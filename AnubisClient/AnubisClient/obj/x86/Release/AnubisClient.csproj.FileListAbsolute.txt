@@ -1,0 +1,6 @@
+C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86\Release\AnubisClient.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86\Release\AnubisClient.ClientForm.resources
+C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86\Release\AnubisClient.Properties.Resources.resources
+C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86\Release\AnubisClient.Robot_Form.resources
+C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86\Release\AnubisClient.csproj.GenerateResource.Cache
+C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\bin\Release\AnubisClient.exe.config

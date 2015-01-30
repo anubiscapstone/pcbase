@@ -27,6 +27,7 @@ namespace AnubisClient
             oc.detectDevice();
             readyDevices.Add(oc);
 
+            thread.RunWorkerAsync();
         }
 
         private static void thread_doWork(object sender, DoWorkEventArgs e)
