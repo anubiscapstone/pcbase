@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
 
 namespace AnubisClient.D_Hardware
 {
@@ -38,6 +39,14 @@ namespace AnubisClient.D_Hardware
             }
             oculus.ConfigureTracking(TrackingCapabilities.Orientation | TrackingCapabilities.MagYawCorrection, TrackingCapabilities.None);
             return true;
+        }
+
+        public override void startDeviceServer()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "C:\\Program Files (x86)\\Oculus\\Service\\OVRServer_x64.exe";
+            //startInfo.Arguments = s;//s would be a string parameter passed into this function
+            Process.Start(startInfo);
         }
     }
 }

@@ -93,7 +93,6 @@ namespace StatusStoplight {
 			try {
 				while (true) {
 					string line = s.readline();
-                    Console.WriteLine(line);
 					if (line == "s" && prevLine != "s" ) {
                         Console.WriteLine("Active");
 						stl.green();

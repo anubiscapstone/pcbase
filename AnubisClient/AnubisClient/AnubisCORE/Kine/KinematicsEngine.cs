@@ -24,7 +24,9 @@ namespace AnubisClient
             readyDevices = new List<HardwareInterface>();
 
             Oculus oc = new Oculus();
+            oc.startDeviceServer();
             oc.detectDevice();
+            
             readyDevices.Add(oc);
 
             thread.RunWorkerAsync();
