@@ -10,7 +10,7 @@ namespace AnubisClient
         public abstract string getIdentString();
         public abstract void modifyModel(SkeletonRep mod);
         public abstract bool detectDevice();
-        public abstract bool startDeviceServer();
+        public abstract void startDeviceServer();
 
     }
 }
