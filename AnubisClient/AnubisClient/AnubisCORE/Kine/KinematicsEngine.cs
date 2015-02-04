@@ -25,6 +25,7 @@ namespace AnubisClient
 
             Oculus oc = new Oculus();
             oc.startDeviceServer();
+            oc.OpenVRPlayer();
             oc.detectDevice();
             
             readyDevices.Add(oc);

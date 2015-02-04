@@ -48,5 +48,13 @@ namespace AnubisClient.D_Hardware
             //startInfo.Arguments = s;//s would be a string parameter passed into this function
             Process.Start(startInfo);
         }
+
+        public void OpenVRPlayer()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "C:\\Program Files (x86)\\VR Player\\VRPlayer.exe";
+            //startInfo.Arguments = s;//s would be a string parameter passed into this function
+            Process.Start(startInfo);
+        }
     }
 }
