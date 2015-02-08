@@ -8,6 +8,9 @@ using System.Windows;
 
 namespace AnubisClient.D_Hardware
 {
+    /// <summary>
+    /// Encapsulates an Oculus Rift DK2 - used to get head tracking info.
+    /// </summary>
     public class Oculus : HardwareInterface
     {
         private HMD oculus;

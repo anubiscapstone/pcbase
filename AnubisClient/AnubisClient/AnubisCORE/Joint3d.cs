@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AnubisClient
 {
+    /// <summary>
+    /// Joint3D - models a single skeletal joint, with angles in relation to attached joints.
+    /// </summary>
     public class Joint3d
     {
         private double pitch;

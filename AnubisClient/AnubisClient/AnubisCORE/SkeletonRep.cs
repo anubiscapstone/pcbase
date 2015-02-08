@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AnubisClient
 {
+    /// <summary>
+    /// Represents a skeleton, the object used to pass user information between input devices and output device drivers.
+    /// </summary>
     public class SkeletonRep
     {
         public Joint3d SpineBase, SpineMiddle, Head, ShoulderLeft, ElbowLeft, WristLeft, HandLeft, ShoulderRight, ElbowRight, WristRight, HandRight, HipLeft, KneeLeft, AnkleLeft, FootLeft, HipRight, KneeRight, AnkleRight;

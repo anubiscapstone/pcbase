@@ -8,14 +8,22 @@ using AnubisClient.D_Hardware;
 
 namespace AnubisClient
 {
-    
+    /// <summary>
+    /// The user interface side - This class handles interacting with the user through hardware devices.
+    /// </summary>
     public static class KinematicsEngine
     {
+        //Interval used to fine tune network flooding issues.
         public const int INTERVAL = 100;
 
+        //processing thread for KinematicsEngine
         private static BackgroundWorker thread;
+        //List of hardware input devices to be polled.
         private static List<HardwareInterface> readyDevices;
 
+        /// <summary>
+        /// initialize - starts Kinematics Engine.
+        /// </summary>
         public static void initialize()
         {
             thread = new BackgroundWorker();
@@ -23,6 +31,7 @@ namespace AnubisClient
             thread.DoWork += new DoWorkEventHandler(thread_doWork);
             readyDevices = new List<HardwareInterface>();
 
+            //Start the Oculus Rift.
             Oculus oc = new Oculus();
             oc.startDeviceServer();
             oc.OpenVRPlayer();
@@ -33,8 +42,15 @@ namespace AnubisClient
             thread.RunWorkerAsync();
         }
 
+        /// <summary>
+        /// thread_doWork - called by the system in a new thread.  Do not call directly.
+        /// Polls hardware inputs, sends resulting skeleton to Comm engine.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private static void thread_doWork(object sender, DoWorkEventArgs e)
         {
+
             while (!thread.CancellationPending)
             {
                 Thread.Sleep(INTERVAL);
