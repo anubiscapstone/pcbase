@@ -7,7 +7,7 @@ using System.IO;
 
 namespace AnubisClient.D_Hardware
 {
-    class KinectInterface:HardwareInterface
+    class KinectInterface
     {
         KinectSensor Sense;
         SkeletonRep SR;
@@ -17,17 +17,17 @@ namespace AnubisClient.D_Hardware
             SR = new SkeletonRep();
         }
 
-        public override bool detectDevice()
+        public  bool detectDevice()
         {
             throw new NotImplementedException();
         }
 
-        public override string getIdentString()
+        public  string getIdentString()
         {
             return "KinectSensor";
         }
 
-        public override void startDeviceServer()
+        public  void startDeviceServer()
         {
             if (Sense != null)
             {
@@ -89,7 +89,7 @@ namespace AnubisClient.D_Hardware
             }
         }
 
-        public override void modifyModel(SkeletonRep mod)
+        public  void modifyModel(SkeletonRep mod)
         {
             mod = SR;
         }

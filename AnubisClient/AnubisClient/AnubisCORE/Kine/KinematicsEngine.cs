@@ -5,6 +5,8 @@ using System.Text;
 using System.ComponentModel;
 using System.Threading;
 using AnubisClient.D_Hardware;
+using AnubisClient.AnubisCORE.Kine;
+using System.Reflection;
 
 namespace AnubisClient
 {
@@ -21,6 +23,31 @@ namespace AnubisClient
         //List of hardware input devices to be polled.
         private static List<HardwareInterface> readyDevices;
 
+        private static HardwareInterface DiscoverDevices()
+        {
+            Type[] types = Assembly.GetAssembly(typeof(HardwareInterface)).GetTypes();
+            for (int i = 0; i < types.Length; i++)
+            {
+                Type t = types[i];
+                if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(HardwareInterface)))
+                {
+                    HardwareInterface HI = (HardwareInterface)Activator.CreateInstance(t);
+                    if (HI.detectDevice())
+                    {
+                        return HI;
+                    }
+                }
+            }
+            return null;
+        }
+
+        private static void StartDevices()
+        {
+            foreach (HardwareInterface hi in readyDevices)
+            {
+                hi.startDeviceServer();
+            }
+        }
         /// <summary>
         /// initialize - starts Kinematics Engine.
         /// </summary>
@@ -31,14 +58,9 @@ namespace AnubisClient
             thread.DoWork += new DoWorkEventHandler(thread_doWork);
             readyDevices = new List<HardwareInterface>();
 
-            //Start the Oculus Rift.
-            Oculus oc = new Oculus();
-            oc.startDeviceServer();
-            oc.OpenVRPlayer();
-            oc.detectDevice();
+            readyDevices.Add(DiscoverDevices());
+            StartDevices();
             
-            readyDevices.Add(oc);
-
             thread.RunWorkerAsync();
         }
 

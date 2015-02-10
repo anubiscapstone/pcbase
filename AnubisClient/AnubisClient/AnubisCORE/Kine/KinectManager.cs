@@ -11,9 +11,11 @@ namespace AnubisClient.AnubisCORE.Kine
     class KinectManager:HardwareInterface
     {
         private List<KinectInterface> KinectSens;
+        private SkeletonRep Mod;
         public KinectManager()
         {
             KinectSens = new List<KinectInterface>();
+            Mod = new SkeletonRep();
         }
 
         public override bool detectDevice()
@@ -46,7 +48,8 @@ namespace AnubisClient.AnubisCORE.Kine
         {
             switch (KinectSens.Count)
             {
-                case 1: break; 
+                case 1: KinectSens[0].modifyModel(Mod); mod.ShoulderLeft.Pitch = Mod.ShoulderLeft.Pitch; mod.ShoulderLeft.Roll = Mod.ShoulderLeft.Roll;
+                    mod.ShoulderRight.Pitch = Mod.ShoulderRight.Pitch; mod.ShoulderRight.Roll = Mod.ShoulderRight.Roll; break;
                 case 2: break; 
                 case 3: break;
                 case 4: break;
