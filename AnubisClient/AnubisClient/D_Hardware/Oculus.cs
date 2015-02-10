@@ -36,6 +36,7 @@ namespace AnubisClient.D_Hardware
 
         public override bool detectDevice()
         {
+            startDeviceServer();
             OVR.Initialize();
             oculus = OVR.HmdCreate(0); 
             if (oculus == null)

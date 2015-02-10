@@ -33,6 +33,8 @@ namespace AnubisClient
             HipRight = new Joint3d();
             KneeRight = new Joint3d();
             AnkleRight = new Joint3d();
+            FootRight = new Joint3d();
+            SpineShoulder = new Joint3d();
         }
         
     }

@@ -48,7 +48,7 @@ namespace AnubisClient.AnubisCORE.Kine
         {
             switch (KinectSens.Count)
             {
-                case 1: KinectSens[0].modifyModel(Mod); mod.ShoulderLeft.Pitch = Mod.ShoulderLeft.Pitch; mod.ShoulderLeft.Roll = Mod.ShoulderLeft.Roll;
+                case 1: Mod = KinectSens[0].ReturnModel(); mod.ShoulderLeft.Pitch = Mod.ShoulderLeft.Pitch; mod.ShoulderLeft.Roll = Mod.ShoulderLeft.Roll;
                     mod.ShoulderRight.Pitch = Mod.ShoulderRight.Pitch; mod.ShoulderRight.Roll = Mod.ShoulderRight.Roll; break;
                 case 2: break; 
                 case 3: break;

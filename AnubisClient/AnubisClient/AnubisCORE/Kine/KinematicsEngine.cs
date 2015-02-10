@@ -23,8 +23,9 @@ namespace AnubisClient
         //List of hardware input devices to be polled.
         private static List<HardwareInterface> readyDevices;
 
-        private static HardwareInterface DiscoverDevices()
+        private static List<HardwareInterface> DiscoverDevices()
         {
+            List<HardwareInterface> devices = new List<HardwareInterface>();
             Type[] types = Assembly.GetAssembly(typeof(HardwareInterface)).GetTypes();
             for (int i = 0; i < types.Length; i++)
             {
@@ -34,11 +35,15 @@ namespace AnubisClient
                     HardwareInterface HI = (HardwareInterface)Activator.CreateInstance(t);
                     if (HI.detectDevice())
                     {
-                        return HI;
+                        devices.Add(HI);
                     }
                 }
             }
+
+            if (devices.Count == 0)
             return null;
+
+            return devices;
         }
 
         private static void StartDevices()
@@ -58,9 +63,6 @@ namespace AnubisClient
             thread.DoWork += new DoWorkEventHandler(thread_doWork);
             readyDevices = new List<HardwareInterface>();
 
-            readyDevices.Add(DiscoverDevices());
-            StartDevices();
-            
             thread.RunWorkerAsync();
         }
 
@@ -72,6 +74,9 @@ namespace AnubisClient
         /// <param name="e"></param>
         private static void thread_doWork(object sender, DoWorkEventArgs e)
         {
+
+            readyDevices = DiscoverDevices();
+            StartDevices();
 
             while (!thread.CancellationPending)
             {
