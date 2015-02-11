@@ -15,26 +15,28 @@ namespace AnubisClient
 
         public SkeletonRep()
         {
-            SpineBase = new Joint3d();
-            SpineMiddle = new Joint3d();
-            Head = new Joint3d();
-            ShoulderLeft = new Joint3d();
-            ElbowLeft = new Joint3d();
-            WristLeft = new Joint3d();
-            HandLeft = new Joint3d();
-            ShoulderRight = new Joint3d();
-            ElbowRight = new Joint3d();
-            WristRight = new Joint3d();
-            HandRight = new Joint3d();
-            HipLeft = new Joint3d();
-            KneeLeft = new Joint3d();
-            AnkleLeft = new Joint3d();
-            FootLeft = new Joint3d();
-            HipRight = new Joint3d();
-            KneeRight = new Joint3d();
-            AnkleRight = new Joint3d();
-            FootRight = new Joint3d();
-            SpineShoulder = new Joint3d();
+            SpineBase = new Joint3d(true);
+            SpineMiddle = new Joint3d(true);
+            Head = new Joint3d(true);
+            ShoulderLeft = new Joint3d(true);
+            ElbowLeft = new Joint3d(true);
+            WristLeft = new Joint3d(true);
+            HandLeft = new Joint3d(true);
+            ShoulderRight = new Joint3d(true);
+            ElbowRight = new Joint3d(true);
+            WristRight = new Joint3d(true);
+            HandRight = new Joint3d(true);
+            HipLeft = new Joint3d(true);
+            KneeLeft = new Joint3d(true);
+            AnkleLeft = new Joint3d(true);
+            FootLeft = new Joint3d(true);
+            HipRight = new Joint3d(true);
+            KneeRight = new Joint3d(true);
+            AnkleRight = new Joint3d(true);
+            FootRight = new Joint3d(true);
+            SpineShoulder = new Joint3d(true);
+
+
         }
         
     }

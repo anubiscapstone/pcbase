@@ -12,6 +12,7 @@ namespace AnubisClient
     /// </summary>
     static class ANUBISEngine
     {
+        private static List<HardwareInterface> ActiveHardware;
         /// <summary>
         /// Initialize starts the ANUBISENGINE.  Nothing happens before this is called. 
         /// Starts the Communications Engine and Kinematics Engine.
@@ -23,6 +24,14 @@ namespace AnubisClient
             CommunicationsEngine.startServer();
 
             KinematicsEngine.initialize();
+
+            ActiveHardware = KinematicsEngine.GetActiveDevices();
+
+        }
+
+        public static List<HardwareInterface> GetActiveHardware()
+        {
+            return ActiveHardware;
         }
 
     }

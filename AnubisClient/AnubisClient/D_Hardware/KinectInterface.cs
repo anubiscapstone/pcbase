@@ -67,25 +67,29 @@ namespace AnubisClient.D_Hardware
                             tracked_skel++;
                             JointCollection jnts = s.Joints;
 
-                            float LDX = jnts[JointType.ElbowLeft].Position.X - jnts[JointType.ShoulderLeft].Position.X;
-                            float LDY = jnts[JointType.ElbowLeft].Position.Y - jnts[JointType.ShoulderLeft].Position.Y;
-                            double LAP = Math.Atan(LDY / LDX) * (180 / Math.PI);
-                            SR.ShoulderLeft.Pitch = LAP;
+                            SR.ShoulderLeft.Pitch = jnts[JointType.ShoulderLeft].Position.X;
+                            SR.ShoulderLeft.Yaw = jnts[JointType.ShoulderLeft].Position.Y;
+                            SR.ShoulderLeft.Roll = jnts[JointType.ShoulderLeft].Position.Z;
 
-                            float RLDZ = jnts[JointType.ElbowLeft].Position.Z - jnts[JointType.ShoulderLeft].Position.Z;
-                            float RLDY = jnts[JointType.ElbowLeft].Position.Y - jnts[JointType.ShoulderLeft].Position.Y;
-                            double RLAP = (Math.Atan(RLDY / RLDZ)) * (180 / Math.PI);
-                            SR.ShoulderLeft.Roll = (90 - RLAP) + 90;
+                            SR.ShoulderRight.Pitch = jnts[JointType.ShoulderRight].Position.X;
+                            SR.ShoulderRight.Yaw = jnts[JointType.ShoulderRight].Position.Y;
+                            SR.ShoulderRight.Roll = jnts[JointType.ShoulderRight].Position.Z;
 
-                            float RDX = jnts[JointType.ElbowRight].Position.X - jnts[JointType.ShoulderRight].Position.X;
-                            float RDY = jnts[JointType.ElbowRight].Position.Y - jnts[JointType.ShoulderRight].Position.Y;
-                            double RAP = Math.Atan(RDY / RDX) * (180 / Math.PI) + 180;
-                            SR.ShoulderLeft.Pitch = RAP;
+                            SR.ElbowLeft.Pitch = jnts[JointType.ElbowLeft].Position.X;
+                            SR.ElbowLeft.Yaw = jnts[JointType.ElbowLeft].Position.Y;
+                            SR.ElbowLeft.Roll = jnts[JointType.ElbowLeft].Position.Z;
 
-                            float RRDZ = jnts[JointType.ElbowRight].Position.Z - jnts[JointType.ShoulderRight].Position.Z;
-                            float RRDY = jnts[JointType.ElbowRight].Position.Y - jnts[JointType.ShoulderRight].Position.Y;
-                            double RRAP = Math.Atan(RRDY / RRDZ) * (180 / Math.PI);
-                            SR.ShoulderLeft.Roll = RRAP;
+                            SR.ElbowRight.Pitch = jnts[JointType.ElbowRight].Position.X;
+                            SR.ElbowRight.Yaw = jnts[JointType.ElbowRight].Position.Y;
+                            SR.ElbowRight.Roll = jnts[JointType.ElbowRight].Position.Z;
+
+                            SR.HandLeft.Pitch = jnts[JointType.HandLeft].Position.X;
+                            SR.HandLeft.Yaw = jnts[JointType.HandLeft].Position.Y;
+                            SR.HandLeft.Roll = jnts[JointType.HandLeft].Position.Z;
+
+                            SR.HandRight.Pitch = jnts[JointType.HandRight].Position.X;
+                            SR.HandRight.Yaw = jnts[JointType.HandRight].Position.Y;
+                            SR.HandRight.Roll = jnts[JointType.HandRight].Position.Z;
                         }
                     }
                 }

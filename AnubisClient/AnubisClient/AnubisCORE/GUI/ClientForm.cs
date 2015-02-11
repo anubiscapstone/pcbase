@@ -14,25 +14,38 @@ namespace AnubisClient
     public partial class ClientForm : Form
     {
 
-        RobotInterface ROI;
-        Robot_Form RF;
+        public List<HardwareInterface> Hardware;
+        public List<Form> ActiveForms;
         public ClientForm()
         {
             this.IsMdiContainer = true;
-            RF = new Robot_Form();
-            RF.MdiParent = this;
+
             InitializeComponent();
             
         }
 
-        public void set_gui_label_kinematics(string text)
+        private void ClientForm_Load(object sender, EventArgs e)
         {
-            
+            Hardware = AnubisClient.ANUBISEngine.GetActiveHardware();
+            foreach (HardwareInterface hi in Hardware)
+            {
+                tscb_HardwareList.Items.Add(hi.getIdentString());
+                
+            }
         }
 
-        private void networkWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tscb_HardwareList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RF.Show();
+            switch(sender.ToString().Split(',').First())
+            {
+                
+            }
+
+        }
+
+        private void ts_ViewWindow_DropDownClosed(object sender, EventArgs e)
+        {
+
         }
         
     }

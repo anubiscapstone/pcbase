@@ -10,6 +10,11 @@ namespace AnubisClient
     /// </summary>
     public class Joint3d
     {
+        public Joint3d(bool InitcenterSkel)
+        {
+            if (InitcenterSkel) {pitch = yaw = roll = 90; }
+            
+        }
         private double pitch;
         public double Pitch
         {

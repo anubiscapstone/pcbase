@@ -36,6 +36,7 @@ namespace AnubisClient
                     if (HI.detectDevice())
                     {
                         devices.Add(HI);
+
                     }
                 }
             }
@@ -53,6 +54,11 @@ namespace AnubisClient
                 hi.startDeviceServer();
             }
         }
+
+        public static List<HardwareInterface> GetActiveDevices()
+        {
+            return readyDevices;
+        }
         /// <summary>
         /// initialize - starts Kinematics Engine.
         /// </summary>
@@ -62,7 +68,8 @@ namespace AnubisClient
             thread.WorkerSupportsCancellation = true;
             thread.DoWork += new DoWorkEventHandler(thread_doWork);
             readyDevices = new List<HardwareInterface>();
-
+            readyDevices = DiscoverDevices();
+            StartDevices();
             thread.RunWorkerAsync();
         }
 
@@ -74,10 +81,6 @@ namespace AnubisClient
         /// <param name="e"></param>
         private static void thread_doWork(object sender, DoWorkEventArgs e)
         {
-
-            readyDevices = DiscoverDevices();
-            StartDevices();
-
             while (!thread.CancellationPending)
             {
                 Thread.Sleep(INTERVAL);

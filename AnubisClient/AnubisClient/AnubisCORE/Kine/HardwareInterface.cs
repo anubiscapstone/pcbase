@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace AnubisClient
 {
@@ -11,6 +12,7 @@ namespace AnubisClient
         public abstract void modifyModel(SkeletonRep mod);
         public abstract bool detectDevice();
         public abstract void startDeviceServer();
+        public abstract Form getForm();
         
 
     }
