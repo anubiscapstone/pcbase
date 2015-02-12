@@ -62,5 +62,10 @@ namespace AnubisClient.D_Hardware
             //startInfo.Arguments = s;//s would be a string parameter passed into this function
             Process.Start(startInfo);
         }
+
+        public override System.Windows.Forms.Form getForm()
+        {
+            return new Oculus_Form();
+        }
     }
 }

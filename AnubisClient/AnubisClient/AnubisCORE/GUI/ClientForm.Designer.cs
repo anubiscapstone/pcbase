@@ -107,7 +107,7 @@
             this.kinect1ToolStripMenuItem.Enabled = false;
             this.kinect1ToolStripMenuItem.Name = "kinect1ToolStripMenuItem";
             this.kinect1ToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.kinect1ToolStripMenuItem.Text = "Active Kinects";
+            this.kinect1ToolStripMenuItem.Text = "Active Hardware";
             // 
             // tscb_HardwareList
             // 
@@ -136,6 +136,7 @@
             this.Name = "ClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ClientForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.Load += new System.EventHandler(this.ClientForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AnubisClient
+namespace AnubisClient.AnubisCORE.GUI
 {
-    public partial class Network_Details : Form
+    public partial class SplashScreen : Form
     {
-        public Network_Details()
+        public SplashScreen()
         {
             InitializeComponent();
         }

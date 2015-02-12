@@ -14,6 +14,13 @@ namespace AnubisClient
         public Kinect_Form()
         {
             InitializeComponent();
+            Name = "kinectmanager";
+        }
+
+        private void Kinect_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
         }
     }
 }

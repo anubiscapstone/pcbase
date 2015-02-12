@@ -84,6 +84,11 @@ namespace AnubisClient.AnubisCORE.Kine
             return "KinectManager";
         }
 
+        public override System.Windows.Forms.Form getForm()
+        {
+            return new Kinect_Form();
+        }
+
 
     }
 

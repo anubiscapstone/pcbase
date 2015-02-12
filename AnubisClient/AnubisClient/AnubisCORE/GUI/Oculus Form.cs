@@ -14,6 +14,14 @@ namespace AnubisClient
         public Oculus_Form()
         {
             InitializeComponent();
+            this.Name = "oculus";
         }
+
+        private void Oculus_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
+
     }
 }

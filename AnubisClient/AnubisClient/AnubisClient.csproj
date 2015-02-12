@@ -90,11 +90,11 @@
     </Compile>
     <Compile Include="AnubisCORE\Comm\CommunicationsEngine.cs" />
     <Compile Include="AnubisCORE\GenericEventArgs.cs" />
-    <Compile Include="AnubisCORE\GUI\Hardware Details.cs">
+    <Compile Include="AnubisCORE\GUI\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\Hardware Details.Designer.cs">
-      <DependentUpon>Hardware Details.cs</DependentUpon>
+    <Compile Include="AnubisCORE\GUI\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="AnubisCORE\Kine\HardwareInterface.cs" />
     <Compile Include="AnubisCORE\Kine\KinectManager.cs" />
@@ -109,18 +109,6 @@
       <DependentUpon>Kinect Form.cs</DependentUpon>
     </Compile>
     <Compile Include="AnubisCORE\Kine\KinematicsEngine.cs" />
-    <Compile Include="AnubisCORE\GUI\Leap Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AnubisCORE\GUI\Leap Form.Designer.cs">
-      <DependentUpon>Leap Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AnubisCORE\GUI\Network Details.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AnubisCORE\GUI\Network Details.Designer.cs">
-      <DependentUpon>Network Details.cs</DependentUpon>
-    </Compile>
     <Compile Include="AnubisCORE\GUI\Oculus Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +135,15 @@
     <Compile Include="D_Robots\Stoplight.cs" />
     <EmbeddedResource Include="AnubisCORE\GUI\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnubisCORE\GUI\Kinect Form.resx">
+      <DependentUpon>Kinect Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnubisCORE\GUI\Oculus Form.resx">
+      <DependentUpon>Oculus Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnubisCORE\GUI\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -175,6 +172,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo-w.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SharpDX.2.6.0\build\SharpDX.targets" Condition="Exists('..\packages\SharpDX.2.6.0\build\SharpDX.targets')" />

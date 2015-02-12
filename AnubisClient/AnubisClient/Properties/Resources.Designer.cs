@@ -61,6 +61,16 @@ namespace AnubisClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_w {
+            get {
+                object obj = ResourceManager.GetObject("Logo_w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No ready Kinect Found!.
         /// </summary>
         internal static string NoKinectReady {
