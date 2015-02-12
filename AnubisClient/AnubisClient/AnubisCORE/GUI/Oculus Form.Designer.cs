@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Name = "Oculus_Form";
             this.Text = "Oculus_Form";
+            this.Activated += new System.EventHandler(this.Oculus_Form_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Oculus_Form_FormClosing);
             this.ResumeLayout(false);
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnubisClient.AnubisCORE.Kine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,10 +12,12 @@ namespace AnubisClient
 {
     public partial class Kinect_Form : Form
     {
-        public Kinect_Form()
+        private KinectManager P_Interface;
+        public Kinect_Form(KinectManager Interface)
         {
             InitializeComponent();
             Name = "kinectmanager";
+            P_Interface = Interface;
         }
 
         private void Kinect_Form_FormClosing(object sender, FormClosingEventArgs e)

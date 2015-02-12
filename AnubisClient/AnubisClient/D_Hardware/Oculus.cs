@@ -49,23 +49,28 @@ namespace AnubisClient.D_Hardware
 
         public override void startDeviceServer()
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "C:\\Program Files (x86)\\Oculus\\Service\\OVRServer_x64.exe";
-            //startInfo.Arguments = s;//s would be a string parameter passed into this function
-            Process.Start(startInfo);
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "C:\\Program Files (x86)\\Oculus\\Service\\OVRServer_x64.exe";
+                //startInfo.Arguments = s;//s would be a string parameter passed into this function
+                Process.Start(startInfo);
+          
         }
 
         public void OpenVRPlayer()
         {
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "C:\\Program Files (x86)\\VR Player\\VRPlayer.exe";
-            //startInfo.Arguments = s;//s would be a string parameter passed into this function
-            Process.Start(startInfo);
+            Process[] pname = Process.GetProcessesByName("VrPlayer");
+            if (pname.Length == 0)
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = "C:\\Program Files (x86)\\VR Player\\VRPlayer.exe";
+                //startInfo.Arguments = s;//s would be a string parameter passed into this function
+                Process.Start(startInfo);
+            }
         }
 
         public override System.Windows.Forms.Form getForm()
         {
-            return new Oculus_Form();
+            return new Oculus_Form(this);
         }
     }
 }

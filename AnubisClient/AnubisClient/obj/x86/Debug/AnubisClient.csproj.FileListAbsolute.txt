@@ -44,6 +44,9 @@ C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86
 C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.Robot_Form.resources
 C:\Users\Admin\Documents\Robots\Johnny6\pcbase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.ClientForm.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.Kinect_Form.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.Oculus_Form.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.AnubisCORE.GUI.SplashScreen.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.Properties.Resources.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.Robot_Form.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.csproj.GenerateResource.Cache
@@ -60,9 +63,5 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\SharpDX.Direct3D11.xml
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\SharpDX.DXGI.xml
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\SharpOVR.xml
-C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.exe
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.AnubisCORE.GUI.SplashScreen.resources
-C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.Kinect_Form.resources
-C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.Oculus_Form.resources
