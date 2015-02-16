@@ -65,3 +65,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\SharpOVR.xml
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.exe
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.csprojResolveAssemblyReference.cache

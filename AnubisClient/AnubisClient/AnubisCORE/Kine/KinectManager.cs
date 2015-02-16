@@ -52,7 +52,7 @@ namespace AnubisClient.AnubisCORE.Kine
                     double LDX = Mod.ElbowLeft.Pitch - Mod.ShoulderLeft.Pitch;
                     double LDY = Mod.ElbowLeft.Yaw - Mod.ShoulderLeft.Yaw;
                     double AngleL = Math.Atan2(LDY, LDX) * (180 / Math.PI);
-                    mod.ShoulderLeft.Pitch = 180-AngleL;
+                    mod.ShoulderLeft.Pitch = (0 - AngleL);
                     
                     //Left Arm Shoulder Roll
                     double RollLDZ = Mod.ShoulderLeft.Roll - Mod.HandLeft.Roll;
