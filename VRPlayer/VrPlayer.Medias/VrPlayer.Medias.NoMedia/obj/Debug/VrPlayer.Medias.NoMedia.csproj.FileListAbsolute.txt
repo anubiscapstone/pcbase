@@ -1,0 +1,8 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\bin\Debug\Log4Net.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\bin\Debug\VrPlayer.Medias.NoMedia.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\bin\Debug\VrPlayer.Medias.NoMedia.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\bin\Debug\VrPlayer.Helpers.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\bin\Debug\VrPlayer.Helpers.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\obj\Debug\VrPlayer.Medias.NoMedia.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\obj\Debug\VrPlayer.Medias.NoMedia.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.NoMedia\obj\Debug\VrPlayer.Medias.NoMedia.pdb

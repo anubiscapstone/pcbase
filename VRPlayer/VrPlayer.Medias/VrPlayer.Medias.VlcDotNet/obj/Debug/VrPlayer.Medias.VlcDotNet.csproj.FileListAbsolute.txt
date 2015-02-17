@@ -1,0 +1,13 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\bin\Debug\VrPlayer.Medias.VlcDotNet.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\bin\Debug\VrPlayer.Medias.VlcDotNet.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\bin\Debug\VrPlayer.Medias.VlcDotNet.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\bin\Debug\Vlc.DotNet.Core.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\bin\Debug\Vlc.DotNet.Core.Interops.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\bin\Debug\Vlc.DotNet.Wpf.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\obj\Debug\VrPlayer.Medias.VlcDotNet.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\obj\Debug\VlcDotNetPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\obj\Debug\VlcDotNetPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\obj\Debug\VrPlayer.Medias.VlcDotNet_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\obj\Debug\VrPlayer.Medias.VlcDotNet.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\obj\Debug\VrPlayer.Medias.VlcDotNet.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.VlcDotNet\obj\Debug\VrPlayer.Medias.VlcDotNet.pdb

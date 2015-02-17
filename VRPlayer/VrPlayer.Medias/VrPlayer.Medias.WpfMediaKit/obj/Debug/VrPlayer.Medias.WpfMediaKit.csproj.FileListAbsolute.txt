@@ -1,0 +1,15 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\VrPlayer.Medias.WpfMediaKit.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\VrPlayer.Medias.WpfMediaKit.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\VrPlayer.Medias.WpfMediaKit.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\SharpDX.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\SharpDX.XAudio2.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\WPFMediaKit.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\SharpDX.xml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\bin\Debug\SharpDX.XAudio2.xml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\obj\Debug\VrPlayer.Medias.WpfMediaKit.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\obj\Debug\WpfMediaKitPanelPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\obj\Debug\WpfMediaKitPanelPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\obj\Debug\VrPlayer.Medias.WpfMediaKit_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\obj\Debug\VrPlayer.Medias.WpfMediaKit.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\obj\Debug\VrPlayer.Medias.WpfMediaKit.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.WpfMediaKit\obj\Debug\VrPlayer.Medias.WpfMediaKit.pdb

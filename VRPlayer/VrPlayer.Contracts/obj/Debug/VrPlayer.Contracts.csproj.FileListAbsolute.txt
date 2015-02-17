@@ -1,0 +1,5 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Contracts\bin\Debug\VrPlayer.Contracts.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Contracts\bin\Debug\VrPlayer.Contracts.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Contracts\obj\Debug\VrPlayer.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Contracts\obj\Debug\VrPlayer.Contracts.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Contracts\obj\Debug\VrPlayer.Contracts.pdb

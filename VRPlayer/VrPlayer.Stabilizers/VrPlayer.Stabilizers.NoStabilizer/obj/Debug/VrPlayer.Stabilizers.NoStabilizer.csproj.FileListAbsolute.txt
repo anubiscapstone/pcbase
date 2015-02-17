@@ -1,0 +1,8 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\bin\Debug\Log4Net.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\bin\Debug\VrPlayer.Stabilizers.NoStabilizer.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\bin\Debug\VrPlayer.Stabilizers.NoStabilizer.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\bin\Debug\VrPlayer.Helpers.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\bin\Debug\VrPlayer.Helpers.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\obj\Debug\VrPlayer.Stabilizers.NoStabilizer.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\obj\Debug\VrPlayer.Stabilizers.NoStabilizer.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\obj\Debug\VrPlayer.Stabilizers.NoStabilizer.pdb

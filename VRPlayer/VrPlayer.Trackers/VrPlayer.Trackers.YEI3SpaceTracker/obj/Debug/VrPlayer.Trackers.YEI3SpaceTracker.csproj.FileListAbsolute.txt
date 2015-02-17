@@ -1,0 +1,12 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\bin\Debug\VrPlayer.Trackers.YEI3SpaceTracker.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\bin\Debug\VrPlayer.Trackers.YEI3SpaceTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\bin\Debug\VrPlayer.Trackers.YEI3SpaceTracker.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\bin\Debug\YEISensorLib.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\bin\Debug\YEISensorLib.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\obj\Debug\VrPlayer.Trackers.YEI3SpaceTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\obj\Debug\YEI3SpacePanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\obj\Debug\YEI3SpacePanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\obj\Debug\VrPlayer.Trackers.YEI3SpaceTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\obj\Debug\VrPlayer.Trackers.YEI3SpaceTracker.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\obj\Debug\VrPlayer.Trackers.YEI3SpaceTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.YEI3SpaceTracker\obj\Debug\VrPlayer.Trackers.YEI3SpaceTracker.pdb

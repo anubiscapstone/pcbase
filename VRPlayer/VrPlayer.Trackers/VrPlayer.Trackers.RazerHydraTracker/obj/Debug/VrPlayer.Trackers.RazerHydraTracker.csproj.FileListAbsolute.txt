@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\bin\Debug\VrPlayer.Trackers.RazerHydraTracker.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\bin\Debug\VrPlayer.Trackers.RazerHydraTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\bin\Debug\VrPlayer.Trackers.RazerHydraTracker.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\obj\Debug\VrPlayer.Trackers.RazerHydraTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\obj\Debug\RazerHydraPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\obj\Debug\RazerHydraPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\obj\Debug\VrPlayer.Trackers.RazerHydraTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\obj\Debug\VrPlayer.Trackers.RazerHydraTracker.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\obj\Debug\VrPlayer.Trackers.RazerHydraTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.RazerHydraTracker\obj\Debug\VrPlayer.Trackers.RazerHydraTracker.pdb

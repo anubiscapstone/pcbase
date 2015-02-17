@@ -1,0 +1,13 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\bin\Debug\VrPlayer.Medias.Gdi.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\bin\Debug\VrPlayer.Medias.Gdi.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\bin\Debug\SharpDX.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\bin\Debug\SharpDX.xml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\obj\Debug\VrPlayer.Medias.Gdi.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\obj\Debug\GdiPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\obj\Debug\GdiPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\obj\Debug\VrPlayer.Medias.Gdi_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\obj\Debug\VrPlayer.Medias.Gdi.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\obj\Debug\VrPlayer.Medias.Gdi.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Medias\VrPlayer.Medias.Gdi\obj\Debug\VrPlayer.Medias.Gdi.pdb

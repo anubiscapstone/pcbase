@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\bin\Debug\VrPlayer.Projections.Cylinder.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\bin\Debug\VrPlayer.Projections.Cylinder.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\bin\Debug\VrPlayer.Projections.Cylinder.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\CylinderPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\CylinderPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.pdb

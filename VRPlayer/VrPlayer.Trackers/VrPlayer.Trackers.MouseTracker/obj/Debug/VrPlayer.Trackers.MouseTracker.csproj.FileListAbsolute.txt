@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\bin\Debug\VrPlayer.Trackers.MouseTracker.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\bin\Debug\VrPlayer.Trackers.MouseTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\bin\Debug\VrPlayer.Trackers.MouseTracker.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\MousePanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\MousePanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.pdb

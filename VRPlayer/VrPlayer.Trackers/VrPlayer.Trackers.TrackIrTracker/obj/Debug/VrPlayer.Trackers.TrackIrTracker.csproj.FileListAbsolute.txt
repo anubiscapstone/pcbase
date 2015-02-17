@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\bin\Debug\VrPlayer.Trackers.TrackIrTracker.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\bin\Debug\VrPlayer.Trackers.TrackIrTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\bin\Debug\VrPlayer.Trackers.TrackIrTracker.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\TrackIrPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\TrackIrPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.pdb

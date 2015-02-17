@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\bin\Debug\VrPlayer.Distortions.Barrel.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\bin\Debug\VrPlayer.Distortions.Barrel.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\bin\Debug\VrPlayer.Distortions.Barrel.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\obj\Debug\VrPlayer.Distortions.Barrel.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\obj\Debug\BarrelPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\obj\Debug\BarrelPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\obj\Debug\VrPlayer.Distortions.Barrel_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\obj\Debug\VrPlayer.Distortions.Barrel.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\obj\Debug\VrPlayer.Distortions.Barrel.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Distortions\VrPlayer.Distortions.Barrel\obj\Debug\VrPlayer.Distortions.Barrel.pdb

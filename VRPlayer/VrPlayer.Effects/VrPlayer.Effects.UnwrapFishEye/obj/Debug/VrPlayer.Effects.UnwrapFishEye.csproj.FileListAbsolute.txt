@@ -1,0 +1,10 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\bin\Debug\VrPlayer.Effects.UnwrapFishEye.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\bin\Debug\VrPlayer.Effects.UnwrapFishEye.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\bin\Debug\VrPlayer.Effects.UnwrapFishEye.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\UnwrapFishEyePanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\UnwrapFishEyePanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.pdb

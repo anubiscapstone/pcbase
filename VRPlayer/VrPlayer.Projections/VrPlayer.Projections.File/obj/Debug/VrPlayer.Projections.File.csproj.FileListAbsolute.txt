@@ -1,0 +1,14 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\bin\Debug\capsule.obj
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\bin\Debug\VrPlayer.Projections.File.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\bin\Debug\VrPlayer.Projections.File.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\bin\Debug\VrPlayer.Projections.File.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\bin\Debug\HelixToolkit.Wpf.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\obj\Debug\VrPlayer.Projections.File.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\obj\Debug\FilePanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\obj\Debug\FilePanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\obj\Debug\VrPlayer.Projections.File_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\obj\Debug\VrPlayer.Projections.File.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\obj\Debug\VrPlayer.Projections.File.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.File\obj\Debug\VrPlayer.Projections.File.pdb

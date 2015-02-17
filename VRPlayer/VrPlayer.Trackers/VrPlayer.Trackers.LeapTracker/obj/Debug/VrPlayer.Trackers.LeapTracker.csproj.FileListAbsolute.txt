@@ -1,0 +1,11 @@
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\bin\Debug\VrPlayer.Trackers.LeapTracker.dll.config
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\bin\Debug\VrPlayer.Trackers.LeapTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\bin\Debug\VrPlayer.Trackers.LeapTracker.pdb
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\bin\Debug\LeapCSharp.NET4.0.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\obj\Debug\VrPlayer.Trackers.LeapTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\obj\Debug\LeapPanel.baml
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\obj\Debug\LeapPanel.g.cs
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\obj\Debug\VrPlayer.Trackers.LeapTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\obj\Debug\VrPlayer.Trackers.LeapTracker.g.resources
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\obj\Debug\VrPlayer.Trackers.LeapTracker.dll
+C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.LeapTracker\obj\Debug\VrPlayer.Trackers.LeapTracker.pdb
