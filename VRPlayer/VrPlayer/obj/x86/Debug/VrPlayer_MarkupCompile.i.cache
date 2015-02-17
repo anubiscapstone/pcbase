@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\admin\Desktop\vrplr2\VrPlayer\obj\x86\Debug\
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer\obj\x86\Debug\
 VrPlayer
 none
 false
 DEBUG;TRACE
-C:\Users\admin\Desktop\vrplr2\VrPlayer\App.xaml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer\App.xaml
 19-702604924
 16-1233015192
 44-839390727
-21-575297997
+21-1120400879
 Views\Dialogs\KeyInputDialog.xaml;Views\Dialogs\DiscInputDialog.xaml;Views\Dialogs\ProcessInputDialog.xaml;Views\Settings\DisplaySettings.xaml;Views\Settings\ShortcutsSettings.xaml;Views\Settings\MediaSettings.xaml;Views\Settings\SettingsWindow.xaml;Views\Dialogs\StreamInputDialog.xaml;Views\ControlPanel.xaml;Views\MainWindow.xaml;Views\Settings\DistortionsSettings.xaml;Views\Settings\EffectsSettings.xaml;Views\Settings\GeneralSettings.xaml;Views\Menu.xaml;Views\Settings\ProjectionsSettings.xaml;Views\Settings\StabilizersSettings.xaml;Views\Settings\TrackersSettings.xaml;Views\ViewPorts\ExternalViewPort.xaml;Views\ViewPorts\MainViewPort.xaml;
 
-True
+False
 

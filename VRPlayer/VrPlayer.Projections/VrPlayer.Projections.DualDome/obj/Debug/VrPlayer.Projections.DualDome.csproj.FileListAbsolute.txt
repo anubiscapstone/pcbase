@@ -8,3 +8,13 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\bin\Debug\VrPlayer.Projections.DualDome.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\bin\Debug\VrPlayer.Projections.DualDome.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\bin\Debug\VrPlayer.Projections.DualDome.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\DualDomePanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\DualDomePanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualDome\obj\Debug\VrPlayer.Projections.DualDome.pdb

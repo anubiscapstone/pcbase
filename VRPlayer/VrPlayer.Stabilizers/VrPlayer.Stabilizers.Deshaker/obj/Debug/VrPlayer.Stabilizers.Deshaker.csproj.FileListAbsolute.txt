@@ -8,3 +8,13 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\bin\Debug\VrPlayer.Stabilizers.Deshaker.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\bin\Debug\VrPlayer.Stabilizers.Deshaker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\bin\Debug\VrPlayer.Stabilizers.Deshaker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\DeshakerPanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\DeshakerPanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Deshaker\obj\Debug\VrPlayer.Stabilizers.Deshaker.pdb

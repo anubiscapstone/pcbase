@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\admin\Desktop\vrplr2\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\
 VrPlayer.Effects.Shazzam
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 714276641
 
 27-45633699
-22-1631557944
+22-2018915267
 ColorKeyAlpha\ColorKeyAlphaPanel.xaml;ParametricEdgeDetection\ParametricEdgeDetectionPanel.xaml;SketchPencilStroke\SketchPencilStrokePanel.xaml;ToonShader\ToonShaderPanel.xaml;Bloom\BloomPanel.xaml;Monochrome\MonochromePanel.xaml;Pixelate\PixelatePanel.xaml;
 
 False

@@ -7,3 +7,13 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\bin\Debug\Log4Net.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\bin\Debug\VrPlayer.Helpers.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\bin\Debug\VrPlayer.Helpers.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\bin\Debug\log4net.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\bin\Debug\log4net.xml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.Properties.Resources.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.pdb

@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.OculusRiftTracker\obj\Debug\
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.OculusRiftTracker\obj\Debug\
 VrPlayer.Trackers.OculusRiftTracker
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 11632237251
 
 4385527845
-171177010740
+17-619855671
 OculusRiftPanel.xaml;
 
 False

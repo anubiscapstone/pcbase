@@ -8,3 +8,13 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\bin\Debug\VrPlayer.Trackers.KinectTracker.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\bin\Debug\VrPlayer.Trackers.KinectTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\bin\Debug\VrPlayer.Trackers.KinectTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\KinectPanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\KinectPanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.KinectTracker\obj\Debug\VrPlayer.Trackers.KinectTracker.pdb

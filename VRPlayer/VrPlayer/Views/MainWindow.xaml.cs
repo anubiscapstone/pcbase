@@ -9,8 +9,6 @@ namespace VrPlayer
 {
     public partial class MainWindow : FullScreenWindow
     {
-        private StreamInputDialog _anubisUDPStream;
-        
         private readonly MainWindowViewModel _viewModel;
 
         private readonly MenuViewModel _menuViewModel;
@@ -22,7 +20,6 @@ namespace VrPlayer
             {
                 _viewModel = ((App)Application.Current).ViewModelFactory.CreateMainWindowViewModel();
                 DataContext = _viewModel;
-                //_anubisUDPStream;
 
                 _menuViewModel = ((App)Application.Current).ViewModelFactory.CreateMenuViewModel();
 

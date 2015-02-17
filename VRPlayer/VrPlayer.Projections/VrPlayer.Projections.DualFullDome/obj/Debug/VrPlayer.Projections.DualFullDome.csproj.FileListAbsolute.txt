@@ -8,3 +8,13 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\bin\Debug\VrPlayer.Projections.DualFullDome.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\bin\Debug\VrPlayer.Projections.DualFullDome.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\bin\Debug\VrPlayer.Projections.DualFullDome.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\DualFullDomePanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\DualFullDomePanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.pdb

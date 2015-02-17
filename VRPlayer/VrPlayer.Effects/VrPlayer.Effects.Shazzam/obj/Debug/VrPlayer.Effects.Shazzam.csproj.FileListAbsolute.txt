@@ -20,3 +20,25 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\bin\Debug\VrPlayer.Effects.Shazzam.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\bin\Debug\VrPlayer.Effects.Shazzam.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\ColorKeyAlpha\ColorKeyAlphaPanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\ParametricEdgeDetection\ParametricEdgeDetectionPanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\SketchPencilStroke\SketchPencilStrokePanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\ToonShader\ToonShaderPanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\Bloom\BloomPanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\Monochrome\MonochromePanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\Pixelate\PixelatePanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\ColorKeyAlpha\ColorKeyAlphaPanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\ParametricEdgeDetection\ParametricEdgeDetectionPanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\SketchPencilStroke\SketchPencilStrokePanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\ToonShader\ToonShaderPanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\Bloom\BloomPanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\Monochrome\MonochromePanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\Pixelate\PixelatePanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.Shazzam\obj\Debug\VrPlayer.Effects.Shazzam.pdb

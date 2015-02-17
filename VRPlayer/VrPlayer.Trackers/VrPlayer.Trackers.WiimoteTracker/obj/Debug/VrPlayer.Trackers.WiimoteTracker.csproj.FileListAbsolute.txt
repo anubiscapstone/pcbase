@@ -9,3 +9,14 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\bin\Debug\VrPlayer.Trackers.WiimoteTracker.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\bin\Debug\VrPlayer.Trackers.WiimoteTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\bin\Debug\VrPlayer.Trackers.WiimoteTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\bin\Debug\WiimoteLib.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\WiimotePanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\WiimotePanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.WiimoteTracker\obj\Debug\VrPlayer.Trackers.WiimoteTracker.pdb

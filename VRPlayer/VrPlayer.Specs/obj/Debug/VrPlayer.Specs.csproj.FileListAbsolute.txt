@@ -40,3 +40,45 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Specs\obj\Debug\VrPlayer.Specs.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Specs\obj\Debug\VrPlayer.Specs.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Specs\obj\Debug\VrPlayer.Specs.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Log4Net.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\1-Grid.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\2-CubeMono.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\3-CubeOverUnder.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\4-CubeSideBySide.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\5-DepthMapEffect.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\6-SphericalOverUnder.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\7-CylindricalOverUnder.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\1-Grid.jpg
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\2-CubeMono.jpg
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\3-CubeOverUnder.jpg
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\4-CubeSideBySide.jpg
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\5-DepthMapEffect.jpg
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\6-SphericalOverUnder.jpg
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\7-CylindricalOverUnder.jpg
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Samples\Samples-copyright.txt
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\DefaultPreset.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Presets\MediaPreset.json
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Specs.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Specs.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Specs.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Moq.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\nunit.framework.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Contracts.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.exe
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Helpers.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Projections.Sphere.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\log4net.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\CsXmpToolkit.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Contracts.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Helpers.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.Projections.Sphere.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\VrPlayer.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Moq.xml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\nunit.framework.xml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\log4net.xml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\obj\Debug\VrPlayer.Specs.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\obj\Debug\VrPlayer.Specs.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Specs\obj\Debug\VrPlayer.Specs.pdb

@@ -9,3 +9,14 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\bin\Debug\VrPlayer.Trackers.VrpnTracker.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\bin\Debug\VrPlayer.Trackers.VrpnTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\bin\Debug\VrPlayer.Trackers.VrpnTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\bin\Debug\VrpnNet.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrpnPanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrpnPanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.VrpnTracker\obj\Debug\VrPlayer.Trackers.VrpnTracker.pdb

@@ -9,3 +9,14 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker.g.resources
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker.dll
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\bin\Debug\VrPlayer.Trackers.PsMoveTracker.dll.config
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\bin\Debug\VrPlayer.Trackers.PsMoveTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\bin\Debug\VrPlayer.Trackers.PsMoveTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\bin\Debug\MoveFramework CS.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\PsMovePanel.baml
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\PsMovePanel.g.cs
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker_MarkupCompile.cache
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker.g.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.PsMoveTracker\obj\Debug\VrPlayer.Trackers.PsMoveTracker.pdb
