@@ -282,28 +282,17 @@ namespace VrPlayer.ViewModels
             }
         }
 
-	    private void OpenStream(object o, string url)
+	    private void OpenStream(object o)
         {
             var mediaPlugin = (IPlugin<IMedia>)o;
             if (_state.MediaPlugin == null || _state.MediaPlugin.Content == null) return;
             var dialog = new StreamInputDialog();
 
-            if (url != "")
-            {
-                _state.MediaPlugin = mediaPlugin;
-                _state.MediaPlugin.Content.OpenStreamCommand.Execute(url);
-            }
-
-            else if (dialog.ShowDialog() == true)
+            if (dialog.ShowDialog() == true)
             {
                 _state.MediaPlugin = mediaPlugin;
                 _state.MediaPlugin.Content.OpenStreamCommand.Execute(dialog.Url);
             }
-        }
-
-        private void OpenStream(object o)
-        {
-            OpenStream(o, "udp://@226.0.0.1:1234");
         }
 
         private void OpenDevice(object o)

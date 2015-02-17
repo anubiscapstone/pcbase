@@ -17,6 +17,7 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEyeStereo\bin\Debug\VrPlayer.Effects.UnwrapFishEyeStereo.pdb
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEyeStereo\bin\Debug\VrPlayer.Helpers.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEyeStereo\bin\Debug\VrPlayer.Helpers.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEyeStereo\obj\Debug\VrPlayer.Effects.UnwrapFishEyeStereo.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEyeStereo\obj\Debug\UnwrapFishEyeStereoPanel.baml
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEyeStereo\obj\Debug\UnwrapFishEyeStereoPanel.g.cs
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEyeStereo\obj\Debug\VrPlayer.Effects.UnwrapFishEyeStereo_MarkupCompile.cache

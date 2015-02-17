@@ -23,6 +23,9 @@ namespace VrPlayer
 
                 _menuViewModel = ((App)Application.Current).ViewModelFactory.CreateMenuViewModel();
 
+
+                // Attempt to auto load anubis stream
+                _viewModel.MediaService.Load("udp://@226.0.0.1:1234");
             }
             catch (Exception exc)
             {
