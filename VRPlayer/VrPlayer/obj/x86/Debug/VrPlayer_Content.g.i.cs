@@ -15,6 +15,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("samples/5-depthmapeffect.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("samples/6-sphericaloverunder.json")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("samples/7-cylindricaloverunder.json")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("user32.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("samples/1-grid.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("samples/2-cubemono.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("samples/3-cubeoverunder.jpg")]

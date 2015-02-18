@@ -11,7 +11,7 @@
         KeyDown="Window_KeyDown"
         AllowDrop="true"
         Drop="Window_OnDrop"
-        Closed="MainWindow_OnClosed">
+        Closed="MainWindow_OnClosed" WindowState="Normal" WindowStartupLocation="CenterScreen">
     <helpers:FullScreenWindow.Resources>
         <converters:InvertBooleanToVisibilityConverter x:Key="InvertBooleanToVisibility"/>
     </helpers:FullScreenWindow.Resources>

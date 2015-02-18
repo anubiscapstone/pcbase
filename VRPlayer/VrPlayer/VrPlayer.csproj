@@ -282,6 +282,7 @@
     <Content Include="Samples\7-CylindricalOverUnder.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="user32.dll" />
     <Resource Include="vrplayer.ico" />
     <None Include="App.config">
       <SubType>Designer</SubType>
