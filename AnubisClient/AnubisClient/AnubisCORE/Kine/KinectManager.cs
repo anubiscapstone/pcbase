@@ -11,11 +11,13 @@ namespace AnubisClient.AnubisCORE.Kine
     public class KinectManager:HardwareInterface
     {
         private List<KinectInterface> KinectSens;
-        private SkeletonRep Mod;
+        private SkeletonRep Kinect_Model;
+        private Gesture.GestureEngine gesture;
         public KinectManager()
         {
             KinectSens = new List<KinectInterface>();
-            Mod = new SkeletonRep();
+            Kinect_Model = new SkeletonRep();
+            gesture = new Gesture.GestureEngine();
         }
 
         public override bool detectDevice()
@@ -46,29 +48,31 @@ namespace AnubisClient.AnubisCORE.Kine
 
         public override void modifyModel(SkeletonRep mod)
         {
+
             switch (KinectSens.Count)
             {
-                case 1: Mod = KinectSens[0].ReturnModel(); 
-                    double LDX = Mod.ElbowLeft.Pitch - Mod.ShoulderLeft.Pitch;
-                    double LDY = Mod.ElbowLeft.Yaw - Mod.ShoulderLeft.Yaw;
+                case 1: Kinect_Model = KinectSens[0].ReturnModel();
+                    //Right Arm Pitch
+                    double LDX = Kinect_Model.ElbowLeft.Pitch - Kinect_Model.ShoulderLeft.Pitch;
+                    double LDY = Kinect_Model.ElbowLeft.Yaw - Kinect_Model.ShoulderLeft.Yaw;
                     double AngleL = Math.Atan2(LDY, LDX) * (180 / Math.PI);
                     mod.ShoulderLeft.Pitch = (0 - AngleL);
                     
                     //Left Arm Shoulder Roll
-                    double RollLDZ = Mod.ShoulderLeft.Roll - Mod.HandLeft.Roll;
-                    double RollLDY = Mod.ShoulderLeft.Yaw - Mod.HandLeft.Yaw;
+                    double RollLDZ = Kinect_Model.ShoulderLeft.Roll - Kinect_Model.HandLeft.Roll;
+                    double RollLDY = Kinect_Model.ShoulderLeft.Yaw - Kinect_Model.HandLeft.Yaw;
                     double RollAngleL = Math.Atan2(RollLDY, RollLDZ) * (180 / Math.PI);
                     mod.ShoulderLeft.Roll =180-((90 - RollAngleL) + 90);
 
                     //Right Arm Pitch
-                    double RDX = Mod.ElbowRight.Pitch - Mod.ShoulderRight.Pitch;
-                    double RDY = Mod.ElbowRight.Yaw - Mod.ShoulderRight.Yaw;
+                    double RDX = Kinect_Model.ElbowRight.Pitch - Kinect_Model.ShoulderRight.Pitch;
+                    double RDY = Kinect_Model.ElbowRight.Yaw - Kinect_Model.ShoulderRight.Yaw;
                     double AngleR = Math.Atan2(RDY, RDX) * (180 / Math.PI) + 180;
                     mod.ShoulderRight.Pitch = 180-(AngleR);
 
                     //Right Arm Shoulder Roll
-                    double RollRDZ = Mod.ShoulderRight.Roll - Mod.HandRight.Roll;
-                    double RollRDY = Mod.ShoulderRight.Yaw - Mod.HandRight.Yaw;
+                    double RollRDZ = Kinect_Model.ShoulderRight.Roll - Kinect_Model.HandRight.Roll;
+                    double RollRDY = Kinect_Model.ShoulderRight.Yaw - Kinect_Model.HandRight.Yaw;
                     double RollAngleR = Math.Atan2(RollRDY, RollRDZ) * (180 / Math.PI);
                     mod.ShoulderRight.Roll =180-(RollAngleR);
                     
@@ -77,6 +81,8 @@ namespace AnubisClient.AnubisCORE.Kine
                 case 3: break;
                 case 4: break;
             }
+
+            gesture.newFrame(mod, Kinect_Model);
         }
 
         public override string getIdentString()

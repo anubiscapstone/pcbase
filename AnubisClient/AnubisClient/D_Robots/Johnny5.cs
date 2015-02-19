@@ -53,8 +53,8 @@ namespace AnubisClient {
 			servoPositions[8] = angleDecode(mod.ShoulderRight.Roll);
 			servoPositions[9] = angleDecode(mod.ShoulderRight.Pitch);
 
-			//servoPositions[14] = angleDecode(skeleton[15].Pitch);
-			//servoPositions[15] = angleDecode(skeleton[14].Pitch);
+			servoPositions[14] = angleDecode(mod.FootRight.Pitch);
+			servoPositions[15] = angleDecode(mod.FootLeft.Pitch);
 
 			// more to come!
 

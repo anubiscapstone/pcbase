@@ -90,6 +90,26 @@ namespace AnubisClient.D_Hardware
                             SR.HandRight.Pitch = jnts[JointType.HandRight].Position.X;
                             SR.HandRight.Yaw = jnts[JointType.HandRight].Position.Y;
                             SR.HandRight.Roll = jnts[JointType.HandRight].Position.Z;
+
+                            SR.AnkleLeft.Pitch = jnts[JointType.AnkleLeft].Position.X;
+                            SR.AnkleLeft.Yaw = jnts[JointType.AnkleLeft].Position.Y;
+                            SR.AnkleLeft.Roll = jnts[JointType.AnkleLeft].Position.Z;
+
+                            SR.AnkleRight.Pitch = jnts[JointType.AnkleRight].Position.X;
+                            SR.AnkleRight.Yaw = jnts[JointType.AnkleRight].Position.Y;
+                            SR.AnkleRight.Roll = jnts[JointType.AnkleRight].Position.Z;
+
+                            SR.FootLeft.Pitch = jnts[JointType.FootLeft].Position.X;
+                            SR.FootLeft.Yaw = jnts[JointType.FootLeft].Position.Y;
+                            SR.FootLeft.Roll = jnts[JointType.FootLeft].Position.Z;
+
+                            SR.FootRight.Pitch = jnts[JointType.FootRight].Position.X;
+                            SR.FootRight.Yaw = jnts[JointType.FootRight].Position.Y;
+                            SR.FootRight.Roll = jnts[JointType.FootRight].Position.Z;
+
+                            SR.FootRight.Pitch = jnts[JointType.FootRight].Position.X;
+                            SR.FootRight.Yaw = jnts[JointType.FootRight].Position.Y;
+                            SR.FootRight.Roll = jnts[JointType.FootRight].Position.Z;
                         }
                     }
                 }
