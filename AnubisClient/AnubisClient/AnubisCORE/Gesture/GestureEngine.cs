@@ -31,7 +31,12 @@ namespace AnubisClient.AnubisCORE.Gesture
                 modify.FootRight.Pitch = 40;
             }
 
-
+            //going backwards code 
+            if ((Math.Abs(kinect.FootRight.Roll) > Math.Abs(kinect.FootLeft.Roll) + .35) || (Math.Abs(kinect.FootLeft.Roll) > Math.Abs(kinect.FootRight.Roll) + .35))
+            {
+                modify.FootLeft.Pitch = 140;
+                modify.FootRight.Pitch = 140;
+            }
 
             if (foot_left_old_position != 0 && foot_right_old_position != 0)
             {
