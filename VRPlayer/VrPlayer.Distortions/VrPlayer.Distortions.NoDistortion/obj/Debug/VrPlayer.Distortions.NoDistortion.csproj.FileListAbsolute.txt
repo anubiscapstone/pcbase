@@ -11,6 +11,5 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPla
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.NoDistortion\bin\Debug\VrPlayer.Distortions.NoDistortion.pdb
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.NoDistortion\bin\Debug\VrPlayer.Helpers.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.NoDistortion\bin\Debug\VrPlayer.Helpers.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.NoDistortion\obj\Debug\VrPlayer.Distortions.NoDistortion.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.NoDistortion\obj\Debug\VrPlayer.Distortions.NoDistortion.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.NoDistortion\obj\Debug\VrPlayer.Distortions.NoDistortion.pdb
