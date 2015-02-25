@@ -62,7 +62,8 @@ namespace AnubisClient.D_Hardware
             if (pname.Length == 0)
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.FileName = "C:\\Program Files (x86)\\VR Player\\VRPlayer.exe";
+                //startInfo.FileName = "C:\\Program Files (x86)\\VR Player\\VRPlayer.exe";   //this is the old location
+                startInfo.FileName = "C:\\Users\\admin\\Desktop\\Anubis Project\\PCBase\\VRPlayer\\VrPlayer\\bin\\Debug\\VrPlayer.exe";  //this is the new location with Drew's changes
                 //startInfo.Arguments = s;//s would be a string parameter passed into this function
                 Process.Start(startInfo);
             }
