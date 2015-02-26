@@ -38,12 +38,13 @@ namespace AnubisClient.D_Hardware
         {
             startDeviceServer();
             OVR.Initialize();
-            oculus = OVR.HmdCreate(0); 
+            oculus = OVR.HmdCreate(0);
             if (oculus == null)
             {
                 return false;
             }
             oculus.ConfigureTracking(TrackingCapabilities.Orientation | TrackingCapabilities.MagYawCorrection, TrackingCapabilities.None);
+            //oculus.RecenterPose();
             return true;
         }
 

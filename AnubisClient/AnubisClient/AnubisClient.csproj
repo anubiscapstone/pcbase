@@ -91,6 +91,12 @@
     </Compile>
     <Compile Include="AnubisCORE\Comm\CommunicationsEngine.cs" />
     <Compile Include="AnubisCORE\GenericEventArgs.cs" />
+    <Compile Include="AnubisCORE\GUI\DoublyBufferedPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AnubisCORE\GUI\DoublyBufferedPane.designer.cs">
+      <DependentUpon>DoublyBufferedPane.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnubisCORE\GUI\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="D_Robots\Stoplight.cs" />
     <EmbeddedResource Include="AnubisCORE\GUI\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnubisCORE\GUI\DoublyBufferedPane.resx">
+      <DependentUpon>DoublyBufferedPane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AnubisCORE\GUI\Kinect Form.resx">
       <DependentUpon>Kinect Form.cs</DependentUpon>
