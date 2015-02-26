@@ -56,25 +56,25 @@ namespace AnubisClient.AnubisCORE.Kine
                     double LDX = Kinect_Model.ElbowLeft.Pitch - Kinect_Model.ShoulderLeft.Pitch;
                     double LDY = Kinect_Model.ElbowLeft.Yaw - Kinect_Model.ShoulderLeft.Yaw;
                     double AngleL = Math.Atan2(LDY, LDX) * (180 / Math.PI);
-                    mod.ShoulderLeft.Pitch = (0 - AngleL);
+                    mod.ShoulderLeft.Pitch = 180 - (0 - AngleL);
                     
                     //Left Arm Shoulder Roll
                     double RollLDZ = Kinect_Model.ShoulderLeft.Roll - Kinect_Model.HandLeft.Roll;
                     double RollLDY = Kinect_Model.ShoulderLeft.Yaw - Kinect_Model.HandLeft.Yaw;
                     double RollAngleL = Math.Atan2(RollLDY, RollLDZ) * (180 / Math.PI);
-                    mod.ShoulderLeft.Roll =180-((90 - RollAngleL) + 90);
+                    mod.ShoulderLeft.Roll =((90 - RollAngleL) + 90);
 
                     //Right Arm Pitch
                     double RDX = Kinect_Model.ElbowRight.Pitch - Kinect_Model.ShoulderRight.Pitch;
                     double RDY = Kinect_Model.ElbowRight.Yaw - Kinect_Model.ShoulderRight.Yaw;
                     double AngleR = Math.Atan2(RDY, RDX) * (180 / Math.PI) + 180;
-                    mod.ShoulderRight.Pitch = 180-(AngleR);
+                    mod.ShoulderRight.Pitch = (AngleR);
 
                     //Right Arm Shoulder Roll
                     double RollRDZ = Kinect_Model.ShoulderRight.Roll - Kinect_Model.HandRight.Roll;
                     double RollRDY = Kinect_Model.ShoulderRight.Yaw - Kinect_Model.HandRight.Yaw;
                     double RollAngleR = Math.Atan2(RollRDY, RollRDZ) * (180 / Math.PI);
-                    mod.ShoulderRight.Roll =180-(RollAngleR);
+                    mod.ShoulderRight.Roll =(RollAngleR);
                     
                     break;
                 case 2: break; 

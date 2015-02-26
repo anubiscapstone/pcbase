@@ -32,5 +32,10 @@ namespace AnubisClient
             P_Interface.OpenVRPlayer();
         }
 
+        private void btn_startVrPlayer_Click(object sender, EventArgs e)
+        {
+            //P_Interface.OpenVRPlayer();
+        }
+
     }
 }

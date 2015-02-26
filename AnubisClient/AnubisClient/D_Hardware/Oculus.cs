@@ -31,7 +31,7 @@ namespace AnubisClient.D_Hardware
                 float yaw = 0, pitch = 0, roll = 0;
                 oculus.GetEyePose(0).Orientation.GetEulerAngles(out yaw, out pitch, out roll);
                 mod.Head.Pitch = 90 - ((pitch * 180) / Math.PI);
-                mod.Head.Yaw = 90 - ((yaw * 180) / Math.PI);
+                mod.Head.Yaw = 180 - ((yaw * 180) / Math.PI);
         }
 
         public override bool detectDevice()
