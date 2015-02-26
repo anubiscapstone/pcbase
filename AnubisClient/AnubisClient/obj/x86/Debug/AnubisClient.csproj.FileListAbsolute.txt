@@ -67,3 +67,10 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\D
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.pdb
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AudioVisualsLogic.DoublyBufferedPane.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\obj\x86\Debug\AnubisClient.AnubisCORE.GUI.StreamViewer.resources
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\CefSharp.Core.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\CefSharp.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\CefSharp.WinForms.dll
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\CefSharp.WinForms.xml
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\CefSharp.xml
+C:\Users\admin\Desktop\Anubis Project\PCBase\AnubisClient\AnubisClient\bin\Debug\CefSharp.Core.xml

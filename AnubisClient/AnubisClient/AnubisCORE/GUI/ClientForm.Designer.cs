@@ -40,6 +40,7 @@
             this.tscb_HardwareList = new System.Windows.Forms.ToolStripComboBox();
             this.kinect3ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.ts_OptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.streamViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.ts_ViewWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ts_NetworkMenu,
             this.ts_HardwareMenu,
+            this.streamViewerToolStripMenuItem,
             this.ts_OptionsMenu});
             this.ts_ViewWindow.Name = "ts_ViewWindow";
             this.ts_ViewWindow.Size = new System.Drawing.Size(96, 20);
@@ -126,6 +128,13 @@
             this.ts_OptionsMenu.Size = new System.Drawing.Size(152, 22);
             this.ts_OptionsMenu.Text = "Options";
             // 
+            // streamViewerToolStripMenuItem
+            // 
+            this.streamViewerToolStripMenuItem.Name = "streamViewerToolStripMenuItem";
+            this.streamViewerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.streamViewerToolStripMenuItem.Text = "Stream Viewer";
+            this.streamViewerToolStripMenuItem.Click += new System.EventHandler(this.streamViewerToolStripMenuItem_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +168,7 @@
         private System.Windows.Forms.ToolStripMenuItem activeRobotsToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox tscb_RobotMenu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem streamViewerToolStripMenuItem;
 
 
     }

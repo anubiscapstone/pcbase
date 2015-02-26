@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Reflection;
+using AnubisClient.AnubisCORE.GUI;
 
 namespace AnubisClient
 {
@@ -15,10 +16,13 @@ namespace AnubisClient
     public partial class ClientForm : Form
     {
         private List<Form> ActiveForms;
+        private StreamViewer SV;
         public ClientForm()
         {
             this.IsMdiContainer = true;
             ActiveForms = ANUBISEngine.GetActiveForms();
+            SV = new StreamViewer();
+            SV.MdiParent = this;
 
             InitializeComponent();
             
@@ -32,6 +36,8 @@ namespace AnubisClient
             {
                 tscb_HardwareList.Items.Add(s);
             }
+
+            
 
         }
 
@@ -59,6 +65,11 @@ namespace AnubisClient
         private void ClientForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void streamViewerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SV.Show();
         }
 
     }
