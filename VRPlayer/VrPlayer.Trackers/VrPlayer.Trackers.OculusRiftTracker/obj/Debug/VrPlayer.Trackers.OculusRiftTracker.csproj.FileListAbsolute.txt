@@ -17,3 +17,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.OculusRiftTracker\obj\Debug\VrPlayer.Trackers.OculusRiftTracker.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.OculusRiftTracker\obj\Debug\VrPlayer.Trackers.OculusRiftTracker.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.OculusRiftTracker\obj\Debug\VrPlayer.Trackers.OculusRiftTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.OculusRiftTracker\obj\Debug\VrPlayer.Trackers.OculusRiftTracker.csprojResolveAssemblyReference.cache

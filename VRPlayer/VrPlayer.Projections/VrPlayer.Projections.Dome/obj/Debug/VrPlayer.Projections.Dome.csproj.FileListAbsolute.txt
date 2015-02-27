@@ -17,3 +17,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPla
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Dome\obj\Debug\VrPlayer.Projections.Dome.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Dome\obj\Debug\VrPlayer.Projections.Dome.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Dome\obj\Debug\VrPlayer.Projections.Dome.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Dome\obj\Debug\VrPlayer.Projections.Dome.csprojResolveAssemblyReference.cache

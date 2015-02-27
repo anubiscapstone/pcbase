@@ -17,3 +17,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPla
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.Pincushion\obj\Debug\VrPlayer.Distortions.Pincushion.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.Pincushion\obj\Debug\VrPlayer.Distortions.Pincushion.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.Pincushion\obj\Debug\VrPlayer.Distortions.Pincushion.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Distortions\VrPlayer.Distortions.Pincushion\obj\Debug\VrPlayer.Distortions.Pincushion.csprojResolveAssemblyReference.cache

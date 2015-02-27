@@ -9,10 +9,10 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\VrPlayer.Stabilizers.Csv.pdb
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\bin\Debug\VrPlayer.Stabilizers.Csv.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\bin\Debug\VrPlayer.Stabilizers.Csv.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\VrPlayer.Stabilizers.Csv.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\CsvPanel.baml
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\CsvPanel.g.cs
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\VrPlayer.Stabilizers.Csv_MarkupCompile.cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\VrPlayer.Stabilizers.Csv.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\VrPlayer.Stabilizers.Csv.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\VrPlayer.Stabilizers.Csv.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.Csv\obj\Debug\VrPlayer.Stabilizers.Csv.csprojResolveAssemblyReference.cache

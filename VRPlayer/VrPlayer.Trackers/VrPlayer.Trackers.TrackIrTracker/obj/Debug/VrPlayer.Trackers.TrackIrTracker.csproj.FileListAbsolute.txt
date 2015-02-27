@@ -17,3 +17,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.TrackIrTracker\obj\Debug\VrPlayer.Trackers.TrackIrTracker.csprojResolveAssemblyReference.cache

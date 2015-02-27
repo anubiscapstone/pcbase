@@ -17,3 +17,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPla
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.DualFullDome\obj\Debug\VrPlayer.Projections.DualFullDome.csprojResolveAssemblyReference.cache

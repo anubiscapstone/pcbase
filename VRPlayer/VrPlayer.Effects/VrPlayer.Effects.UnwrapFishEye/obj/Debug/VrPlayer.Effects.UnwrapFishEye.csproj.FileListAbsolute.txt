@@ -17,3 +17,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.UnwrapFishEye\obj\Debug\VrPlayer.Effects.UnwrapFishEye.csprojResolveAssemblyReference.cache

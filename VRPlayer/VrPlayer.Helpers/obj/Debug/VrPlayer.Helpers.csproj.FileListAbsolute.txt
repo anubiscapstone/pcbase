@@ -16,4 +16,3 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Helpers\obj\Debug\VrPlayer.Helpers.csprojResolveAssemblyReference.cache
