@@ -22,13 +22,18 @@ namespace AnubisClient.AnubisCORE.Gesture
         {
             double foot_right_point_length = Math.Abs(kinect.AnkleRight.Pitch - kinect.FootRight.Pitch);
             double foot_left_point_length = Math.Abs(kinect.AnkleLeft.Pitch - kinect.FootLeft.Pitch);
+
+            //turn in place to the right
             if (foot_right_point_length > 0.07)
             {
                 modify.FootLeft.Pitch = 40;
+                modify.FootRight.Pitch = 140;
             }
+            //turn in place to the left
             if (foot_left_point_length > 0.07)
             {
                 modify.FootRight.Pitch = 40;
+                modify.FootLeft.Pitch = 140;
             }
 
             //going backwards code 
