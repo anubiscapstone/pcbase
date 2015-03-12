@@ -11,7 +11,6 @@ C:\Users\admin\Desktop\vrplayer-d40ab7c1a87e098351c2d5f95d9ee192c9bad38a\VrPlaye
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.FullDome\bin\Debug\VrPlayer.Projections.FullDome.dll.config
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.FullDome\bin\Debug\VrPlayer.Projections.FullDome.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.FullDome\bin\Debug\VrPlayer.Projections.FullDome.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.FullDome\obj\Debug\VrPlayer.Projections.FullDome.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.FullDome\obj\Debug\FullDomePanel.baml
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.FullDome\obj\Debug\FullDomePanel.g.cs
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.FullDome\obj\Debug\VrPlayer.Projections.FullDome_MarkupCompile.cache

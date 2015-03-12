@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.Windows;
+using System.Threading;
 
 namespace AnubisClient.D_Hardware
 {
@@ -14,6 +15,7 @@ namespace AnubisClient.D_Hardware
     public class Oculus : HardwareInterface
     {
         private HMD oculus;
+        private double YOffset, POffset;
 
         public Oculus()
         {
@@ -30,8 +32,19 @@ namespace AnubisClient.D_Hardware
 
                 float yaw = 0, pitch = 0, roll = 0;
                 oculus.GetEyePose(0).Orientation.GetEulerAngles(out yaw, out pitch, out roll);
-                mod.Head.Pitch = 90 - ((pitch * 180) / Math.PI);
-                mod.Head.Yaw = 180 - ((yaw * 180) / Math.PI);
+                mod.Head.Pitch = 90 - ((pitch * 180) / Math.PI) ;
+                if (YOffset == 0)
+                {
+                    YOffset = ((yaw * 180) / Math.PI);
+                }
+                mod.Head.Yaw = 90 - ((yaw * 180) / Math.PI) + YOffset;
+                if (mod.Head.Yaw < 0)
+                {
+                    mod.Head.Yaw += 360;
+                } else if (mod.Head.Yaw > 360)
+                {
+                    mod.Head.Yaw -= 360;
+                }
         }
 
         public override bool detectDevice()
@@ -44,6 +57,10 @@ namespace AnubisClient.D_Hardware
                 return false;
             }
             oculus.ConfigureTracking(TrackingCapabilities.Orientation | TrackingCapabilities.MagYawCorrection, TrackingCapabilities.None);
+            //float yaw = 0, roll = 0, pitch = 0;
+            //oculus.GetEyePose(0).Orientation.GetEulerAngles(out yaw, out pitch, out roll);
+            //YOffset =((yaw * 180) / Math.PI);
+            //POffset =(((yaw - YOffset) * 180) / Math.PI);
             //oculus.RecenterPose();
             return true;
         }

@@ -13,4 +13,3 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.None\bin\Debug\VrPlayer.Helpers.pdb
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.None\obj\Debug\VrPlayer.Effects.NoEffect.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.None\obj\Debug\VrPlayer.Effects.NoEffect.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Effects\VrPlayer.Effects.None\obj\Debug\VrPlayer.Effects.NoEffect.csprojResolveAssemblyReference.cache

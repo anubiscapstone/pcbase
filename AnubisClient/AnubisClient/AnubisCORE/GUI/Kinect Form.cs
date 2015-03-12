@@ -20,6 +20,8 @@ namespace AnubisClient
             P_Interface = Interface;
         }
 
+
+
         private void Kinect_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();

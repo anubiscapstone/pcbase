@@ -19,10 +19,12 @@ namespace AnubisClient
             SpineMiddle = new Joint3d(true);
             Head = new Joint3d(true);
             ShoulderLeft = new Joint3d(true);
+            ShoulderLeft.Roll = 0;
             ElbowLeft = new Joint3d(true);
             WristLeft = new Joint3d(true);
             HandLeft = new Joint3d(true);
             ShoulderRight = new Joint3d(true);
+            ShoulderRight.Roll = 0;
             ElbowRight = new Joint3d(true);
             WristRight = new Joint3d(true);
             HandRight = new Joint3d(true);

@@ -17,3 +17,4 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.pdb
+C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Trackers\VrPlayer.Trackers.MouseTracker\obj\Debug\VrPlayer.Trackers.MouseTracker.csprojResolveAssemblyReference.cache

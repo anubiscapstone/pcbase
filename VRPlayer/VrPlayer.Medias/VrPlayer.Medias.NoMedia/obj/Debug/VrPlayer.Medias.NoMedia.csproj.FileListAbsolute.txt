@@ -13,4 +13,3 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Medias\VrPlayer.M
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Medias\VrPlayer.Medias.NoMedia\bin\Debug\VrPlayer.Helpers.pdb
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Medias\VrPlayer.Medias.NoMedia\obj\Debug\VrPlayer.Medias.NoMedia.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Medias\VrPlayer.Medias.NoMedia\obj\Debug\VrPlayer.Medias.NoMedia.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Medias\VrPlayer.Medias.NoMedia\obj\Debug\VrPlayer.Medias.NoMedia.csprojResolveAssemblyReference.cache

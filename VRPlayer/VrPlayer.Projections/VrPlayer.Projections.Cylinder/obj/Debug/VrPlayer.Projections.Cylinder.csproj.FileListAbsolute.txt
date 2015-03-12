@@ -17,4 +17,3 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPla
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.g.resources
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Projections\VrPlayer.Projections.Cylinder\obj\Debug\VrPlayer.Projections.Cylinder.csprojResolveAssemblyReference.cache

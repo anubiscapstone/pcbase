@@ -13,4 +13,3 @@ C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPla
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\bin\Debug\VrPlayer.Helpers.pdb
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\obj\Debug\VrPlayer.Stabilizers.NoStabilizer.dll
 C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\obj\Debug\VrPlayer.Stabilizers.NoStabilizer.pdb
-C:\Users\admin\Desktop\Anubis Project\PCBase\VRPlayer\VrPlayer.Stabilizers\VrPlayer.Stabilizers.NoStabilizer\obj\Debug\VrPlayer.Stabilizers.NoStabilizer.csprojResolveAssemblyReference.cache
