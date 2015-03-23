@@ -29,7 +29,7 @@ namespace VrPlayer
 
 
                 // Attempt to auto load anubis stream
-                _viewModel.MediaService.Load("http://192.168.0.150:1235/?action=stream");
+                _viewModel.MediaService.Load("http://192.168.0.105:1235/?action=stream");
 
                 //Display Stream On Rift
                 this.WindowStartupLocation = WindowStartupLocation.Manual;

@@ -18,13 +18,19 @@ namespace AnubisClient
             SpineBase = new Joint3d(true);
             SpineMiddle = new Joint3d(true);
             Head = new Joint3d(true);
+
+            //The shoulders are set to zero now because that should be their default setting.
+            //At zero, they hang straight down (no stress on joints)
             ShoulderLeft = new Joint3d(true);
             ShoulderLeft.Roll = 0;
+
             ElbowLeft = new Joint3d(true);
             WristLeft = new Joint3d(true);
             HandLeft = new Joint3d(true);
+
             ShoulderRight = new Joint3d(true);
             ShoulderRight.Roll = 0;
+
             ElbowRight = new Joint3d(true);
             WristRight = new Joint3d(true);
             HandRight = new Joint3d(true);

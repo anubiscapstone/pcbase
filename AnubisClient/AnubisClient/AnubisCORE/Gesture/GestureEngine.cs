@@ -51,11 +51,15 @@ namespace AnubisClient.AnubisCORE.Gesture
                 old_velocities.Enqueue(foot_right_velocity + foot_left_velocity);
             }
 
+            //The queue size is 15.  This allows for about 1/2 second of buffering
+            //at 30fps.  This roughly translates to response time, so it is important
+            //to keep it low.
             if (old_velocities.Count > 15)
             {
                 old_velocities.Dequeue();
             }
 
+            //calculate the average velocity and compare it to our threshhold.
             if (old_velocities.Count > 0)
             {
                 double velocity_sum = 0;

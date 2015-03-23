@@ -51,14 +51,19 @@ namespace AnubisClient.AnubisCORE.Kine
 
             switch (KinectSens.Count)
             {
+                //different models can be used when different numbers of Kinects are present.
                 case 1: Kinect_Model = KinectSens[0].ReturnModel();
                     //Left Arm Pitch
+                    //From a front view, the elbow and shoulder are compared.  We take their relative angle
+                    //to each other to determine the shoulder pitch.
                     double LDX = 0 - (Kinect_Model.ElbowLeft.Pitch - Kinect_Model.ShoulderLeft.Pitch);
                     double LDY = 0 - (Kinect_Model.ElbowLeft.Yaw - Kinect_Model.ShoulderLeft.Yaw);
                     double AngleL = Math.Abs(Math.Atan2(LDY, LDX) * (180 / Math.PI));
                     mod.ShoulderLeft.Pitch = (AngleL);
                     
                     //Left Arm Shoulder Roll
+                    //From a side on view, the shoulder and hand are compared.  We take their relative angle
+                    //to each other to determine shoulder roll.  
                     double RollLDZ = Kinect_Model.ShoulderLeft.Roll - Kinect_Model.HandLeft.Roll;
                     double RollLDY = Kinect_Model.ShoulderLeft.Yaw - Kinect_Model.HandLeft.Yaw;
                     double RollAngleL = Math.Atan2(RollLDY, RollLDZ) * (180 / Math.PI);
@@ -83,6 +88,8 @@ namespace AnubisClient.AnubisCORE.Kine
                 case 4: break;
             }
 
+            //run the gesture engine after the Kinematics run, to allow it to override kinematic movements
+            //with gestured commands.
             gesture.newFrame(mod, Kinect_Model);
         }
 
