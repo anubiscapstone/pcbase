@@ -12,9 +12,15 @@ using AnubisClient.AnubisCORE.GUI;
 
 namespace AnubisClient
 {
-    
+    /// <summary>
+    /// This is the main form for the application. The form is an MDI form to allow for multiple children
+    /// forms within a given area of the screen
+    /// </summary>
     public partial class ClientForm : Form
     {
+        /// <summary>
+        /// Initializes the active forms and sets the MDI Parent form
+        /// </summary>
         private List<Form> ActiveForms;
         private StreamViewer SV;
         public ClientForm()
@@ -28,6 +34,7 @@ namespace AnubisClient
             
         }
 
+        //On Load, adds the active hardware to the toolstrip menu to allow a user to select that hardware menu
         private void ClientForm_Load(object sender, EventArgs e)
         {
             tscb_HardwareList.Items.Add("");
@@ -41,6 +48,11 @@ namespace AnubisClient
 
         }
 
+        /// <summary>
+        /// Detects a change in the hardware toolstrip selection. Opens the appropriate form for the selected hardware
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tscb_HardwareList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string IDENT = sender.ToString().Split(',').First().ToLower();
@@ -56,17 +68,32 @@ namespace AnubisClient
 
         }
 
+        /// <summary>
+        /// Resets certain properties of the toolstrip menu when closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ts_ViewWindow_DropDownClosed(object sender, EventArgs e)
         {
             tscb_HardwareList.SelectedIndex = 0;
 
         }
 
+        /// <summary>
+        /// Closes Application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClientForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Opens the stream viewing form when selected
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void streamViewerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SV.Show();

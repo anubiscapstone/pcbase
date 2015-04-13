@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace AnubisClient.AnubisCORE.GUI
 {
+    /// <summary>
+    /// A small webpage form for watching the video stream from the robot
+    /// </summary>
     public partial class StreamViewer : Form
     {
 
@@ -24,6 +27,11 @@ namespace AnubisClient.AnubisCORE.GUI
 
         }
 
+        /// <summary>
+        /// Cancel the form close and hide instead
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StreamViewer_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;

@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace AnubisClient.AnubisCORE.GUI
 {
+    /// <summary>
+    /// Form that is displayed at startup
+    /// </summary>
     public partial class SplashScreen : Form
     {
         public SplashScreen()

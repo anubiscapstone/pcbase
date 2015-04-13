@@ -53,6 +53,12 @@ namespace AnubisClient
 
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         static void SplashTimer_Tick(object sender, EventArgs e)
         {
             Splash.Close();

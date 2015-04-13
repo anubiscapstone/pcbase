@@ -8,6 +8,11 @@ using AnubisClient.D_Hardware;
 
 namespace AnubisClient.AnubisCORE.Kine
 {
+
+    /// <summary>
+    /// The Kinect Manager is used to facilitate the option of multiple kinects in the system
+    /// Responsible for communicating with Kinects
+    /// </summary>
     public class KinectManager:HardwareInterface
     {
         private List<KinectInterface> KinectSens;
@@ -20,6 +25,10 @@ namespace AnubisClient.AnubisCORE.Kine
             gesture = new Gesture.GestureEngine();
         }
 
+        /// <summary>
+        /// Disccovers the connected Kinects and adds them to a list of available kinects
+        /// </summary>
+        /// <returns></returns>
         public override bool detectDevice()
         {
             foreach (var potential in KinectSensor.KinectSensors)
@@ -38,6 +47,9 @@ namespace AnubisClient.AnubisCORE.Kine
             
         }
 
+        /// <summary>
+        /// Starts the device server that allows for the communication with the device
+        /// </summary>
         public override void startDeviceServer()
         {
             foreach (var Sensor in KinectSens)
@@ -46,6 +58,10 @@ namespace AnubisClient.AnubisCORE.Kine
             }
         }
 
+        /// <summary>
+        /// Updates the skeleton model with the skeleton data from the kinect
+        /// </summary>
+        /// <param name="mod"></param>
         public override void modifyModel(SkeletonRep mod)
         {
 
@@ -92,6 +108,7 @@ namespace AnubisClient.AnubisCORE.Kine
             //with gestured commands.
             gesture.newFrame(mod, Kinect_Model);
         }
+
 
         public override string getIdentString()
         {

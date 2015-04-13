@@ -12,6 +12,10 @@ namespace AnubisClient
 {
     public partial class Kinect_Form : Form
     {
+        /// <summary>
+        /// A form to display data from the Kinect Manager
+        /// Status: Incomplete
+        /// </summary>
         private KinectManager P_Interface;
         public Kinect_Form(KinectManager Interface)
         {

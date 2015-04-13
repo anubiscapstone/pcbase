@@ -11,6 +11,9 @@ namespace AnubisClient
 {
     public partial class Options : Form
     {
+        /// <summary>
+        /// Form for setting possible options in the application
+        /// </summary>
         public Options()
         {
             InitializeComponent();

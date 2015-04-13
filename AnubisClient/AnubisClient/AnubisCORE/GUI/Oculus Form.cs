@@ -11,12 +11,20 @@ using System.Windows.Forms;
 
 namespace AnubisClient
 {
+    /// <summary>
+    /// Form to display the tracking data of the oculus rift. Shows a positional graph of where the head is looking compared
+    /// to the begining reference value
+    /// </summary>
     public partial class Oculus_Form : Form
     {
         private Oculus P_Interface;
         private Timer paintTime;
         private SkeletonRep sRep;
         private DoublyBufferedPane chalkBoard;
+        /// <summary>
+        /// Initializes a new oculus form and prepares the double buffered pane to be drawn on
+        /// </summary>
+        /// <param name="Interface"></param>
         public Oculus_Form(Oculus Interface)
         {
             InitializeComponent();
@@ -37,6 +45,11 @@ namespace AnubisClient
            
         }
 
+        /// <summary>
+        /// On a given interval, the pane is updated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void paintTime_Tick(object sender, EventArgs e)
         {
             P_Interface.modifyModel(sRep);
@@ -59,12 +72,23 @@ namespace AnubisClient
 
         }
 
+        /// <summary>
+        /// When form is closing, cancel the closing call and make the form hide instead. This prevents the object from being
+        /// destroyed and allows the form to be opend and closed multiple times
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Oculus_Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
             e.Cancel = true;
         }
 
+        /// <summary>
+        /// Opens the VRPlayer Application for viewing the robot stream on the Oculus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Oculus_Form_Activated(object sender, EventArgs e)
         {
             paintTime.Start();

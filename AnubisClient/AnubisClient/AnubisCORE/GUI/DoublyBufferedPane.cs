@@ -8,6 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace AudioVisualsLogic {
+
+    /// <summary>
+    /// Double Buffered pane to reduce flicker in drawing on forms.
+    /// Author: Matt Hunter
+    /// </summary>
 	public partial class DoublyBufferedPane : UserControl {
 		private bool initializationComplete;
 		private bool isDisposing;
