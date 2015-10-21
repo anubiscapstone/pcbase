@@ -42,3 +42,4 @@ Icon
 *.dll
 *.lref
 **/obj/
+*.manifest
