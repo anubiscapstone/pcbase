@@ -4,36 +4,37 @@ using System.Linq;
 using System.Text;
 using Microsoft.Kinect;
 using System.IO;
+using AnubisClient.AnubisCORE.Gesture;
 
 namespace AnubisClient.D_Hardware
 {
-    class KinectInterface
+    public class KinectInterface:HardwareInterface
     {
-        KinectSensor Sense;
-        SkeletonRep SR;
-        int tracked_skel;
-        public KinectInterface(KinectSensor sensor)
+        private GestureEngine Gesture;
+        private KinectSensor Sensor;
+        private SkeletonRep Skeleton;
+        public KinectInterface()
         {
-            Sense = sensor;
-            SR = new SkeletonRep();
+            Skeleton = new SkeletonRep();
+            Gesture = new GestureEngine();
         }
 
-        public  string getIdentString()
+        public override string getIdentString()
         {
             return "KinectSensor";
         }
 
-        public  void startDeviceServer()
+        public override void startDeviceServer()
         {
-            if (Sense != null)
+            if (Sensor != null)
             {
-                Sense.SkeletonStream.Enable();
-                Sense.SkeletonFrameReady += this.Sense_SkeletonFrameReady;
-                
+                Sensor.SkeletonStream.Enable();
+                Sensor.SkeletonFrameReady += this.Sensor_SkeletonFrameReady;
+
 
                 try
                 {
-                    Sense.Start();
+                    Sensor.Start();
                 }
                 catch (IOException)
                 {
@@ -42,7 +43,24 @@ namespace AnubisClient.D_Hardware
             }
         }
 
-        void Sense_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
+        /// <summary>
+        /// Disccovers the connected Kinects and adds them to a list of available kinects
+        /// </summary>
+        /// <returns></returns>
+        public override bool detectDevice()
+        {
+            foreach (var potential in KinectSensor.KinectSensors)
+            {
+                if (potential.Status == KinectStatus.Connected)
+                {
+                    Sensor = potential;
+                    return true;
+                }
+            }
+            return false;
+
+        }
+        void Sensor_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
             Skeleton[] skeletons = new Skeleton[0];
 
@@ -58,69 +76,109 @@ namespace AnubisClient.D_Hardware
                 //Update joint position information
                 if (skeletons.Length != 0)
                 {
-                    tracked_skel = 0;
                     foreach (Skeleton s in skeletons)
                     {
 
                         if (s.TrackingState == SkeletonTrackingState.Tracked)
                         {
-                            tracked_skel++;
                             JointCollection jnts = s.Joints;
 
-                            SR.ShoulderLeft.Pitch = jnts[JointType.ShoulderLeft].Position.X;
-                            SR.ShoulderLeft.Yaw = jnts[JointType.ShoulderLeft].Position.Y;
-                            SR.ShoulderLeft.Roll = jnts[JointType.ShoulderLeft].Position.Z;
+                            Skeleton.ShoulderLeft.Pitch = jnts[JointType.ShoulderLeft].Position.X;
+                            Skeleton.ShoulderLeft.Yaw = jnts[JointType.ShoulderLeft].Position.Y;
+                            Skeleton.ShoulderLeft.Roll = jnts[JointType.ShoulderLeft].Position.Z;
 
-                            SR.ShoulderRight.Pitch = jnts[JointType.ShoulderRight].Position.X;
-                            SR.ShoulderRight.Yaw = jnts[JointType.ShoulderRight].Position.Y;
-                            SR.ShoulderRight.Roll = jnts[JointType.ShoulderRight].Position.Z;
+                            Skeleton.ShoulderRight.Pitch = jnts[JointType.ShoulderRight].Position.X;
+                            Skeleton.ShoulderRight.Yaw = jnts[JointType.ShoulderRight].Position.Y;
+                            Skeleton.ShoulderRight.Roll = jnts[JointType.ShoulderRight].Position.Z;
 
-                            SR.ElbowLeft.Pitch = jnts[JointType.ElbowLeft].Position.X;
-                            SR.ElbowLeft.Yaw = jnts[JointType.ElbowLeft].Position.Y;
-                            SR.ElbowLeft.Roll = jnts[JointType.ElbowLeft].Position.Z;
+                            Skeleton.ElbowLeft.Pitch = jnts[JointType.ElbowLeft].Position.X;
+                            Skeleton.ElbowLeft.Yaw = jnts[JointType.ElbowLeft].Position.Y;
+                            Skeleton.ElbowLeft.Roll = jnts[JointType.ElbowLeft].Position.Z;
 
-                            SR.ElbowRight.Pitch = jnts[JointType.ElbowRight].Position.X;
-                            SR.ElbowRight.Yaw = jnts[JointType.ElbowRight].Position.Y;
-                            SR.ElbowRight.Roll = jnts[JointType.ElbowRight].Position.Z;
+                            Skeleton.ElbowRight.Pitch = jnts[JointType.ElbowRight].Position.X;
+                            Skeleton.ElbowRight.Yaw = jnts[JointType.ElbowRight].Position.Y;
+                            Skeleton.ElbowRight.Roll = jnts[JointType.ElbowRight].Position.Z;
 
-                            SR.HandLeft.Pitch = jnts[JointType.HandLeft].Position.X;
-                            SR.HandLeft.Yaw = jnts[JointType.HandLeft].Position.Y;
-                            SR.HandLeft.Roll = jnts[JointType.HandLeft].Position.Z;
+                            Skeleton.HandLeft.Pitch = jnts[JointType.HandLeft].Position.X;
+                            Skeleton.HandLeft.Yaw = jnts[JointType.HandLeft].Position.Y;
+                            Skeleton.HandLeft.Roll = jnts[JointType.HandLeft].Position.Z;
 
-                            SR.HandRight.Pitch = jnts[JointType.HandRight].Position.X;
-                            SR.HandRight.Yaw = jnts[JointType.HandRight].Position.Y;
-                            SR.HandRight.Roll = jnts[JointType.HandRight].Position.Z;
+                            Skeleton.HandRight.Pitch = jnts[JointType.HandRight].Position.X;
+                            Skeleton.HandRight.Yaw = jnts[JointType.HandRight].Position.Y;
+                            Skeleton.HandRight.Roll = jnts[JointType.HandRight].Position.Z;
 
-                            SR.AnkleLeft.Pitch = jnts[JointType.AnkleLeft].Position.X;
-                            SR.AnkleLeft.Yaw = jnts[JointType.AnkleLeft].Position.Y;
-                            SR.AnkleLeft.Roll = jnts[JointType.AnkleLeft].Position.Z;
+                            Skeleton.AnkleLeft.Pitch = jnts[JointType.AnkleLeft].Position.X;
+                            Skeleton.AnkleLeft.Yaw = jnts[JointType.AnkleLeft].Position.Y;
+                            Skeleton.AnkleLeft.Roll = jnts[JointType.AnkleLeft].Position.Z;
 
-                            SR.AnkleRight.Pitch = jnts[JointType.AnkleRight].Position.X;
-                            SR.AnkleRight.Yaw = jnts[JointType.AnkleRight].Position.Y;
-                            SR.AnkleRight.Roll = jnts[JointType.AnkleRight].Position.Z;
+                            Skeleton.AnkleRight.Pitch = jnts[JointType.AnkleRight].Position.X;
+                            Skeleton.AnkleRight.Yaw = jnts[JointType.AnkleRight].Position.Y;
+                            Skeleton.AnkleRight.Roll = jnts[JointType.AnkleRight].Position.Z;
 
-                            SR.FootLeft.Pitch = jnts[JointType.FootLeft].Position.X;
-                            SR.FootLeft.Yaw = jnts[JointType.FootLeft].Position.Y;
-                            SR.FootLeft.Roll = jnts[JointType.FootLeft].Position.Z;
+                            Skeleton.FootLeft.Pitch = jnts[JointType.FootLeft].Position.X;
+                            Skeleton.FootLeft.Yaw = jnts[JointType.FootLeft].Position.Y;
+                            Skeleton.FootLeft.Roll = jnts[JointType.FootLeft].Position.Z;
 
-                            SR.FootRight.Pitch = jnts[JointType.FootRight].Position.X;
-                            SR.FootRight.Yaw = jnts[JointType.FootRight].Position.Y;
-                            SR.FootRight.Roll = jnts[JointType.FootRight].Position.Z;
+                            Skeleton.FootRight.Pitch = jnts[JointType.FootRight].Position.X;
+                            Skeleton.FootRight.Yaw = jnts[JointType.FootRight].Position.Y;
+                            Skeleton.FootRight.Roll = jnts[JointType.FootRight].Position.Z;
 
-                            SR.FootRight.Pitch = jnts[JointType.FootRight].Position.X;
-                            SR.FootRight.Yaw = jnts[JointType.FootRight].Position.Y;
-                            SR.FootRight.Roll = jnts[JointType.FootRight].Position.Z;
+                            Skeleton.FootRight.Pitch = jnts[JointType.FootRight].Position.X;
+                            Skeleton.FootRight.Yaw = jnts[JointType.FootRight].Position.Y;
+                            Skeleton.FootRight.Roll = jnts[JointType.FootRight].Position.Z;
                         }
                     }
                 }
             }
         }
 
-        public  SkeletonRep ReturnModel()
+
+        /// <summary>
+        /// Updates the skeleton model with the skeleton data from the kinect
+        /// </summary>
+        /// <param name="mod"></param>
+        public override void modifyModel(SkeletonRep mod)
         {
-            return SR;
+
+            //Left Arm Pitch
+            //From a front view, the elbow and shoulder are compared.  We take their relative angle
+            //to each other to determine the shoulder pitch.
+            double LDX = 0 - (Skeleton.ElbowLeft.Pitch - Skeleton.ShoulderLeft.Pitch);
+            double LDY = 0 - (Skeleton.ElbowLeft.Yaw - Skeleton.ShoulderLeft.Yaw);
+            double AngleL = Math.Abs(Math.Atan2(LDY, LDX) * (180 / Math.PI));
+            mod.ShoulderLeft.Pitch = (AngleL);
+
+            //Left Arm Shoulder Roll
+            //From a side on view, the shoulder and hand are compared.  We take their relative angle
+            //to each other to determine shoulder roll.  
+            double RollLDZ = Skeleton.ShoulderLeft.Roll - Skeleton.HandLeft.Roll;
+            double RollLDY = Skeleton.ShoulderLeft.Yaw - Skeleton.HandLeft.Yaw;
+            double RollAngleL = Math.Atan2(RollLDY, RollLDZ) * (180 / Math.PI);
+            mod.ShoulderLeft.Roll = 180 - (RollAngleL + 90);
+
+            //Right Arm Pitch
+            double RDX = 0 - (Skeleton.ElbowRight.Pitch - Skeleton.ShoulderRight.Pitch);
+            double RDY = 0 - (Skeleton.ElbowRight.Yaw - Skeleton.ShoulderRight.Yaw);
+            double AngleR = Math.Abs(Math.Atan2(RDY, RDX) * (180 / Math.PI));
+            mod.ShoulderRight.Pitch = (AngleR);
+
+            //Right Arm Shoulder Roll
+            double RollRDZ = Skeleton.ShoulderRight.Roll - Skeleton.HandRight.Roll;
+            double RollRDY = Skeleton.ShoulderRight.Yaw - Skeleton.HandRight.Yaw;
+            double RollAngleR = Math.Atan2(RollRDY, RollRDZ) * (180 / Math.PI);
+            mod.ShoulderRight.Roll = RollAngleR + 90;
+
+
+            //run the gesture engine after the Kinematics run, to allow it to override kinematic movements
+            //with gestured commands.
+            Gesture.newFrame(mod, Skeleton);
         }
 
+        public override System.Windows.Forms.Form getForm()
+        {
+            return new Kinect_Form(this);
+        }
 
     }
+
 }

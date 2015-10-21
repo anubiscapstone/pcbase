@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Reflection;
 using AnubisClient.AnubisCORE.GUI;
+using AnubisClient.AnubisCORE;
 
 namespace AnubisClient
 {

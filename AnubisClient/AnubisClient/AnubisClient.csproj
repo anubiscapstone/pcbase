@@ -110,7 +110,6 @@
       <DependentUpon>StreamViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="AnubisCORE\Kine\HardwareInterface.cs" />
-    <Compile Include="AnubisCORE\Kine\KinectManager.cs" />
     <Compile Include="D_Hardware\KinectInterface.cs" />
     <Compile Include="D_Hardware\Oculus.cs" />
     <Compile Include="D_Robots\Johnny5.cs" />

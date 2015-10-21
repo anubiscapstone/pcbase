@@ -5,10 +5,9 @@ using System.Text;
 using System.ComponentModel;
 using System.Threading;
 using AnubisClient.D_Hardware;
-using AnubisClient.AnubisCORE.Kine;
 using System.Reflection;
 
-namespace AnubisClient
+namespace AnubisClient.AnubisCORE.Kine
 {
     /// <summary>
     /// The user interface side - This class handles interacting with the user through hardware devices.

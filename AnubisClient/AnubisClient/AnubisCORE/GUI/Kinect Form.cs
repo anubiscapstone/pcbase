@@ -1,4 +1,4 @@
-﻿using AnubisClient.AnubisCORE.Kine;
+﻿using AnubisClient.D_Hardware;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +16,11 @@ namespace AnubisClient
         /// A form to display data from the Kinect Manager
         /// Status: Incomplete
         /// </summary>
-        private KinectManager P_Interface;
-        public Kinect_Form(KinectManager Interface)
+        private KinectInterface P_Interface;
+        public Kinect_Form(KinectInterface Interface)
         {
             InitializeComponent();
-            Name = "kinectmanager";
+            Name = "kinectinterface";
             P_Interface = Interface;
         }
 
