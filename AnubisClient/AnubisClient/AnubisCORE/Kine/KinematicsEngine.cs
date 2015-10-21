@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Threading;
-using AnubisClient.D_Hardware;
-using AnubisClient.AnubisCORE.Kine;
 using System.Reflection;
 
 namespace AnubisClient

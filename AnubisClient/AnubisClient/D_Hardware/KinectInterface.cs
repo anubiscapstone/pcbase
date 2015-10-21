@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Kinect;
 using System.IO;
 
-namespace AnubisClient.D_Hardware
+namespace AnubisClient
 {
     class KinectInterface
     {

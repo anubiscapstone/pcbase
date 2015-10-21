@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.Kinect;
 using System.IO;
-using AnubisClient.D_Hardware;
 
-namespace AnubisClient.AnubisCORE.Kine
+namespace AnubisClient
 {
 
     /// <summary>
@@ -17,12 +16,12 @@ namespace AnubisClient.AnubisCORE.Kine
     {
         private List<KinectInterface> KinectSens;
         private SkeletonRep Kinect_Model;
-        private Gesture.GestureEngine gesture;
+        private GestureEngine gesture;
         public KinectManager()
         {
             KinectSens = new List<KinectInterface>();
             Kinect_Model = new SkeletonRep();
-            gesture = new Gesture.GestureEngine();
+            gesture = new GestureEngine();
         }
 
         /// <summary>

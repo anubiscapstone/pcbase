@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AudioVisualsLogic {
+namespace AnubisClient {
 
     /// <summary>
     /// Double Buffered pane to reduce flicker in drawing on forms.

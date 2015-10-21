@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 
 
-namespace AnubisClient.AnubisCORE.GUI
+namespace AnubisClient
 {
     /// <summary>
     /// A small webpage form for watching the video stream from the robot
