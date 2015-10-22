@@ -1,4 +1,4 @@
-﻿namespace AudioVisualsLogic {
+﻿namespace AnubisClient {
 	partial class DoublyBufferedPane {
 		/// <summary> 
 		/// Required designer variable.

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AnubisClient.AnubisCORE.GUI
+namespace AnubisClient
 {
     /// <summary>
     /// Form that is displayed at startup

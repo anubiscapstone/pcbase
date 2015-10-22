@@ -6,7 +6,7 @@ using Microsoft.Kinect;
 using System.IO;
 using AnubisClient.AnubisCORE.Gesture;
 
-namespace AnubisClient.D_Hardware
+namespace AnubisClient
 {
     public class KinectInterface:HardwareInterface
     {

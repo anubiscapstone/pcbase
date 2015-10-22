@@ -1,4 +1,4 @@
-﻿namespace AnubisClient.AnubisCORE.GUI
+﻿namespace AnubisClient
 {
     partial class StreamViewer
     {

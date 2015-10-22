@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Threading;
 
-namespace AnubisClient.D_Hardware
+namespace AnubisClient
 {
     /// <summary>
     /// Encapsulates an Oculus Rift DK2 - used to get head tracking info.

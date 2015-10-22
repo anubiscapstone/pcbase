@@ -1,6 +1,4 @@
-﻿using AnubisClient.AnubisCORE.GUI;
-using AnubisClient.AnubisCORE.Kine;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace AnubisClient.AnubisCORE
+namespace AnubisClient
 {
     /// <summary>
     /// Encapsulates all robot interaction functionality.  The only things outside of this class are the 

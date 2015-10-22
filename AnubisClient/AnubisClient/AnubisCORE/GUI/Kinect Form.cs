@@ -1,5 +1,4 @@
-﻿using AnubisClient.D_Hardware;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
