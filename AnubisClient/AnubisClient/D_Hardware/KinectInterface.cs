@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Microsoft.Kinect;
 using System.IO;
-using AnubisClient.AnubisCORE.Gesture;
 
 namespace AnubisClient
 {
