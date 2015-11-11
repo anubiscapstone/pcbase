@@ -90,7 +90,7 @@ namespace AnubisClient
                     readyDevices[i].modifyModel(mod);
                 }
 
-                CommunicationsEngine.publishNewSkeleton(mod);
+                RobotEngine.publishNewSkeleton(mod);
 
             }
         }

@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnubisCORE\ANUBISEngine.cs" />
+    <Compile Include="AnubisCORE\Comm\NetworkEngine.cs" />
     <Compile Include="AnubisCORE\Gesture\GestureEngine.cs" />
     <Compile Include="AnubisCORE\GUI\ClientForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +111,7 @@
       <DependentUpon>StreamViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="AnubisCORE\Kine\HardwareInterface.cs" />
+    <Compile Include="AnubisCORE\Robo\RobotEngine.cs" />
     <Compile Include="D_Hardware\KinectInterface.cs" />
     <Compile Include="D_Hardware\Oculus.cs" />
     <Compile Include="D_Robots\Johnny5.cs" />
@@ -141,7 +143,7 @@
     <Compile Include="AnubisCORE\GUI\Robot Form.Designer.cs">
       <DependentUpon>Robot Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\Comm\RobotInterface.cs" />
+    <Compile Include="AnubisCORE\Robo\RobotInterface.cs" />
     <Compile Include="AnubisCORE\SkeletonRep.cs" />
     <Compile Include="AnubisCORE\Comm\Sock.cs" />
     <Compile Include="D_Robots\Stoplight.cs" />

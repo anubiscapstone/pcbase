@@ -33,14 +33,17 @@ namespace AnubisClient
             SplashTimer.Interval = 2000;
             SplashTimer.Tick += SplashTimer_Tick;
             SplashTimer.Start();
-            CommunicationsEngine.initialize();
-            CommunicationsEngine.startServer();
 
+            RobotEngine.initialize();
             KinematicsEngine.initialize();
 
             ActiveHardware = KinematicsEngine.GetActiveDevices();
-            MainHubForm = new ClientForm();
+
+            NetworkEngine server = new NetworkEngine();
+            server.newRobotEvent += RobotEngine.addNewRobot;
+            server.startServer();
             
+            MainHubForm = new ClientForm();
 
             foreach (HardwareInterface hi in ActiveHardware)
             {

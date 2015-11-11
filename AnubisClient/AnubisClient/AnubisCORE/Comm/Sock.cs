@@ -62,7 +62,7 @@ namespace AnubisClient {
             {
                 sock.Send(ASCIIEncoding.ASCII.GetBytes(line + "\n")); // Append a new-line when sending
             }
-            catch (Exception ex){}
+            catch (Exception){}
 			
 		}
 
