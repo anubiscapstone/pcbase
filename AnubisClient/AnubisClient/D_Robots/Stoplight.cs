@@ -11,7 +11,8 @@ namespace AnubisClient
     {
         private Timer tmr;
 
-        public Stoplight(Sock sock) : base(sock)
+        public Stoplight(CommunicationsEngine commDriver, CommunicationsInterface commSock)
+            : base(commDriver, commSock)
         {
             tmr = new Timer(2000);
             tmr.Elapsed += new ElapsedEventHandler(reset);

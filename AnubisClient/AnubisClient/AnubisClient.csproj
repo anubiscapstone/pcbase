@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnubisCORE\ANUBISEngine.cs" />
+    <Compile Include="AnubisCORE\Comm\CommunicationsInterface.cs" />
     <Compile Include="AnubisCORE\Comm\NetworkEngine.cs" />
     <Compile Include="AnubisCORE\Gesture\GestureEngine.cs" />
     <Compile Include="AnubisCORE\GUI\ClientForm.cs">

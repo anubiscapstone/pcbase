@@ -9,7 +9,7 @@ namespace AnubisClient {
     /// <summary>
     /// Sock is the class for sending and recieving data across the network
     /// </summary>
-	public class Sock {
+	public class Sock : CommunicationsInterface{
 		private Socket sock;
 		private string _rmtHost;
 		private int _port;
@@ -57,7 +57,7 @@ namespace AnubisClient {
 			return new Sock(sock.Accept(), rmtHost, port);
 		}
 
-        public void sendline(string line) { //Send string to destination address
+        public override void sendline(string line) { //Send string to destination address
             try
             {
                 sock.Send(ASCIIEncoding.ASCII.GetBytes(line + "\n")); // Append a new-line when sending
@@ -66,7 +66,8 @@ namespace AnubisClient {
 			
 		}
 
-		public string readline() { // blocks -- When called waits for a string to appear in buffer. Reads line in buffer
+        public override string readline()
+        { // blocks -- When called waits for a string to appear in buffer. Reads line in buffer
 			string message = "";
 			while (true) {
 				byte[] bytes = new byte[1024];
@@ -78,7 +79,8 @@ namespace AnubisClient {
 			return message;
 		}
 
-		public void close() { //Closes the socket
+        public override void close()
+        { //Closes the socket
 			sock.Close();
 		}
 	}

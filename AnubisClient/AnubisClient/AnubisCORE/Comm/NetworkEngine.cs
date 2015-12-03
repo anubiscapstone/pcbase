@@ -12,7 +12,7 @@ namespace AnubisClient {
     /// </summary>
 	public class NetworkEngine : CommunicationsEngine {
         //port server listens to for incoming connections.
-		public const int SERVER_PORT = 1337;
+		private int port;
 
 		private BackgroundWorker server;
 		private Sock serversock;
@@ -20,7 +20,8 @@ namespace AnubisClient {
         /// <summary>
         /// Must be called to start Comm Engine.
         /// </summary>
-		public NetworkEngine() {
+		public NetworkEngine(int port) {
+            this.port = port;
 			server = new BackgroundWorker();
 			server.WorkerSupportsCancellation = true;
 			server.DoWork += new DoWorkEventHandler(server_acceptConnections);
@@ -36,7 +37,8 @@ namespace AnubisClient {
 		private void server_acceptConnections(object sender, DoWorkEventArgs e) {
 			while (!server.CancellationPending) {
 				Sock newconnection = serversock.accept(); // blocks
-				RobotInterface roi = RobotInterface.getNewROIFromHeloString(newconnection);
+                string helo = serversock.readline(); // blocks
+				RobotInterface roi = RobotInterface.getNewROIFromHeloString(helo, this, newconnection);
 				if (roi == null) continue; // socket was cleaned up for us in the getNewROI.... method
                 SignalNewRobot(new GenericEventArgs<RobotInterface>(roi));
 			}
@@ -54,7 +56,7 @@ namespace AnubisClient {
 
 
 			try {
-				serversock = new Sock(SERVER_PORT);
+				serversock = new Sock(port);
 				serversock.listen();
 				server.RunWorkerAsync();
 			}

@@ -10,15 +10,18 @@ namespace AnubisClient {
     /// Encapsulates a robot as it appears to the server.
     /// </summary>
 	public abstract class RobotInterface {
-		private Sock robotsock;
+        private CommunicationsEngine commDriver;
+        private CommunicationsInterface commSock;
 
         /// <summary>
         /// Create a new robot interface with a socket
         /// </summary>
         /// <param name="robotsock">socket robot is connected on</param>
-		public RobotInterface(Sock robotsock) {
-			this.robotsock = robotsock;
-		}
+        public RobotInterface(CommunicationsEngine commDriver, CommunicationsInterface commSock)
+        {
+            this.commDriver = commDriver;
+            this.commSock = commSock;
+        }
 
         /// <summary>
         /// Clever function that, when called, will get the concrete class for the connecting robot.
@@ -26,20 +29,19 @@ namespace AnubisClient {
         /// </summary>
         /// <param name="sock">Connecting robot socket</param>
         /// <returns>Concrete robot interface</returns>
-		public static RobotInterface getNewROIFromHeloString(Sock sock) {
-			string helo = sock.readline(); // blocks
-
+        public static RobotInterface getNewROIFromHeloString(String helo, CommunicationsEngine commDriver, CommunicationsInterface commSock)
+        {
 			Type[] types = Assembly.GetAssembly(typeof(RobotInterface)).GetTypes();
 			for (int i = 0; i < types.Length; i++) {
 				Type t = types[i];
 				if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(RobotInterface))) {
-					RobotInterface roi = (RobotInterface)Activator.CreateInstance(t, sock);
+                    RobotInterface roi = (RobotInterface)Activator.CreateInstance(t, commDriver, commSock);
 					if (roi.getHeloString() == helo) return roi;
 				}
 			}
 
-			sock.sendline("err Your helo string is not recognized.");
-			sock.close();
+            commSock.sendline("err Your helo string is not recognized.");
+            commSock.close();
 			return null;
 		}
 
@@ -48,7 +50,7 @@ namespace AnubisClient {
         /// </summary>
         /// <param name="line">string command to send</param>
 		protected void sock_sendline_sync(string line) {
-			robotsock.sendline(line);
+            commSock.sendline(line);
 		}
 
         /// <summary>
@@ -59,7 +61,7 @@ namespace AnubisClient {
 		protected void sock_invokeProto_solicitRobotResponse_async(string message, EventHandler<GenericEventArgs<string>> callback) {
 			BackgroundWorker transactor = new BackgroundWorker();
 			transactor.DoWork += (object sender, DoWorkEventArgs e) => {
-				string response = robotsock.readline(); // blocks
+                string response = commSock.readline(); // blocks
 				callback(this, new GenericEventArgs<string>(response));
 			};
 			sock_sendline_sync(message);
@@ -67,7 +69,7 @@ namespace AnubisClient {
 		}
 
 		public void sock_close() {
-			robotsock.close();
+            commSock.close();
 		}
 
 		public abstract string getHeloString();

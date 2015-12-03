@@ -8,7 +8,9 @@ namespace AnubisClient {
 	public class Johnny5 : RobotInterface {
 		private int[] servoPositions;
 
-		public Johnny5(Sock sock) : base(sock) {
+        public Johnny5(CommunicationsEngine commDriver, CommunicationsInterface commSock)
+            : base(commDriver, commSock)
+        {
 			servoPositions = new int[17];
             for (int i = 0; i < servoPositions.Length; i++)
             {

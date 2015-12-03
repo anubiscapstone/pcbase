@@ -39,7 +39,7 @@ namespace AnubisClient
 
             ActiveHardware = KinematicsEngine.GetActiveDevices();
 
-            NetworkEngine server = new NetworkEngine();
+            NetworkEngine server = new NetworkEngine(1337);
             server.newRobotEvent += RobotEngine.addNewRobot;
             server.startServer();
             
