@@ -8,8 +8,8 @@ namespace AnubisClient {
 	public class Johnny5 : ControlInterface {
 		private int[] servoPositions;
 
-        public Johnny5(CommunicationsEngine commDriver, CommunicationsInterface commSock)
-            : base(commDriver, commSock)
+        public Johnny5(CommunicationsInterface commSock)
+            : base(commSock)
         {
 			servoPositions = new int[17];
             for (int i = 0; i < servoPositions.Length; i++)
@@ -38,7 +38,7 @@ namespace AnubisClient {
 		}
 
 		private void storeVector() {
-			sock_sendline_sync("sv " + createVector());
+			commSock.sendline("sv " + createVector());
 		}
 
 		public override string getHeloString() {
@@ -81,7 +81,7 @@ namespace AnubisClient {
 			EventHandler<GenericEventArgs<string>> protocallback = (object sender, GenericEventArgs<string> e) => {
 				callback(sender, new GenericEventArgs<bool>(e.payload == createVector()));
 			};
-			sock_invokeProto_solicitRobotResponse_async("rv", protocallback);
+			commSock.solicitResponse("rv", protocallback);
 		}
 
 		public override void requestData(string identifier, EventHandler<GenericEventArgs<string>> callback) {
@@ -89,7 +89,7 @@ namespace AnubisClient {
 				// process the response, if needed
 				callback(sender, e);
 			};
-			sock_invokeProto_solicitRobotResponse_async("rd " + identifier, protocallback);
+            commSock.solicitResponse("rd " + identifier, protocallback);
 		}
 
 		public override void ping(EventHandler<GenericEventArgs<long>> callback) {
@@ -99,7 +99,7 @@ namespace AnubisClient {
 				callback(sender, new GenericEventArgs<long>(timer.ElapsedMilliseconds));
 			};
 			timer.Start();
-			sock_invokeProto_solicitRobotResponse_async("pg", protocallback);
+            commSock.solicitResponse("pg", protocallback);
 		}
 	}
 }

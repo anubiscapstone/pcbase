@@ -10,16 +10,14 @@ namespace AnubisClient {
     /// Encapsulates a robot as it appears to the server.
     /// </summary>
 	public abstract class ControlInterface {
-        private CommunicationsEngine commDriver;
-        private CommunicationsInterface commSock;
+        protected CommunicationsInterface commSock;
 
         /// <summary>
         /// Create a new robot interface with a socket
         /// </summary>
         /// <param name="robotsock">socket robot is connected on</param>
-        public ControlInterface(CommunicationsEngine commDriver, CommunicationsInterface commSock)
+        public ControlInterface(CommunicationsInterface commSock)
         {
-            this.commDriver = commDriver;
             this.commSock = commSock;
         }
 
@@ -29,13 +27,15 @@ namespace AnubisClient {
         /// </summary>
         /// <param name="sock">Connecting robot socket</param>
         /// <returns>Concrete robot interface</returns>
-        public static ControlInterface getNewROIFromHeloString(String helo, CommunicationsEngine commDriver, CommunicationsInterface commSock)
+        public static ControlInterface getNewROIFromHeloString(CommunicationsInterface commSock)
         {
-			Type[] types = Assembly.GetAssembly(typeof(ControlInterface)).GetTypes();
+            String helo = commSock.readline(); // blocks
+
+            Type[] types = Assembly.GetAssembly(typeof(ControlInterface)).GetTypes();
 			for (int i = 0; i < types.Length; i++) {
 				Type t = types[i];
 				if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ControlInterface))) {
-                    ControlInterface roi = (ControlInterface)Activator.CreateInstance(t, commDriver, commSock);
+                    ControlInterface roi = (ControlInterface)Activator.CreateInstance(t, commSock);
 					if (roi.getHeloString() == helo) return roi;
 				}
 			}
@@ -43,33 +43,6 @@ namespace AnubisClient {
             commSock.sendline("err Your helo string is not recognized.");
             commSock.close();
 			return null;
-		}
-
-        /// <summary>
-        /// Send a string to the robot.
-        /// </summary>
-        /// <param name="line">string command to send</param>
-		protected void sock_sendline_sync(string line) {
-            commSock.sendline(line);
-		}
-
-        /// <summary>
-        /// Used to return a response to a robot query.
-        /// </summary>
-        /// <param name="message">string message</param>
-        /// <param name="callback">Event called when the robot responds</param>
-		protected void sock_invokeProto_solicitRobotResponse_async(string message, EventHandler<GenericEventArgs<string>> callback) {
-			BackgroundWorker transactor = new BackgroundWorker();
-			transactor.DoWork += (object sender, DoWorkEventArgs e) => {
-                string response = commSock.readline(); // blocks
-				callback(this, new GenericEventArgs<string>(response));
-			};
-			sock_sendline_sync(message);
-			transactor.RunWorkerAsync();
-		}
-
-		public void sock_close() {
-            commSock.close();
 		}
 
 		public abstract string getHeloString();

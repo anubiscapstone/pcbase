@@ -37,8 +37,7 @@ namespace AnubisClient {
 		private void server_acceptConnections(object sender, DoWorkEventArgs e) {
 			while (!server.CancellationPending) {
 				Sock newconnection = serversock.accept(); // blocks
-                string helo = serversock.readline(); // blocks
-				ControlInterface roi = ControlInterface.getNewROIFromHeloString(helo, this, newconnection);
+				ControlInterface roi = ControlInterface.getNewROIFromHeloString(newconnection);
 				if (roi == null) continue; // socket was cleaned up for us in the getNewROI.... method
                 SignalNewRobot(new GenericEventArgs<ControlInterface>(roi));
 			}

@@ -11,8 +11,8 @@ namespace AnubisClient
     {
         private Timer tmr;
 
-        public Stoplight(CommunicationsEngine commDriver, CommunicationsInterface commSock)
-            : base(commDriver, commSock)
+        public Stoplight(CommunicationsInterface commSock)
+            : base(commSock)
         {
             tmr = new Timer(2000);
             tmr.Elapsed += new ElapsedEventHandler(reset);
@@ -22,14 +22,14 @@ namespace AnubisClient
         private void reset(Object sender, ElapsedEventArgs e)
         {
             tmr.Stop();
-            sock_sendline_sync("e");
+            commSock.sendline("e");
         }
 
         private void renew()
         {
             tmr.Stop();
             tmr.Start();
-            sock_sendline_sync("s");
+            commSock.sendline("s");
         }
 
         public override string getHeloString()
@@ -73,7 +73,7 @@ namespace AnubisClient
                 callback(sender, new GenericEventArgs<long>(timer.ElapsedMilliseconds));
             };
             timer.Start();
-            sock_invokeProto_solicitRobotResponse_async("pg", protocallback);
+            commSock.solicitResponse("pg", protocallback);
         }
     }
 }
