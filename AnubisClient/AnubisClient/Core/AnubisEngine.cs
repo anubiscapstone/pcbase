@@ -14,7 +14,7 @@ namespace AnubisClient
     /// </summary>
     static class ANUBISEngine
     {
-        private static List<HardwareInterface> ActiveHardware;
+        private static List<SensorInterface> ActiveHardware;
         private static List<Form> ActiveForms;
         private static ClientForm MainHubForm;
         private static System.Windows.Forms.Timer SplashTimer;
@@ -34,18 +34,18 @@ namespace AnubisClient
             SplashTimer.Tick += SplashTimer_Tick;
             SplashTimer.Start();
 
-            RobotEngine.initialize();
-            KinematicsEngine.initialize();
+            ControlEngine.initialize();
+            SensorEngine.initialize();
 
-            ActiveHardware = KinematicsEngine.GetActiveDevices();
+            ActiveHardware = SensorEngine.GetActiveDevices();
 
             NetworkEngine server = new NetworkEngine(1337);
-            server.newRobotEvent += RobotEngine.addNewRobot;
+            server.newRobotEvent += ControlEngine.addNewRobot;
             server.startServer();
             
             MainHubForm = new ClientForm();
 
-            foreach (HardwareInterface hi in ActiveHardware)
+            foreach (SensorInterface hi in ActiveHardware)
             {
                 Form Temp = hi.getForm();
                 Temp.MdiParent = MainHubForm;
@@ -76,7 +76,7 @@ namespace AnubisClient
         public static List<string> GetHardwareNames()
         {
             List<string> ret = new List<string>();
-            foreach (HardwareInterface hi in ActiveHardware)
+            foreach (SensorInterface hi in ActiveHardware)
             {
                 ret.Add(hi.getIdentString());
             }

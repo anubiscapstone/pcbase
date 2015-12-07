@@ -9,7 +9,7 @@ namespace AnubisClient {
     /// <summary>
     /// Encapsulates a robot as it appears to the server.
     /// </summary>
-	public abstract class RobotInterface {
+	public abstract class ControlInterface {
         private CommunicationsEngine commDriver;
         private CommunicationsInterface commSock;
 
@@ -17,7 +17,7 @@ namespace AnubisClient {
         /// Create a new robot interface with a socket
         /// </summary>
         /// <param name="robotsock">socket robot is connected on</param>
-        public RobotInterface(CommunicationsEngine commDriver, CommunicationsInterface commSock)
+        public ControlInterface(CommunicationsEngine commDriver, CommunicationsInterface commSock)
         {
             this.commDriver = commDriver;
             this.commSock = commSock;
@@ -29,13 +29,13 @@ namespace AnubisClient {
         /// </summary>
         /// <param name="sock">Connecting robot socket</param>
         /// <returns>Concrete robot interface</returns>
-        public static RobotInterface getNewROIFromHeloString(String helo, CommunicationsEngine commDriver, CommunicationsInterface commSock)
+        public static ControlInterface getNewROIFromHeloString(String helo, CommunicationsEngine commDriver, CommunicationsInterface commSock)
         {
-			Type[] types = Assembly.GetAssembly(typeof(RobotInterface)).GetTypes();
+			Type[] types = Assembly.GetAssembly(typeof(ControlInterface)).GetTypes();
 			for (int i = 0; i < types.Length; i++) {
 				Type t = types[i];
-				if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(RobotInterface))) {
-                    RobotInterface roi = (RobotInterface)Activator.CreateInstance(t, commDriver, commSock);
+				if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ControlInterface))) {
+                    ControlInterface roi = (ControlInterface)Activator.CreateInstance(t, commDriver, commSock);
 					if (roi.getHeloString() == helo) return roi;
 				}
 			}

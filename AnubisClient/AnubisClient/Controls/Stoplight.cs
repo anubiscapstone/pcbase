@@ -7,7 +7,7 @@ using System.Timers;
 
 namespace AnubisClient
 {
-    class Stoplight : RobotInterface
+    class Stoplight : ControlInterface
     {
         private Timer tmr;
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Diagnostics;
 
 namespace AnubisClient {
-	public class Johnny5 : RobotInterface {
+	public class Johnny5 : ControlInterface {
 		private int[] servoPositions;
 
         public Johnny5(CommunicationsEngine commDriver, CommunicationsInterface commSock)

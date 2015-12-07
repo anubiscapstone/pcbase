@@ -81,89 +81,89 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnubisCORE\ANUBISEngine.cs" />
-    <Compile Include="AnubisCORE\Comm\CommunicationsInterface.cs" />
-    <Compile Include="AnubisCORE\Comm\NetworkEngine.cs" />
-    <Compile Include="AnubisCORE\Gesture\GestureEngine.cs" />
-    <Compile Include="AnubisCORE\GUI\ClientForm.cs">
+    <Compile Include="Core\AnubisEngine.cs" />
+    <Compile Include="Core\Communications\CommunicationsInterface.cs" />
+    <Compile Include="Core\Communications\NetworkEngine.cs" />
+    <Compile Include="Core\Gesture\GestureEngine.cs" />
+    <Compile Include="Core\GUI\ClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\ClientForm.Designer.cs">
+    <Compile Include="Core\GUI\ClientForm.Designer.cs">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\Comm\CommunicationsEngine.cs" />
-    <Compile Include="AnubisCORE\GenericEventArgs.cs" />
-    <Compile Include="AnubisCORE\GUI\DoublyBufferedPane.cs">
+    <Compile Include="Core\Communications\CommunicationsEngine.cs" />
+    <Compile Include="Core\GenericEventArgs.cs" />
+    <Compile Include="Core\GUI\DoublyBufferedPane.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\DoublyBufferedPane.designer.cs">
+    <Compile Include="Core\GUI\DoublyBufferedPane.designer.cs">
       <DependentUpon>DoublyBufferedPane.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\SplashScreen.cs">
+    <Compile Include="Core\GUI\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\SplashScreen.Designer.cs">
+    <Compile Include="Core\GUI\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\StreamViewer.cs">
+    <Compile Include="Core\GUI\StreamViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\StreamViewer.Designer.cs">
+    <Compile Include="Core\GUI\StreamViewer.Designer.cs">
       <DependentUpon>StreamViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\Kine\HardwareInterface.cs" />
-    <Compile Include="AnubisCORE\Robo\RobotEngine.cs" />
-    <Compile Include="D_Hardware\KinectInterface.cs" />
-    <Compile Include="D_Hardware\Oculus.cs" />
-    <Compile Include="D_Robots\Johnny5.cs" />
-    <Compile Include="AnubisCORE\Joint3d.cs" />
-    <Compile Include="AnubisCORE\GUI\Kinect Form.cs">
+    <Compile Include="Core\Sensor\SensorInterface.cs" />
+    <Compile Include="Core\Control\ControlEngine.cs" />
+    <Compile Include="Sensors\KinectInterface.cs" />
+    <Compile Include="Sensors\Oculus.cs" />
+    <Compile Include="Controls\Johnny5.cs" />
+    <Compile Include="Core\Joint3d.cs" />
+    <Compile Include="Core\GUI\Kinect Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\Kinect Form.Designer.cs">
+    <Compile Include="Core\GUI\Kinect Form.Designer.cs">
       <DependentUpon>Kinect Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\Kine\KinematicsEngine.cs" />
-    <Compile Include="AnubisCORE\GUI\Oculus Form.cs">
+    <Compile Include="Core\Sensor\SensorEngine.cs" />
+    <Compile Include="Core\GUI\Oculus Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\Oculus Form.Designer.cs">
+    <Compile Include="Core\GUI\Oculus Form.Designer.cs">
       <DependentUpon>Oculus Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\Options.cs">
+    <Compile Include="Core\GUI\Options.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\Options.Designer.cs">
+    <Compile Include="Core\GUI\Options.Designer.cs">
       <DependentUpon>Options.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AnubisCORE\GUI\Robot Form.cs">
+    <Compile Include="Core\GUI\Robot Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnubisCORE\GUI\Robot Form.Designer.cs">
+    <Compile Include="Core\GUI\Robot Form.Designer.cs">
       <DependentUpon>Robot Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnubisCORE\Robo\RobotInterface.cs" />
-    <Compile Include="AnubisCORE\SkeletonRep.cs" />
-    <Compile Include="AnubisCORE\Comm\Sock.cs" />
-    <Compile Include="D_Robots\Stoplight.cs" />
-    <EmbeddedResource Include="AnubisCORE\GUI\ClientForm.resx">
+    <Compile Include="Core\Control\ControlInterface.cs" />
+    <Compile Include="Core\SkeletonRep.cs" />
+    <Compile Include="Core\Communications\Sock.cs" />
+    <Compile Include="Controls\Stoplight.cs" />
+    <EmbeddedResource Include="Core\GUI\ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnubisCORE\GUI\DoublyBufferedPane.resx">
+    <EmbeddedResource Include="Core\GUI\DoublyBufferedPane.resx">
       <DependentUpon>DoublyBufferedPane.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnubisCORE\GUI\Kinect Form.resx">
+    <EmbeddedResource Include="Core\GUI\Kinect Form.resx">
       <DependentUpon>Kinect Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnubisCORE\GUI\Oculus Form.resx">
+    <EmbeddedResource Include="Core\GUI\Oculus Form.resx">
       <DependentUpon>Oculus Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnubisCORE\GUI\SplashScreen.resx">
+    <EmbeddedResource Include="Core\GUI\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnubisCORE\GUI\StreamViewer.resx">
+    <EmbeddedResource Include="Core\GUI\StreamViewer.resx">
       <DependentUpon>StreamViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -171,7 +171,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnubisCORE\GUI\Robot Form.resx">
+    <EmbeddedResource Include="Core\GUI\Robot Form.resx">
       <DependentUpon>Robot Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />

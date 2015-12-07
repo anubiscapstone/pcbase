@@ -12,7 +12,7 @@ namespace AnubisClient
     /// <summary>
     /// Encapsulates an Oculus Rift DK2 - used to get head tracking info.
     /// </summary>
-    public class Oculus : HardwareInterface
+    public class Oculus : SensorInterface
     {
         private HMD oculus;
         private double YOffset, POffset;

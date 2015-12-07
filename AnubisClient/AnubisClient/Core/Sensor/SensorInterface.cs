@@ -9,7 +9,7 @@ namespace AnubisClient
     /// <summary>
     /// Abstract class for defining a hardware interface
     /// </summary>
-    public abstract class HardwareInterface
+    public abstract class SensorInterface
     {
         public abstract string getIdentString();
         public abstract void modifyModel(SkeletonRep mod);

@@ -7,7 +7,7 @@ using System.IO;
 
 namespace AnubisClient
 {
-    public class KinectInterface:HardwareInterface
+    public class KinectInterface:SensorInterface
     {
         private GestureEngine Gesture;
         private KinectSensor Sensor;

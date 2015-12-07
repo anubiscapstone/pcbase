@@ -8,21 +8,21 @@ using System.ComponentModel;
 namespace AnubisClient {
 
     /// <summary>
-    /// RobotEngine - Loads robot drivers, sends skeleton represntations to all connected robots.
+    /// ControlEngine - Loads robot drivers, sends skeleton represntations to all connected robots.
     /// </summary>
-	public static class RobotEngine{
+	public static class ControlEngine{
 
         //list of connected robots.
-		private static List<RobotInterface> activeRobots;
+		private static List<ControlInterface> activeRobots;
 
         /// <summary>
         /// Must be called to start Robo Engine.
         /// </summary>
 		public static void initialize() {
-			activeRobots = new List<RobotInterface>();
+			activeRobots = new List<ControlInterface>();
 		}
 
-        public static void addNewRobot(object sender, GenericEventArgs<RobotInterface> e){
+        public static void addNewRobot(object sender, GenericEventArgs<ControlInterface> e){
             activeRobots.Add(e.payload);
         }
 

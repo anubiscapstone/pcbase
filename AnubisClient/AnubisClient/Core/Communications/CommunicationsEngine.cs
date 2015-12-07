@@ -18,10 +18,10 @@ namespace AnubisClient {
         public abstract bool startServer();
         public abstract bool stopServer();
 
-        public event EventHandler<GenericEventArgs<RobotInterface>> newRobotEvent;
-        protected void SignalNewRobot(GenericEventArgs<RobotInterface> e)
+        public event EventHandler<GenericEventArgs<ControlInterface>> newRobotEvent;
+        protected void SignalNewRobot(GenericEventArgs<ControlInterface> e)
         {
-            EventHandler<GenericEventArgs<RobotInterface>> eventCopy = newRobotEvent;
+            EventHandler<GenericEventArgs<ControlInterface>> eventCopy = newRobotEvent;
             if (eventCopy != null) eventCopy(this, e);
         }
     }
