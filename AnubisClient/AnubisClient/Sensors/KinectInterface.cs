@@ -12,6 +12,7 @@ namespace AnubisClient
         private GestureEngine Gesture;
         private KinectSensor Sensor;
         private SkeletonRep Skeleton;
+        private Boolean useNeutralSkeleton = true;
         public KinectInterface()
         {
             Skeleton = new SkeletonRep();
@@ -63,23 +64,23 @@ namespace AnubisClient
         {
             Skeleton[] skeletons = new Skeleton[0];
 
+            useNeutralSkeleton = true;
             using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame())
             {
-                if (skeletonFrame != null)
+                if(skeletonFrame != null && skeletonFrame.SkeletonArrayLength > 0)
                 {
                     //Copy Skeleton data to placeholder
                     skeletons = new Skeleton[skeletonFrame.SkeletonArrayLength];
                     skeletonFrame.CopySkeletonDataTo(skeletons);
-                }
 
-                //Update joint position information
-                if (skeletons.Length != 0)
-                {
+                    //Update joint position information
                     foreach (Skeleton s in skeletons)
                     {
 
                         if (s.TrackingState == SkeletonTrackingState.Tracked)
                         {
+                            useNeutralSkeleton = false;
+
                             JointCollection jnts = s.Joints;
 
                             Skeleton.ShoulderLeft.Pitch = jnts[JointType.ShoulderLeft].Position.X;
@@ -138,39 +139,51 @@ namespace AnubisClient
         /// <param name="mod"></param>
         public override void modifyModel(SkeletonRep mod)
         {
+            if (useNeutralSkeleton)
+            {
+                mod.ShoulderLeft.Pitch = 90;
+                mod.ShoulderLeft.Roll = 90;
+                mod.ShoulderRight.Pitch = 90;
+                mod.ShoulderRight.Roll = 90;
+                mod.FootLeft.Pitch = 90;
+                mod.FootRight.Pitch = 90;
+            }
+            else
+            {
+                //Left Arm Pitch
+                //From a front view, the elbow and shoulder are compared.  We take their relative angle
+                //to each other to determine the shoulder pitch.
+                double LDX = 0 - (Skeleton.ElbowLeft.Pitch - Skeleton.ShoulderLeft.Pitch);
+                double LDY = 0 - (Skeleton.ElbowLeft.Yaw - Skeleton.ShoulderLeft.Yaw);
+                double AngleL = Math.Abs(Math.Atan2(LDY, LDX) * (180 / Math.PI));
+                mod.ShoulderLeft.Pitch = (AngleL);
 
-            //Left Arm Pitch
-            //From a front view, the elbow and shoulder are compared.  We take their relative angle
-            //to each other to determine the shoulder pitch.
-            double LDX = 0 - (Skeleton.ElbowLeft.Pitch - Skeleton.ShoulderLeft.Pitch);
-            double LDY = 0 - (Skeleton.ElbowLeft.Yaw - Skeleton.ShoulderLeft.Yaw);
-            double AngleL = Math.Abs(Math.Atan2(LDY, LDX) * (180 / Math.PI));
-            mod.ShoulderLeft.Pitch = (AngleL);
+                //Left Arm Shoulder Roll
+                //From a side on view, the shoulder and hand are compared.  We take their relative angle
+                //to each other to determine shoulder roll.  
+                double RollLDZ = Skeleton.ShoulderLeft.Roll - Skeleton.HandLeft.Roll;
+                double RollLDY = Skeleton.ShoulderLeft.Yaw - Skeleton.HandLeft.Yaw;
+                double RollAngleL = Math.Atan2(RollLDY, RollLDZ) * (180 / Math.PI);
+                mod.ShoulderLeft.Roll = 180 - (RollAngleL + 90);
 
-            //Left Arm Shoulder Roll
-            //From a side on view, the shoulder and hand are compared.  We take their relative angle
-            //to each other to determine shoulder roll.  
-            double RollLDZ = Skeleton.ShoulderLeft.Roll - Skeleton.HandLeft.Roll;
-            double RollLDY = Skeleton.ShoulderLeft.Yaw - Skeleton.HandLeft.Yaw;
-            double RollAngleL = Math.Atan2(RollLDY, RollLDZ) * (180 / Math.PI);
-            mod.ShoulderLeft.Roll = 180 - (RollAngleL + 90);
+                //Right Arm Pitch
+                double RDX = 0 - (Skeleton.ElbowRight.Pitch - Skeleton.ShoulderRight.Pitch);
+                double RDY = 0 - (Skeleton.ElbowRight.Yaw - Skeleton.ShoulderRight.Yaw);
+                double AngleR = Math.Abs(Math.Atan2(RDY, RDX) * (180 / Math.PI));
+                mod.ShoulderRight.Pitch = (AngleR);
 
-            //Right Arm Pitch
-            double RDX = 0 - (Skeleton.ElbowRight.Pitch - Skeleton.ShoulderRight.Pitch);
-            double RDY = 0 - (Skeleton.ElbowRight.Yaw - Skeleton.ShoulderRight.Yaw);
-            double AngleR = Math.Abs(Math.Atan2(RDY, RDX) * (180 / Math.PI));
-            mod.ShoulderRight.Pitch = (AngleR);
-
-            //Right Arm Shoulder Roll
-            double RollRDZ = Skeleton.ShoulderRight.Roll - Skeleton.HandRight.Roll;
-            double RollRDY = Skeleton.ShoulderRight.Yaw - Skeleton.HandRight.Yaw;
-            double RollAngleR = Math.Atan2(RollRDY, RollRDZ) * (180 / Math.PI);
-            mod.ShoulderRight.Roll = RollAngleR + 90;
+                //Right Arm Shoulder Roll
+                double RollRDZ = Skeleton.ShoulderRight.Roll - Skeleton.HandRight.Roll;
+                double RollRDY = Skeleton.ShoulderRight.Yaw - Skeleton.HandRight.Yaw;
+                double RollAngleR = Math.Atan2(RollRDY, RollRDZ) * (180 / Math.PI);
+                mod.ShoulderRight.Roll = RollAngleR + 90;
 
 
-            //run the gesture engine after the Kinematics run, to allow it to override kinematic movements
-            //with gestured commands.
-            Gesture.newFrame(mod, Skeleton);
+                //run the gesture engine after the Kinematics run, to allow it to override kinematic movements
+                //with gestured commands.
+                Gesture.newFrame(mod, Skeleton);
+            }
+            System.Diagnostics.Debug.WriteLine(useNeutralSkeleton.ToString() + " " + mod.FootLeft.Pitch.ToString() + " " + mod.ShoulderLeft.Pitch.ToString());
         }
 
         public override System.Windows.Forms.Form getForm()
