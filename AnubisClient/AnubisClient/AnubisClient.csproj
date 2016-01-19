@@ -81,8 +81,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\SkeletonViewer.cs" />
     <Compile Include="Core\AnubisEngine.cs" />
     <Compile Include="Core\Communications\CommunicationsInterface.cs" />
+    <Compile Include="Core\Communications\NamedPipe.cs" />
+    <Compile Include="Core\Communications\NamedPipeEngine.cs" />
     <Compile Include="Core\Communications\NetworkEngine.cs" />
     <Compile Include="Core\Gesture\GestureEngine.cs" />
     <Compile Include="Core\GUI\ClientForm.cs">

@@ -39,9 +39,13 @@ namespace AnubisClient
 
             ActiveHardware = SensorEngine.GetActiveDevices();
 
-            NetworkEngine server = new NetworkEngine(1337);
-            server.newRobotEvent += ControlEngine.addNewRobot;
-            server.startServer();
+            NetworkEngine netServer = new NetworkEngine(1337);
+            netServer.newRobotEvent += ControlEngine.addNewRobot;
+            netServer.startServer();
+
+            NamedPipeEngine pipeServer = new NamedPipeEngine("anubis-pipe");
+            pipeServer.newRobotEvent += ControlEngine.addNewRobot;
+            pipeServer.startServer();
             
             MainHubForm = new ClientForm();
 
