@@ -39,7 +39,7 @@ namespace AnubisClient {
 				Sock newconnection = serversock.accept(); // blocks
 				ControlInterface roi = ControlInterface.getNewROIFromHeloString(newconnection);
 				if (roi == null) continue; // socket was cleaned up for us in the getNewROI.... method
-                SignalNewRobot(new GenericEventArgs<ControlInterface>(roi));
+                SignalNewControl(roi);
 			}
 			cleanupServer();
 		}
@@ -50,7 +50,7 @@ namespace AnubisClient {
         /// Called to start server listening.
         /// </summary>
         /// <returns>true if successful</returns>
-		public override bool startServer() {
+		public override bool StartServer() {
 			if (server.IsBusy) return false;
 
 
@@ -71,7 +71,7 @@ namespace AnubisClient {
         /// Stop CommEngine from running.
         /// </summary>
         /// <returns>true if successful</returns>
-		public override bool stopServer() {
+		public override bool StopServer() {
 			if (!server.IsBusy) return false;
 			server.CancelAsync();
 			return true;
@@ -82,7 +82,7 @@ namespace AnubisClient {
         /// Called by startServer in case of failure.
         /// </summary>
 		private void cleanupServer() {
-			serversock.close();
+			serversock.Close();
 			serversock = null;
 		}
 	}

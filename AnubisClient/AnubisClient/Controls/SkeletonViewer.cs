@@ -15,18 +15,18 @@ namespace AnubisClient
             return "SkeletonViewer";
         }
 
-        public override void ping(EventHandler<GenericEventArgs<long>> callback)
+        public override void ping(EventHandler<long> callback)
         {
             Stopwatch timer = new Stopwatch();
-            EventHandler<GenericEventArgs<string>> protocallback = (object sender, GenericEventArgs<string> e) => {
+            EventHandler<string> protocallback = (object sender, string e) => {
                 timer.Stop();
-                callback(sender, new GenericEventArgs<long>(timer.ElapsedMilliseconds));
+                callback(sender, timer.ElapsedMilliseconds);
             };
             timer.Start();
-            commSock.solicitResponse("ping", protocallback);
+            commSock.SolicitResponse("ping", protocallback);
         }
 
-        public override void requestData(string identifier, EventHandler<GenericEventArgs<string>> callback)
+        public override void requestData(string identifier, EventHandler<string> callback)
         {
             throw new NotImplementedException();
         }
@@ -46,7 +46,7 @@ namespace AnubisClient
             throw new NotImplementedException();
         }
 
-        public override void verifyRobot(EventHandler<GenericEventArgs<bool>> callback)
+        public override void verifyRobot(EventHandler<bool> callback)
         {
             throw new NotImplementedException();
         }

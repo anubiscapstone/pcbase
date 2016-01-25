@@ -47,3 +47,4 @@ Icon
 **/ipch/
 **/Debug
 *.sdf
+*.opensdf

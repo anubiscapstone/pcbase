@@ -71,7 +71,8 @@ Void NamedPipeClient::pipeReadDone(Object^ sender, RunWorkerCompletedEventArgs^ 
 		if (e->Error != nullptr || e->Cancelled)
 			throw e->Error;
 
-		this->Message = safe_cast<String^>(e->Result);
+		if (e->Result != nullptr)
+			this->Message = safe_cast<String^>(e->Result);
 		if (this->pipe->IsConnected)
 			this->pipeReadWorker->RunWorkerAsync();
 		else

@@ -22,8 +22,8 @@ namespace AnubisClient {
 			activeRobots = new List<ControlInterface>();
 		}
 
-        public static void addNewRobot(object sender, GenericEventArgs<ControlInterface> e){
-            activeRobots.Add(e.payload);
+        public static void addNewRobot(object sender, ControlInterface e){
+            activeRobots.Add(e);
         }
 
         /// <summary>

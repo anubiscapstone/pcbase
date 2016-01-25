@@ -79,7 +79,7 @@ namespace AnubisClient {
 			return message;
 		}
 
-        public override void close()
+        public override void Close()
         { //Closes the socket
 			sock.Close();
 		}
