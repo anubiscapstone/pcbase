@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.ComponentModel;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace AnubisClient {
+namespace AnubisClient
+{
     /// <summary>
     /// Encapsulates a robot as it appears to the server.
     /// </summary>
@@ -28,10 +30,11 @@ namespace AnubisClient {
         /// </summary>
         /// <param name="sock">Connecting robot socket</param>
         /// <returns>Concrete robot interface</returns>
-        public static async Task<ControlInterface> getNewROIFromHeloString(CommunicationsInterface commSock)
+        public static async Task<ControlInterface> getNewROIFromHeloString(CommunicationsInterface commSock, CancellationToken cancelToken)
         {
             String helo = await commSock.ReadLine();
-
+            if (helo.IndexOf("\n") >= 0)
+                helo = helo.Substring(0, helo.IndexOf("\n"));
             Type[] types = Assembly.GetAssembly(typeof(ControlInterface)).GetTypes();
 			for (int i = 0; i < types.Length; i++) {
 				Type t = types[i];
@@ -41,17 +44,12 @@ namespace AnubisClient {
 				}
 			}
 
-            commSock.SendLine("err Your helo string is not recognized.");
+            await commSock.SendLine("err Your helo string is not recognized.");
             commSock.Close();
 			return null;
 		}
 
 		public abstract string getHeloString();
 		public abstract void updateSkeleton(SkeletonRep mod);
-		public abstract void useNeutralSkeleton();
-		public abstract void useNullSkeleton();
-		public abstract void verifyRobot(EventHandler<bool> callback);
-		public abstract void requestData(string identifier, EventHandler<string> callback);
-		public abstract void ping(EventHandler<long> callback);
 	}
 }

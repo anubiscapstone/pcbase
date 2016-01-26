@@ -15,7 +15,7 @@ namespace AnubisClient
     public class Oculus : SensorInterface
     {
         private HMD oculus;
-        private double YOffset, POffset;
+        private double YOffset;
 
         public Oculus()
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.IO.Pipes;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AnubisClient
@@ -14,48 +15,35 @@ namespace AnubisClient
         private StreamWriter pipeWriter = null;
         private StreamReader pipeReader= null;
 
-        public NamedPipe(NamedPipeServerStream pipe)
+        public NamedPipe(NamedPipeServerStream pipe, CancellationToken cancelToken)
+            : base(cancelToken)
         {
             this.pipe = pipe;
             pipeWriter = new StreamWriter(pipe);
             pipeReader = new StreamReader(pipe);
         }
 
-        public bool IsConnected()
+        public override bool IsConnected()
         {
             if (pipe == null || !pipe.IsConnected)
                 return false;
             return true;
         }
 
-        public override async Task<string> ReadLine()
-        {
-            if (IsConnected())
-                try
-                {
-                    return await pipeReader.ReadLineAsync();
-                }
-                catch
-                {
-                    Close();
-                }
-            return "";
-        }
-
-        public override async void SendLine(string line)
+        public override async Task SendLine(string line)
         {
             if (IsConnected())
             {
-                try
-                {
                     await pipeWriter.WriteLineAsync(line);
                     await pipeWriter.FlushAsync();
-                }
-                catch
-                {
-                    Close();
-                }
             }
+        }
+
+        public override async Task<string> ReadLine()
+        {
+            if (IsConnected())
+                return await pipeReader.ReadLineAsync();
+            return "";
         }
 
         public override void Close()

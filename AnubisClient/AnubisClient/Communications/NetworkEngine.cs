@@ -4,86 +4,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace AnubisClient {
+namespace AnubisClient
+{
+	public class NetworkEngine : CommunicationsEngine
+    {
+        private TcpListener serversock = null;
+        private int port;
 
-    /// <summary>
-    /// CommunicationEngine - Loads robot drivers, sends skeleton represntations to all connected robots.
-    /// </summary>
-	public class NetworkEngine : CommunicationsEngine {
-        //port server listens to for incoming connections.
-		private int port;
-
-		private BackgroundWorker server;
-		private Sock serversock;
-
-        /// <summary>
-        /// Must be called to start Comm Engine.
-        /// </summary>
-		public NetworkEngine(int port) {
+		public NetworkEngine(int port)
+        {
             this.port = port;
-			server = new BackgroundWorker();
-			server.WorkerSupportsCancellation = true;
-			server.DoWork += new DoWorkEventHandler(server_acceptConnections);
-			// do not need to init serversock here
 		}
 
-        /// <summary>
-        /// Thread function started by the system, do not call.
-        /// listens for incoming connections.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-		private void server_acceptConnections(object sender, DoWorkEventArgs e) {
-			while (!server.CancellationPending) {
-				Sock newconnection = serversock.accept(); // blocks
-				ControlInterface roi = ControlInterface.getNewROIFromHeloString(newconnection);
-				if (roi == null) continue; // socket was cleaned up for us in the getNewROI.... method
-                SignalNewControl(roi);
-			}
-			cleanupServer();
-		}
+        protected override void SetupServer()
+        {
+            serversock = new TcpListener(IPAddress.Any, port);
+            serversock.Start();
+        }
+        protected override void CleanupServer()
+        {
+            serversock.Stop();
+        }
 
-
-
-        /// <summary>
-        /// Called to start server listening.
-        /// </summary>
-        /// <returns>true if successful</returns>
-		public override bool StartServer() {
-			if (server.IsBusy) return false;
-
-
-			try {
-				serversock = new Sock(port);
-				serversock.listen();
-				server.RunWorkerAsync();
-			}
-			catch {
-				cleanupServer();
-				return false;
-			}
-
-			return true;
-		}
-
-        /// <summary>
-        /// Stop CommEngine from running.
-        /// </summary>
-        /// <returns>true if successful</returns>
-		public override bool StopServer() {
-			if (!server.IsBusy) return false;
-			server.CancelAsync();
-			return true;
-		}
-
-        /// <summary>
-        /// Close connections to active robots.
-        /// Called by startServer in case of failure.
-        /// </summary>
-		private void cleanupServer() {
-			serversock.Close();
-			serversock = null;
-		}
-	}
+        protected override async Task<CommunicationsInterface> Connect(CancellationToken cancelToken)
+        {
+            return new Sock(await serversock.AcceptTcpClientAsync().ConfigureAwait(false), port, cancelToken);
+        }
+    }
 }

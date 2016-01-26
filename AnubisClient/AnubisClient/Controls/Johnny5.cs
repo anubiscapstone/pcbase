@@ -43,7 +43,7 @@ namespace AnubisClient {
 
         private void storeVector()
         {
-            commSock.sendline("sv " + createVector());
+            commSock.SendLine("sv " + createVector());
         }
 
         public override string getHeloString()
@@ -67,24 +67,6 @@ namespace AnubisClient {
 
             // more to come!
 
-            storeVector();
-        }
-
-        public override void useNeutralSkeleton()
-        {
-            for (int i = 0; i < servoPositions.Length; i++)
-            {
-                servoPositions[i] = 1500;
-            }
-            storeVector();
-        }
-
-        public override void useNullSkeleton()
-        {
-            for (int i = 0; i < servoPositions.Length; i++)
-            {
-                servoPositions[i] = (i == 14 || i == 15 ? 1500 : -1);
-            }
             storeVector();
         }
     }

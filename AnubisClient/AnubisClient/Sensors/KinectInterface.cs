@@ -183,7 +183,6 @@ namespace AnubisClient
                 //with gestured commands.
                 Gesture.newFrame(mod, Skeleton);
             }
-            System.Diagnostics.Debug.WriteLine(useNeutralSkeleton.ToString() + " " + mod.FootLeft.Pitch.ToString() + " " + mod.ShoulderLeft.Pitch.ToString());
         }
 
         public override System.Windows.Forms.Form getForm()

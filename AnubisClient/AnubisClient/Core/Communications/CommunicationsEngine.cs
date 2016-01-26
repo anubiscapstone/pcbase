@@ -4,45 +4,67 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace AnubisClient {
-
-    /// <summary>
-    /// CommunicationEngine - Interface for listening for new Controls.
-    /// </summary>
+namespace AnubisClient
+{
     public abstract class CommunicationsEngine
     {
-        private bool running = false;
+        private CancellationTokenSource cancel = null;
+        private List<CommunicationsInterface> comms = null;
+
+        public CommunicationsEngine()
+        {
+            comms = new List<CommunicationsInterface>();
+        }
 
         public async void StartServer()
         {
-            if(!running)
+            if(cancel == null)
             {
-                running = true;
-                SetupServer();
-                while(running)
+                try
                 {
-                    CommunicationsInterface comm = await Connect();
-                    if (comm == null)
-                        StopServer();
-                    else
-                        AcceptConnection(comm);
+                    cancel = new CancellationTokenSource();
+                    SetupServer();
+                    while (!cancel.Token.IsCancellationRequested)
+                    {
+                        CommunicationsInterface comm = await Connect(cancel.Token).ConfigureAwait(false);
+                        if (comm == null)
+                            StopServer();
+                        else
+                            AcceptConnection(comm, cancel.Token);
+                    }
+                }
+                finally
+                {
+                    StopServer();
                 }
             }
         }
         public void StopServer()
         {
-            running = false;
+            if (cancel != null)
+            {
+                cancel.Cancel();
+                cancel = null;
+                comms.ForEach((CommunicationsInterface c) => { if(c.IsConnected()) c.Close(); });
+                comms.Clear();
+                CleanupServer();
+            }
         }
 
         protected abstract void SetupServer();
-        protected abstract Task<CommunicationsInterface> Connect();
-        protected async void AcceptConnection(CommunicationsInterface comm)
+        protected abstract void CleanupServer();
+        protected abstract Task<CommunicationsInterface> Connect(CancellationToken cancelToken);
+        private async void AcceptConnection(CommunicationsInterface comm, CancellationToken cancelToken)
         {
-            ControlInterface control = await ControlInterface.getNewROIFromHeloString(comm);
+            ControlInterface control = await ControlInterface.getNewROIFromHeloString(comm, cancelToken).ConfigureAwait(false);
             if (control != null)
+            {
+                comms.Add(comm);
                 SignalNewControl(control);
+            }
         }
 
         public event EventHandler<ControlInterface> NewControlEvent;
