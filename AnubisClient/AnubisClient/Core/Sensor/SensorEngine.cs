@@ -21,6 +21,8 @@ namespace AnubisClient
         //List of hardware input devices to be polled.
         private static List<SensorInterface> readyDevices;
 
+        private static GestureEngine Gesture;
+
         private static List<SensorInterface> DiscoverDevices()
         {
             List<SensorInterface> devices = new List<SensorInterface>();
@@ -62,6 +64,8 @@ namespace AnubisClient
         /// </summary>
         public static void initialize()
         {
+            Gesture = new GestureEngine();
+
             thread = new BackgroundWorker();
             thread.WorkerSupportsCancellation = true;
             thread.DoWork += new DoWorkEventHandler(thread_doWork);
@@ -89,6 +93,10 @@ namespace AnubisClient
                 {
                     readyDevices[i].modifyModel(mod);
                 }
+
+                //run the gesture engine after the Kinematics run, to allow it to override kinematic movements
+                //with gestured commands.
+                Gesture.newFrame(mod);
 
                 ControlEngine.publishNewSkeleton(mod);
 

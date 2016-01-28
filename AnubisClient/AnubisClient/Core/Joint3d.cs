@@ -12,9 +12,30 @@ namespace AnubisClient
     {
         public Joint3d(bool InitcenterSkel)
         {
-            if (InitcenterSkel) {pitch = yaw = roll = 90; }
+            if (InitcenterSkel) { x = y = z = 0; pitch = yaw = roll = 90; }
             
         }
+        private double x;
+        public double X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+
+        private double y;
+        public double Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+
+        private double z;
+        public double Z
+        {
+            get { return z; }
+            set { z = value; }
+        }
+
         private double pitch;
         public double Pitch
         {
@@ -35,8 +56,6 @@ namespace AnubisClient
             get { return roll; }
             set { roll = value; }
         }
-
-
 
     }
 }

@@ -18,35 +18,35 @@ namespace AnubisClient
             old_velocities = new Queue<double>();
         }
 
-        public void newFrame(SkeletonRep modify, SkeletonRep kinect)
+        public void newFrame(SkeletonRep mod)
         {
-            double foot_right_point_length = Math.Abs(kinect.AnkleRight.Pitch - kinect.FootRight.Pitch);
-            double foot_left_point_length = Math.Abs(kinect.AnkleLeft.Pitch - kinect.FootLeft.Pitch);
+            double foot_right_point_length = Math.Abs(mod.AnkleRight.X - mod.FootRight.X);
+            double foot_left_point_length = Math.Abs(mod.AnkleLeft.X - mod.FootLeft.X);
 
             //turn in place to the right
             if (foot_right_point_length > 0.07)
             {
-                modify.FootLeft.Pitch = 40;
-                modify.FootRight.Pitch = 140;
+                mod.FootLeft.Pitch = 40;
+                mod.FootRight.Pitch = 140;
             }
             //turn in place to the left
             if (foot_left_point_length > 0.07)
             {
-                modify.FootRight.Pitch = 40;
-                modify.FootLeft.Pitch = 140;
+                mod.FootRight.Pitch = 40;
+                mod.FootLeft.Pitch = 140;
             }
 
             //going backwards code 
-            if ((Math.Abs(kinect.FootRight.Roll) > Math.Abs(kinect.FootLeft.Roll) + .35) || (Math.Abs(kinect.FootLeft.Roll) > Math.Abs(kinect.FootRight.Roll) + .35))
+            if ((Math.Abs(mod.FootRight.Z) > Math.Abs(mod.FootLeft.Z) + .35) || (Math.Abs(mod.FootLeft.Z) > Math.Abs(mod.FootRight.Z) + .35))
             {
-                modify.FootLeft.Pitch = 140;
-                modify.FootRight.Pitch = 140;
+                mod.FootLeft.Pitch = 140;
+                mod.FootRight.Pitch = 140;
             }
 
             if (foot_left_old_position != 0 && foot_right_old_position != 0)
             {
-                double foot_right_velocity = Math.Abs(kinect.FootRight.Yaw - foot_right_old_position);
-                double foot_left_velocity = Math.Abs(kinect.FootLeft.Yaw - foot_left_old_position);
+                double foot_right_velocity = Math.Abs(mod.FootRight.Y - foot_right_old_position);
+                double foot_left_velocity = Math.Abs(mod.FootLeft.Y - foot_left_old_position);
                 //Such Magic Numbers!!
                 old_velocities.Enqueue(foot_right_velocity + foot_left_velocity);
             }
@@ -70,13 +70,13 @@ namespace AnubisClient
                 double average_velocity = velocity_sum / old_velocities.Count;
                 if (average_velocity > 0.04)
                 {
-                    modify.FootLeft.Pitch = 40;
-                    modify.FootRight.Pitch = 40;
+                    mod.FootLeft.Pitch = 40;
+                    mod.FootRight.Pitch = 40;
                 }
             }
 
-            foot_left_old_position = kinect.FootLeft.Yaw;
-            foot_right_old_position = kinect.FootRight.Yaw;
+            foot_left_old_position = mod.FootLeft.Y;
+            foot_right_old_position = mod.FootRight.Y;
         }
 
     }
