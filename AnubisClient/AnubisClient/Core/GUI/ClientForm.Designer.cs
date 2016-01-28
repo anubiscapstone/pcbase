@@ -39,8 +39,8 @@
             this.kinect1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tscb_HardwareList = new System.Windows.Forms.ToolStripComboBox();
             this.kinect3ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.ts_OptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.streamViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ts_OptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.ts_ViewWindow});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(3344, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,7 +73,7 @@
             this.tscb_RobotMenu,
             this.toolStripSeparator1});
             this.ts_NetworkMenu.Name = "ts_NetworkMenu";
-            this.ts_NetworkMenu.Size = new System.Drawing.Size(152, 22);
+            this.ts_NetworkMenu.Size = new System.Drawing.Size(149, 22);
             this.ts_NetworkMenu.Text = "Network";
             // 
             // activeRobotsToolStripMenuItem
@@ -100,7 +100,7 @@
             this.tscb_HardwareList,
             this.kinect3ToolStripMenuItem});
             this.ts_HardwareMenu.Name = "ts_HardwareMenu";
-            this.ts_HardwareMenu.Size = new System.Drawing.Size(152, 22);
+            this.ts_HardwareMenu.Size = new System.Drawing.Size(149, 22);
             this.ts_HardwareMenu.Text = "Hardware";
             // 
             // kinect1ToolStripMenuItem
@@ -122,24 +122,24 @@
             this.kinect3ToolStripMenuItem.Name = "kinect3ToolStripMenuItem";
             this.kinect3ToolStripMenuItem.Size = new System.Drawing.Size(209, 6);
             // 
-            // ts_OptionsMenu
-            // 
-            this.ts_OptionsMenu.Name = "ts_OptionsMenu";
-            this.ts_OptionsMenu.Size = new System.Drawing.Size(152, 22);
-            this.ts_OptionsMenu.Text = "Options";
-            // 
             // streamViewerToolStripMenuItem
             // 
             this.streamViewerToolStripMenuItem.Name = "streamViewerToolStripMenuItem";
-            this.streamViewerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.streamViewerToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.streamViewerToolStripMenuItem.Text = "Stream Viewer";
             this.streamViewerToolStripMenuItem.Click += new System.EventHandler(this.streamViewerToolStripMenuItem_Click);
+            // 
+            // ts_OptionsMenu
+            // 
+            this.ts_OptionsMenu.Name = "ts_OptionsMenu";
+            this.ts_OptionsMenu.Size = new System.Drawing.Size(149, 22);
+            this.ts_OptionsMenu.Text = "Options";
             // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3344, 1012);
+            this.ClientSize = new System.Drawing.Size(1264, 682);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ClientForm";

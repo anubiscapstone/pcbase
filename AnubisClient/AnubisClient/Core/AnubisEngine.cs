@@ -49,14 +49,6 @@ namespace AnubisClient
             
             MainHubForm = new ClientForm();
 
-            foreach (SensorInterface hi in ActiveHardware)
-            {
-                Form Temp = hi.getForm();
-                Temp.MdiParent = MainHubForm;
-                ActiveForms.Add(Temp);
-
-            }
-
         }
 
 

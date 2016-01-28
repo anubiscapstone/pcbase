@@ -39,6 +39,8 @@ namespace SkeletonViewer {
 		IDWriteFactory* dwFactory = nullptr;
 		IDWriteTextFormat* dwTextFormat = nullptr;
 
+		RECT* bounds = nullptr;
+
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
@@ -103,8 +105,8 @@ namespace SkeletonViewer {
 			//
 			this->canvas = (gcnew SkeletonViewer::Canvas());
 			this->canvas->Name = L"Canvas";
-			this->canvas->Location = System::Drawing::Point(50, 50);
-			this->canvas->Size = System::Drawing::Size(500, 500);
+			this->canvas->Location = System::Drawing::Point(25, 25);
+			this->canvas->Size = System::Drawing::Size(900, 900);
 			this->canvas->TabIndex = 0;
 			// 
 			// MainForm
@@ -112,7 +114,7 @@ namespace SkeletonViewer {
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
 			this->Padding = System::Windows::Forms::Padding(0);
-			this->ClientSize = System::Drawing::Size(600, 600);
+			this->ClientSize = System::Drawing::Size(950, 950);
 			this->components = gcnew System::ComponentModel::Container();
 			this->Controls->Add(this->canvas);
 
@@ -123,9 +125,14 @@ namespace SkeletonViewer {
 		void InitializeDirect2D()
 		{
 			HWND hCanvas = static_cast<HWND>(this->canvas->Handle.ToPointer());
-			RECT rc;
-			GetWindowRect(hCanvas, &rc);
-			D2D1_SIZE_U canvasSize = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+			RECT* rc = new RECT;
+			GetWindowRect(hCanvas, rc);
+			D2D1_SIZE_U canvasSize = D2D1::SizeU(rc->right - rc->left, rc->bottom - rc->top);
+			bounds = rc;
+			bounds->right = bounds->right - bounds->left;
+			bounds->bottom = bounds->bottom - bounds->top;
+			bounds->left = 0;
+			bounds->top = 0;
 
 			// Setup Direct2D
 			ID2D1Factory* d2dFactory = nullptr;
@@ -142,7 +149,7 @@ namespace SkeletonViewer {
 			IDWriteFactory* dwFactory = nullptr;
 			IDWriteTextFormat* dwTextFormat = nullptr;
 			DWriteCreateFactory(DWRITE_FACTORY_TYPE_SHARED, __uuidof(IDWriteFactory),  reinterpret_cast<IUnknown**>(&dwFactory));
-			dwFactory->CreateTextFormat(L"Courier", NULL, DWRITE_FONT_WEIGHT_REGULAR, DWRITE_FONT_STYLE_NORMAL, DWRITE_FONT_STRETCH_NORMAL, 20.0, L"en-us", &dwTextFormat);
+			dwFactory->CreateTextFormat(L"Courier", NULL, DWRITE_FONT_WEIGHT_REGULAR, DWRITE_FONT_STYLE_NORMAL, DWRITE_FONT_STRETCH_NORMAL, 30.0, L"en-us", &dwTextFormat);
 			this->dwFactory = dwFactory;
 			this->dwTextFormat = dwTextFormat;
 		}

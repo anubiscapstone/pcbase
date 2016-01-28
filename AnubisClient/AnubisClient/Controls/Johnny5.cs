@@ -21,8 +21,7 @@ namespace AnubisClient {
 
         private int angleDecode(double angle)
         {
-            if (angle < 0) return 600;
-            if (angle > 180) return 2400;
+            angle = Math.Max(0, Math.Min(180, angle));
             return (int)(angle * 10) + 600;
         }
 
@@ -53,19 +52,60 @@ namespace AnubisClient {
 
         public override void updateSkeleton(SkeletonRep mod)
         {
-            servoPositions[13] = angleDecode(mod.Head.Yaw);
-            servoPositions[16] = angleDecode(mod.Head.Pitch);
+            double headAngleX = 90.0;
+            double headAngleY = 90.0;
+            double arm1AngleX = 90.0;
+            double arm1AngleY = 90.0;
+            double arm2AngleX = 90.0;
+            double arm2AngleY = 90.0;
+            double foot1Angle = 90.0;
+            double foot2Angle = 90.0;
 
-            servoPositions[8] = angleDecode(mod.ShoulderLeft.Roll);
-            servoPositions[9] = angleDecode(mod.ShoulderLeft.Pitch);
+            if(mod.Joints[SkeletonRep.JointType.Head].Tracked)
+            {
+                headAngleX = mod.Joints[SkeletonRep.JointType.Head].Yaw;
+                headAngleY = mod.Joints[SkeletonRep.JointType.Head].Pitch;
+            }
 
-            servoPositions[3] = angleDecode(mod.ShoulderRight.Roll);
-            servoPositions[4] = angleDecode(mod.ShoulderRight.Pitch);
+            if (mod.Joints[SkeletonRep.JointType.ShoulderLeft].Tracked && mod.Joints[SkeletonRep.JointType.ElbowLeft].Tracked)
+            {
+                double DX = -(mod.Joints[SkeletonRep.JointType.ElbowLeft].X - mod.Joints[SkeletonRep.JointType.ShoulderLeft].X);
+                double DY = -(mod.Joints[SkeletonRep.JointType.ElbowLeft].Y - mod.Joints[SkeletonRep.JointType.ShoulderLeft].Y);
+                double DZ = -(mod.Joints[SkeletonRep.JointType.ElbowLeft].Z - mod.Joints[SkeletonRep.JointType.ShoulderLeft].Z);
+                double lenAngleY = Math.Sqrt(Math.Pow(DY, 2) + Math.Pow(DZ, 2));
+                arm1AngleX = Math.Atan2(Math.Max(0, lenAngleY), DX) * (180 / Math.PI);
+                double lenAngleX = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DZ, 2));
+                arm1AngleY = Math.Atan2(Math.Max(0, lenAngleX), DY) * (180 / Math.PI);
+            }
 
-            servoPositions[14] = angleDecode(mod.FootRight.Pitch);
-            servoPositions[15] = angleDecode(mod.FootLeft.Pitch);
+            if (mod.Joints[SkeletonRep.JointType.ShoulderRight].Tracked && mod.Joints[SkeletonRep.JointType.ElbowRight].Tracked)
+            {
+                double DX = -(mod.Joints[SkeletonRep.JointType.ElbowRight].X - mod.Joints[SkeletonRep.JointType.ShoulderRight].X);
+                double DY = mod.Joints[SkeletonRep.JointType.ElbowRight].Y - mod.Joints[SkeletonRep.JointType.ShoulderRight].Y;
+                double DZ = -(mod.Joints[SkeletonRep.JointType.ElbowRight].Z - mod.Joints[SkeletonRep.JointType.ShoulderRight].Z);
+                double lenAngleY = Math.Sqrt(Math.Pow(DY, 2) + Math.Pow(DZ, 2));
+                arm2AngleX = Math.Atan2(Math.Max(0, lenAngleY), DX) * (180 / Math.PI);
+                double lenAngleX = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DZ, 2));
+                arm2AngleY = Math.Atan2(Math.Max(0, lenAngleX), DY) * (180 / Math.PI);
+            }
 
-            // more to come!
+            if (mod.Joints[SkeletonRep.JointType.AnkleLeft].Tracked && mod.Joints[SkeletonRep.JointType.FootLeft].Tracked && mod.Joints[SkeletonRep.JointType.AnkleRight].Tracked && mod.Joints[SkeletonRep.JointType.FootRight].Tracked)
+            {
+                foot1Angle = mod.Joints[SkeletonRep.JointType.FootLeft].Pitch;
+                foot2Angle = mod.Joints[SkeletonRep.JointType.FootRight].Pitch;
+            }
+
+            servoPositions[13] = angleDecode(headAngleX);
+            servoPositions[16] = angleDecode(headAngleY);
+
+            servoPositions[8] = angleDecode(arm1AngleY);
+            servoPositions[9] = angleDecode(arm1AngleX);
+
+            servoPositions[3] = angleDecode(arm2AngleY);
+            servoPositions[4] = angleDecode(arm2AngleX);
+            
+            servoPositions[14] = angleDecode(foot2Angle);
+            servoPositions[15] = angleDecode(foot1Angle);
 
             storeVector();
         }
