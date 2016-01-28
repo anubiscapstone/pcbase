@@ -3,6 +3,7 @@
 #include "Includes.h"
 #include "Canvas.h"
 #include "NamedPipeClient.h"
+#include "SkeletonDrawer.h"
 
 namespace SkeletonViewer {
 
@@ -23,12 +24,14 @@ namespace SkeletonViewer {
 		MainForm(NamedPipeClient^ pipeClient)
 		{
 			this->pipeClient = pipeClient;
+			this->skeleton = gcnew SkeletonDrawer();
 			InitializeComponent();
 			InitializeDirect2D();
 		}
 
 	protected:
 		NamedPipeClient^ pipeClient = nullptr;
+		SkeletonDrawer^ skeleton = nullptr;
 
 		ID2D1Factory* d2dFactory = nullptr;
 		ID2D1HwndRenderTarget* d2dRenderTarget = nullptr;
