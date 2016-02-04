@@ -51,6 +51,7 @@ namespace AnubisClient
                 {
                     mod.Joints[SkeletonRep.JointType.Head].Yaw -= 360;
                 }
+                mod.Joints[SkeletonRep.JointType.Head].Tracked = true;
         }
 
         public override bool detectDevice()
