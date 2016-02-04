@@ -91,8 +91,10 @@ namespace AnubisClient {
 
             if (mod.Joints[SkeletonRep.JointType.AnkleLeft].Tracked && mod.Joints[SkeletonRep.JointType.FootLeft].Tracked && mod.Joints[SkeletonRep.JointType.AnkleRight].Tracked && mod.Joints[SkeletonRep.JointType.FootRight].Tracked)
             {
-                foot1Angle = mod.Joints[SkeletonRep.JointType.FootLeft].Pitch;
-                foot2Angle = mod.Joints[SkeletonRep.JointType.FootRight].Pitch;
+                if (mod.Joints[SkeletonRep.JointType.FootLeft].Pitch != 0)
+                    foot1Angle = mod.Joints[SkeletonRep.JointType.FootLeft].Pitch;
+                if (mod.Joints[SkeletonRep.JointType.FootRight].Pitch != 0)
+                    foot2Angle = mod.Joints[SkeletonRep.JointType.FootRight].Pitch;
             }
 
             servoPositions[13] = angleDecode(headAngleX);

@@ -8,10 +8,10 @@ namespace AnubisClient
     public class GestureEngine
     {
 
-        Queue<double> old_velocities;
-        double foot_right_old_position = 0;
-        double foot_left_old_position = 0;
-
+        private Queue<double> old_velocities;
+        private double foot_right_old_position = 0;
+        private double foot_left_old_position = 0;
+        private bool forward_noise_gate = false;
 
         public GestureEngine()
         {
@@ -22,8 +22,6 @@ namespace AnubisClient
         {
             if (!mod.Joints[SkeletonRep.JointType.AnkleLeft].Tracked || !mod.Joints[SkeletonRep.JointType.FootLeft].Tracked || !mod.Joints[SkeletonRep.JointType.AnkleRight].Tracked || !mod.Joints[SkeletonRep.JointType.FootRight].Tracked)
             {
-                mod.Joints[SkeletonRep.JointType.FootLeft].Pitch = 90;
-                mod.Joints[SkeletonRep.JointType.FootRight].Pitch = 90;
                 old_velocities.Clear();
                 return;
             }
@@ -38,51 +36,49 @@ namespace AnubisClient
                 mod.Joints[SkeletonRep.JointType.FootRight].Pitch = 140;
             }
             //turn in place to the left
-            if (foot_left_point_length > 0.07)
+            else if (foot_left_point_length > 0.07)
             {
                 mod.Joints[SkeletonRep.JointType.FootRight].Pitch = 40;
                 mod.Joints[SkeletonRep.JointType.FootLeft].Pitch = 140;
             }
-            System.Diagnostics.Debug.WriteLine(foot_left_point_length.ToString() + " " + foot_right_point_length.ToString());
-
             //going backwards code 
-            if ((Math.Abs(mod.Joints[SkeletonRep.JointType.FootRight].Z) > Math.Abs(mod.Joints[SkeletonRep.JointType.FootLeft].Z) + .35) || (Math.Abs(mod.Joints[SkeletonRep.JointType.FootLeft].Z) > Math.Abs(mod.Joints[SkeletonRep.JointType.FootRight].Z) + .35))
+            else if ((Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleRight].Z) > Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleLeft].Z) + .35) || (Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleLeft].Z) > Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleRight].Z) + .35))
             {
                 mod.Joints[SkeletonRep.JointType.FootLeft].Pitch = 140;
                 mod.Joints[SkeletonRep.JointType.FootRight].Pitch = 140;
             }
-
-            if (foot_left_old_position != 0 && foot_right_old_position != 0)
+            //going forwards code
+            else
             {
-                double foot_left_velocity = Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleLeft].Y - foot_left_old_position);
-                double foot_right_velocity = Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleRight].Y - foot_right_old_position);
-                //Such Magic Numbers!!
-                old_velocities.Enqueue(foot_right_velocity + foot_left_velocity);
-            }
-
-            //The queue size is 15.  This allows for about 1/2 second of buffering
-            //at 30fps.  This roughly translates to response time, so it is important
-            //to keep it low.
-            //calculate the average velocity and compare it to our threshhold.
-            if (old_velocities.Count > 15)
-            {
-                double velocity_sum = 0;
-                foreach (double velocity in old_velocities)
+                if (foot_left_old_position != 0 && foot_right_old_position != 0)
                 {
-                    velocity_sum += velocity;
+                    double foot_left_velocity = Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleLeft].Y - foot_left_old_position);
+                    double foot_right_velocity = Math.Abs(mod.Joints[SkeletonRep.JointType.AnkleRight].Y - foot_right_old_position);
+                    old_velocities.Enqueue(foot_right_velocity + foot_left_velocity);
                 }
-                double average_velocity = velocity_sum / old_velocities.Count;
-                if (average_velocity > 0.04)
+                foot_left_old_position = mod.Joints[SkeletonRep.JointType.AnkleLeft].Y;
+                foot_right_old_position = mod.Joints[SkeletonRep.JointType.AnkleRight].Y;
+
+                if (old_velocities.Count >= 10)
                 {
-                    mod.Joints[SkeletonRep.JointType.AnkleLeft].Pitch = 40;
-                    mod.Joints[SkeletonRep.JointType.AnkleRight].Pitch = 40;
+                    double velocities_past_threshold = 0;
+                    foreach (double velocity in old_velocities)
+                    {
+                        if (velocity > 0.04) // arbitrary threshold velocities must past to be counted towards our forward signal
+                            velocities_past_threshold++;
+                    }
+                    if (velocities_past_threshold >= (old_velocities.Count * 0.6)) // open noise gate when greater than or equal to 60% of the queue length is above our threshold
+                        forward_noise_gate = true;
+                    if (velocities_past_threshold <= (old_velocities.Count * 0.1)) // close noise gate when less than or equal to 20% of the queue length is above our threshold
+                        forward_noise_gate = false;
+                    if(forward_noise_gate)
+                    {
+                        mod.Joints[SkeletonRep.JointType.FootLeft].Pitch = 40;
+                        mod.Joints[SkeletonRep.JointType.FootRight].Pitch = 40;
+                    }
+                    old_velocities.Dequeue();
                 }
-
-                old_velocities.Dequeue();
             }
-
-            foot_left_old_position = mod.Joints[SkeletonRep.JointType.AnkleLeft].Y;
-            foot_right_old_position = mod.Joints[SkeletonRep.JointType.AnkleRight].Y;
         }
 
     }
