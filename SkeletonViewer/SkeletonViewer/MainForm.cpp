@@ -10,9 +10,10 @@ Void MainForm::Direct2DPaint()
 
 		skeleton->parseAndDraw(this->pipeClient->Message, d2dRenderTarget, d2dBrush, *bounds);
 
-		std::wstring s = msclr::interop::marshal_as<std::wstring>(this->pipeClient->Message);
-		D2D1_RECT_F d2drc = D2D1::RectF(bounds->left, bounds->top, bounds->right, bounds->bottom);
-		d2dRenderTarget->DrawText(s.c_str(), s.length(), dwTextFormat, d2drc, d2dBrush);
+		//raw text output
+		//std::wstring s = msclr::interop::marshal_as<std::wstring>(this->pipeClient->Message);
+		//D2D1_RECT_F d2drc = D2D1::RectF(bounds->left, bounds->top, bounds->right, bounds->bottom);
+		//d2dRenderTarget->DrawText(s.c_str(), s.length(), dwTextFormat, d2drc, d2dBrush);
 	}
 	d2dRenderTarget->EndDraw();
 }
