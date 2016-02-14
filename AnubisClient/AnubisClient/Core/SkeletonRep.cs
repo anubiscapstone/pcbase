@@ -11,7 +11,7 @@ namespace AnubisClient
     /// </summary>
     public class SkeletonRep
     {
-        public const int NUM_JOINTS = 20;
+        public const int NUM_JOINTS = 30;
         public enum JointType : int
         {
             Head,
@@ -33,7 +33,18 @@ namespace AnubisClient
             AnkleLeft,
             AnkleRight,
             FootLeft,
-            FootRight
+            FootRight,
+            ThumbRight,
+            ThumbLeft,
+            IndexRight,
+            IndexLeft,
+            MiddleRight,
+            MiddleLeft,
+            RingRight,
+            RingLeft,
+            PinkyRight,
+            PinkyLeft
+
         }
         public class JointCollection : IEnumerable<Joint3d>
         {

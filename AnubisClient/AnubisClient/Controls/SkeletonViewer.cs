@@ -24,6 +24,7 @@ namespace AnubisClient
                 toSend += j.Y.ToString() + " ";
             }
             commSock.SendLine(toSend);
+            System.Diagnostics.Debug.WriteLine(mod.Joints[SkeletonRep.JointType.ThumbLeft].X.ToString());
         }
     }
 }
