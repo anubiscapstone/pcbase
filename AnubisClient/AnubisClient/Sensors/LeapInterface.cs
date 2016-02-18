@@ -15,63 +15,40 @@ namespace AnubisClient.Sensors
         public LeapInterface()
         {
             controller = new Controller();
+            controller.SetPolicy(Controller.PolicyFlag.POLICY_BACKGROUND_FRAMES);
             listener = new LeapEventListener();
         }
 
         private class LeapEventListener : Listener
         {
-            public Boolean lt_tracked = false;
-            public float lt_x;
+            public Hand trackedLeft = null;
+            public Hand trackedRight = null;
+            int i;
             public override void OnFrame(Controller controller)
             {
-                base.OnFrame(controller);
-
-                Hand trackedLeft = null;
-                Hand trackedRight = null;
-
-                lt_tracked = false;
+                System.Diagnostics.Debug.WriteLine(i++.ToString());
+                Hand tempLeft = null;
+                Hand tempRight = null;
 
                 foreach (Hand h in controller.Frame().Hands)
                 {
-                    if ((trackedLeft == null) && (h.IsLeft))
+                    if ((tempLeft == null) && (h.IsLeft))
                     {
-                        lt_tracked = true;
-                        trackedLeft = h;
+                        tempLeft = h;
                     }
 
-                    if ((trackedRight == null) && (h.IsRight))
+                    if ((tempRight == null) && (h.IsRight))
                     {
-                        trackedRight = h;
-                    }
-                }
-
-                if (trackedLeft != null)
-                {
-                    foreach (Finger f in trackedLeft.Fingers)
-                    {
-                        switch (f.Type)
-                        {
-                            case Finger.FingerType.TYPE_THUMB:
-                                lt_x = f.TipPosition.x;
-                                break;
-                            //case Finger.FingerType.TYPE_INDEX:
-
-                            //case Finger.FingerType.TYPE_MIDDLE:
-
-                            //case Finger.FingerType.TYPE_PINKY:
-
-                        }
+                        tempRight = h;
                     }
                 }
 
+                trackedLeft = tempLeft;
+                trackedRight = tempRight;
             }
 
-            }
-
-        public void newFrameHandler(Leap.Frame frame)
-        {
-           
         }
+
 
         public override string getIdentString()
         {
@@ -80,11 +57,89 @@ namespace AnubisClient.Sensors
 
         public override void modifyModel(SkeletonRep mod)
         {
-            if (listener.lt_tracked)
-            {
+            Hand tempLeft = listener.trackedLeft;
+            Hand tempRight = listener.trackedRight;
 
-                mod.Joints[SkeletonRep.JointType.ThumbLeft].X = listener.lt_x;
+            if (tempLeft != null)
+            {
+                foreach (Finger f in tempLeft.Fingers)
+                {
+                    switch (f.Type)
+                    {
+                        case Finger.FingerType.TYPE_THUMB:
+                            mod.Joints[SkeletonRep.JointType.ThumbLeft].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.ThumbLeft].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.ThumbLeft].Z = f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.ThumbLeft].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_INDEX:
+                            mod.Joints[SkeletonRep.JointType.IndexLeft].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.IndexLeft].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.IndexLeft].Z= f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.IndexLeft].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_MIDDLE:
+                            mod.Joints[SkeletonRep.JointType.MiddleLeft].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.MiddleLeft].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.MiddleLeft].Z =  f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.MiddleLeft].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_RING:
+                            mod.Joints[SkeletonRep.JointType.RingLeft].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.RingLeft].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.RingLeft].Z = f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.RingLeft].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_PINKY:
+                            mod.Joints[SkeletonRep.JointType.PinkyLeft].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.PinkyLeft].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.PinkyLeft].Z = f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.PinkyLeft].Tracked = true;
+                            break;
+                    }
+                }
             }
+
+            if (tempRight != null)
+            {
+                foreach (Finger f in tempRight.Fingers)
+                {
+                    switch(f.Type)
+                    {
+                        case Finger.FingerType.TYPE_THUMB:
+                            mod.Joints[SkeletonRep.JointType.ThumbRight].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.ThumbRight].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.ThumbRight].Z = f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.ThumbRight].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_INDEX:
+                            mod.Joints[SkeletonRep.JointType.IndexRight].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.IndexRight].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.IndexRight].Z= f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.IndexRight].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_MIDDLE:
+                            mod.Joints[SkeletonRep.JointType.MiddleRight].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.MiddleRight].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.MiddleRight].Z =  f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.MiddleRight].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_RING:
+                            mod.Joints[SkeletonRep.JointType.RingRight].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.RingRight].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.RingRight].Z = f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.RingRight].Tracked = true;
+                            break;
+                        case Finger.FingerType.TYPE_PINKY:
+                            mod.Joints[SkeletonRep.JointType.PinkyRight].X = f.TipPosition.x;
+                            mod.Joints[SkeletonRep.JointType.PinkyRight].Y = f.TipPosition.y;
+                            mod.Joints[SkeletonRep.JointType.PinkyRight].Z = f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.PinkyRight].Tracked = true;
+                            break;
+                    }
+                }
+            }
+          
         }
 
         public override bool detectDevice()

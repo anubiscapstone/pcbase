@@ -7,7 +7,7 @@ bool SkeletonDrawer::parseMessage(String^ msg, RECT bounds)
 	try
 	{
 		array<String^>^ jointParts = msg->Split(String(" ").ToCharArray(), StringSplitOptions::RemoveEmptyEntries);
-		if (jointParts->Length != 40)
+		if (jointParts->Length < 40)
 			return false;
 		
 		double scalex = ((bounds.right - bounds.left) / 2.0);
