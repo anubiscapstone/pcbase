@@ -6,12 +6,11 @@ using System.Text;
 namespace AnubisClient
 {
     /// <summary>
-    /// Joint3D - models a single skeletal joint.
+    /// Joint3D - Models a single skeletal joint.
+    /// Whether a joint is tracked and what properties of it that are tracked is Sensor specific.
     /// </summary>
     public class Joint3d
     {
-        public Joint3d() {}
-
         public bool Tracked = false;
 
         public double X = 0.0;

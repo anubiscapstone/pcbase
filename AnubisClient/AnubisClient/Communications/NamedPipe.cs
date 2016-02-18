@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace AnubisClient
 {
+    /// <summary>
+    /// Encapsulates a two-way, asynchronous, named pipe.
+    /// </summary>
     public class NamedPipe : CommunicationsInterface
     {
         private NamedPipeServerStream pipe = null;

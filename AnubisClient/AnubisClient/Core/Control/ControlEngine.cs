@@ -8,33 +8,28 @@ using System.ComponentModel;
 namespace AnubisClient {
 
     /// <summary>
-    /// ControlEngine - Loads robot drivers, sends skeleton represntations to all connected robots.
+    /// Module that manages the ControlInterfaces.
+    /// Keeps references to all of the Controls and can be asked to update them all with a new Skeleton
     /// </summary>
-	public static class ControlEngine{
-
-        //list of connected robots.
-		private static List<ControlInterface> activeControls;
+	public static class ControlEngine
+    {
+        private static List<ControlInterface> activeControls = new List<ControlInterface>();
 
         /// <summary>
-        /// Must be called to start Robo Engine.
+        /// Event handler for CommunicationEngine's NewControlEvent
+        /// This will be called whenever a new Control is connected to the system and validated
         /// </summary>
-		public static void initialize() {
-			activeControls = new List<ControlInterface>();
-		}
-
-        public static void addNewRobot(object sender, ControlInterface e){
-            activeControls.Add(e);
+        public static void AddNewRobot(object sender, ControlInterface newControl){
+            activeControls.Add(newControl);
         }
 
         /// <summary>
-        /// Called by Kinematics Engine to update Robo Engine.
-        /// Sends a skeletal representation of the user.
+        /// Sends a Skeleton to all of the connected Controls
+        /// Every new Skeleton will be sent to the Controls via this method.
         /// </summary>
-        /// <param name="mod">Skeleton representation of user.</param>
-		public static void publishNewSkeleton(SkeletonRep mod) {
+		public static void PublishNewSkeleton(SkeletonRep mod) {
             foreach(var c in activeControls)
-                c.updateSkeleton(mod);
+                c.UpdateSkeleton(mod);
 		}
-
 	}
 }

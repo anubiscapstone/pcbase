@@ -7,11 +7,17 @@ using System.Text;
 namespace AnubisClient
 {
     /// <summary>
-    /// Represents a skeleton, the object used to pass user information between input devices and output device drivers.
+    /// A collection of all of the information we track about the user.
+    /// Sensors and the GestureEngine will create and modify these.
+    /// Controls will interperet this information within the context of their application.
+    /// The coordinate space of a joint is specific to that joint.
     /// </summary>
     public class SkeletonRep
     {
-        public const int NUM_JOINTS = 30;
+        /// <summary>
+        ///Any joints that can be tracked should be in this list.
+        ///Whether they are tracked and whether they are needed is up to the Sensors and Controls
+        /// </summary>
         public enum JointType : int
         {
             Head,
@@ -46,13 +52,13 @@ namespace AnubisClient
             PinkyLeft
 
         }
+        /// <summary>
+        /// Provides an enumerable interface to a collection of Joint3Ds
+        /// It is accesible by the JointType enum
+        /// </summary>
         public class JointCollection : IEnumerable<Joint3d>
         {
-            private Joint3d[] Joints;
-            public JointCollection()
-            {
-                Joints = new Joint3d[NUM_JOINTS];
-            }
+            private Joint3d[] Joints = new Joint3d[Enum.GetValues(typeof(JointType)).Length];
 
             public Joint3d this[JointType j]
             {
@@ -83,12 +89,21 @@ namespace AnubisClient
             Joints = new JointCollection();
             Neutralize();
         }
-        
+
+        /// <summary>
+        /// Sets all of the skeleton's joints to a "neutral" position.
+        /// The neutral position of a joint is specific to that joint.
+        /// No orientation information is set here.
+        /// </summary>
         public void Neutralize()
         {
-            for (int i = 0; i < NUM_JOINTS; i++)
+            //Reset all joints
+            int len = Enum.GetValues(typeof(JointType)).Length;
+            for (int i = 0; i < len; i++)
                 Joints[i] = new Joint3d();
 
+            //A simple "standing man" configuration within [-1,1] in all three dimensions.
+            //No orientations are set here.
             //Joints[JointType.Spine] is center at (0, 0, 0)
 
             Joints[JointType.HipCenter].Y = Joints[JointType.Spine].Y - 0.3;

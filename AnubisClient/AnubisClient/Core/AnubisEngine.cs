@@ -9,76 +9,77 @@ using System.Windows.Forms;
 namespace AnubisClient
 {
     /// <summary>
-    /// Encapsulates all robot interaction functionality.  The only things outside of this class are the 
-    /// standard Windows user interface.
+    /// Module that represents the entire system.
+    /// This is the "entry point" for all of the other modules.
+    /// Initializing this module will start the system up.
     /// </summary>
     static class ANUBISEngine
     {
-        private static List<SensorInterface> ActiveHardware;
-        private static List<Form> ActiveForms;
-        private static ClientForm MainHubForm;
-        private static System.Windows.Forms.Timer SplashTimer;
-        private static SplashScreen Splash;
+        private static ClientForm MainHubForm = new ClientForm();
+        private static SplashScreen Splash = new SplashScreen();
+
+        //Delay in milliseconds between each frame
+        public const int INTERVAL = 100;
+        //main worker thread
+        private static BackgroundWorker thread = new BackgroundWorker();
+
+        private static NetworkEngine netServer = new NetworkEngine(1337);
+        private static NamedPipeEngine pipeServer = new NamedPipeEngine("anubis-pipe");
+
         /// <summary>
-        /// Initialize starts the ANUBISENGINE.  Nothing happens before this is called. 
-        /// Starts the Communications Engine and Kinematics Engine.
+        /// Called by Program.cs
+        /// Starts the ANUBISENGINE.  Nothing happens before this is called. 
+        /// Sets up the main form and starts up all of the other modules.
         /// </summary>
-        public static void Initialize() //Already being called by Program.cs
+        public static void Run()
         {
-            ActiveForms = new List<Form>();
-            SplashTimer = new System.Windows.Forms.Timer();
-            Splash = new SplashScreen();
+            //Splash screen is displayed while we set up
             Splash.Show();
             Splash.Refresh();
-            SplashTimer.Interval = 2000;
-            SplashTimer.Tick += SplashTimer_Tick;
-            SplashTimer.Start();
 
-            ControlEngine.initialize();
-            SensorEngine.initialize();
+            //Setup main worker thread
+            thread.WorkerSupportsCancellation = true;
+            thread.DoWork += new DoWorkEventHandler(thread_doWork);
 
-            ActiveHardware = SensorEngine.GetActiveDevices();
-
-            NetworkEngine netServer = new NetworkEngine(1337);
-            netServer.NewControlEvent += ControlEngine.addNewRobot;
+            //Set up two Communication Engines.
+            netServer.NewControlEvent += ControlEngine.AddNewRobot;
             netServer.StartServer();
-
-            NamedPipeEngine pipeServer = new NamedPipeEngine("anubis-pipe");
-            pipeServer.NewControlEvent += ControlEngine.addNewRobot;
-            pipeServer.StartServer();
             
-            MainHubForm = new ClientForm();
+            pipeServer.NewControlEvent += ControlEngine.AddNewRobot;
+            pipeServer.StartServer();
 
+            //Start up all of the Sensors
+            SensorEngine.StartDevices();
+
+            //When we're done, wait a moment and then show the main form
+            Thread.Sleep(1000);
+            Splash.Close();
+            MainHubForm.Show();
+
+            //Start main processing loop
+            thread.RunWorkerAsync();
         }
-
 
         /// <summary>
-        /// 
+        /// Main Processing Loop
+        /// Every INTERVAL milliseconds, the Sensors are polled for a new Skeleton, Gesture recognition is ran, and the results of both are sent to the Controls
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        static void SplashTimer_Tick(object sender, EventArgs e)
+        private static void thread_doWork(object sender, DoWorkEventArgs e)
         {
-            Splash.Close();
-            Thread.Sleep(500);
-            MainHubForm.Show();
-        }
-
-        public static List<Form> GetActiveForms()
-        {
-            return ActiveForms;
-        }
-
-        public static List<string> GetHardwareNames()
-        {
-            List<string> ret = new List<string>();
-            foreach (SensorInterface hi in ActiveHardware)
+            while (!thread.CancellationPending)
             {
-                ret.Add(hi.getIdentString());
+                //Delay between frames
+                Thread.Sleep(INTERVAL);
+
+                //Poll the Sensors for a new Skeleton
+                SkeletonRep mod = SensorEngine.GetNewSkeleton();
+
+                //Run the Gesture Engine and add any recognized gestures to the Skeleton
+                GestureEngine.NewFrame(mod);
+
+                //Present the new Skeleton to the Controls
+                ControlEngine.PublishNewSkeleton(mod);
             }
-            return ret;
         }
-
-
     }
 }

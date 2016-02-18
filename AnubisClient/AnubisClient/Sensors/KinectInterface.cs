@@ -7,42 +7,19 @@ using System.IO;
 
 namespace AnubisClient
 {
-    public class KinectInterface:SensorInterface
+    /// <summary>
+    /// Encapsulates an adapter to the Microsoft Kinect
+    /// Will take a single skeleton tracked by a Kinect, translate it for our own internal use in ANUBIS, and modify a skeleton with that information when requested
+    /// </summary>
+    public class KinectInterface : SensorInterface
     {
         private KinectSensor Sensor;
         private SkeletonRep Skeleton;
         private Boolean useNeutralSkeleton = true;
-        public KinectInterface(){}
 
-        public override string getIdentString()
+        public override bool DetectDevice()
         {
-            return "KinectSensor";
-        }
-
-        public override void startDeviceServer()
-        {
-            if (Sensor != null)
-            {
-                Sensor.SkeletonStream.Enable();
-                Sensor.SkeletonFrameReady += this.Sensor_SkeletonFrameReady;
-
-                try
-                {
-                    Sensor.Start();
-                }
-                catch (IOException)
-                {
-
-                }
-            }
-        }
-
-        /// <summary>
-        /// Disccovers the connected Kinects and adds them to a list of available kinects
-        /// </summary>
-        /// <returns></returns>
-        public override bool detectDevice()
-        {
+            //Looks for a connected Kinect and returns true if one is found.
             foreach (var potential in KinectSensor.KinectSensors)
             {
                 if (potential.Status == KinectStatus.Connected)
@@ -52,11 +29,30 @@ namespace AnubisClient
                 }
             }
             return false;
-
         }
+
+        public override void StartDeviceServer()
+        {
+            //Sets up the Kinect to start tracking, hooks the new frame event, and starts the tracking
+            if (Sensor != null)
+            {
+                Sensor.SkeletonStream.Enable();
+                Sensor.SkeletonFrameReady += this.Sensor_SkeletonFrameReady;
+
+                try
+                {
+                    Sensor.Start();
+                }
+                catch (IOException){}
+            }
+        }
+
+        /// <summary>
+        /// Event Handler for new frame events for the Kinect
+        /// </summary>
         void Sensor_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
-            Skeleton = new SkeletonRep();
+            SkeletonRep Skeleton = new SkeletonRep();
 
             Skeleton[] skeletons = new Skeleton[0];
 
@@ -162,15 +158,12 @@ namespace AnubisClient
                     }
                 }
             }
+            this.Skeleton = Skeleton;
         }
 
-
-        /// <summary>
-        /// Updates the skeleton model with the skeleton data from the kinect
-        /// </summary>
-        /// <param name="mod"></param>
-        public override void modifyModel(SkeletonRep mod)
+        public override void ModifyModel(SkeletonRep mod)
         {
+            SkeletonRep Skeleton = this.Skeleton;
             if(!useNeutralSkeleton)
             {
                 mod.Joints[SkeletonRep.JointType.ShoulderCenter] = Skeleton.Joints[SkeletonRep.JointType.ShoulderCenter];
