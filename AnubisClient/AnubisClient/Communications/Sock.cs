@@ -7,16 +7,19 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AnubisClient {
-	public class Sock : CommunicationsInterface{
-        private int port;
+namespace AnubisClient
+{
+    /// <summary>
+    /// Encapsulates a TCP/IP socket
+    /// </summary>
+    public class Sock : CommunicationsInterface
+    {
         private TcpClient sock = null;
         private NetworkStream stream = null;
 
-        public Sock(TcpClient sock, int port, CancellationToken cancelToken)
+        public Sock(TcpClient sock, CancellationToken cancelToken)
             : base(cancelToken)
         {
-            this.port = port;
             this.sock = sock;
             this.stream = sock.GetStream();
 		}
@@ -32,7 +35,8 @@ namespace AnubisClient {
         {
             if(IsConnected())
             {
-                line += "\n";
+                //We don't have a WriteLineAsync, so we're tacking on a newline character and using a raw byte buffer with WriteAsync.
+                line += '\n';
                 byte[] buf = Encoding.ASCII.GetBytes(line);
                 await stream.WriteAsync(buf, 0, line.Length, cancelToken).ConfigureAwait(false);
             }
@@ -43,6 +47,7 @@ namespace AnubisClient {
             string message = "";
             if (IsConnected())
             {
+                //We don't have a ReadLineAsync, so we're reading in raw byte buffers with ReadAsync and looking for a newline character to stop.
                 do
                 {
                     if (cancelToken.IsCancellationRequested)

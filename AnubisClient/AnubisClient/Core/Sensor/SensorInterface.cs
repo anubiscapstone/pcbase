@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace AnubisClient
 {
     /// <summary>
-    /// Abstract class for defining a hardware interface
+    /// Provides an interface to request skeleton data from a Sensor
     /// </summary>
     public abstract class SensorInterface
     {

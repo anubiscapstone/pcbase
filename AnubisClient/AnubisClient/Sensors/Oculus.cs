@@ -10,7 +10,8 @@ using System.Threading;
 namespace AnubisClient
 {
     /// <summary>
-    /// Encapsulates an Oculus Rift DK2 - used to get head tracking info.
+    /// Encapsulates an adapter to the Oculus Rift
+    /// Will take the head information tracked by an Oculus Rift, translate it for our own internal use in ANUBIS, and modify a skeleton with that information when requested
     /// </summary>
     public class Oculus : SensorInterface
     {

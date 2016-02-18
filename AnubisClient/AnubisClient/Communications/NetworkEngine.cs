@@ -11,8 +11,13 @@ using System.Threading.Tasks;
 
 namespace AnubisClient
 {
-	public class NetworkEngine : CommunicationsEngine
+    /// <summary>
+    /// Encapsulates a TCP/IP server.
+    /// As clients connect, it will spawn Sock instances to talk to them.
+    /// </summary>
+    public class NetworkEngine : CommunicationsEngine
     {
+        //using TcpListener for simplicity and the await keyword support
         private TcpListener serversock = null;
         private int port;
 
@@ -33,7 +38,7 @@ namespace AnubisClient
 
         protected override async Task<CommunicationsInterface> Connect(CancellationToken cancelToken)
         {
-            return new Sock(await serversock.AcceptTcpClientAsync().ConfigureAwait(false), port, cancelToken);
+            return new Sock(await serversock.AcceptTcpClientAsync().ConfigureAwait(false), cancelToken);
         }
     }
 }

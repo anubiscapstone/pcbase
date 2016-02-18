@@ -9,7 +9,8 @@ using System.Reflection;
 namespace AnubisClient
 {
     /// <summary>
-    /// The user interface side - This class handles interacting with the user through hardware devices.
+    /// Module that manages the SensorInterfaces.
+    /// Keeps references to all of the Sensors and can be asked to poll them all for a new Skeleton
     /// </summary>
     public static class SensorEngine
     {
@@ -33,10 +34,8 @@ namespace AnubisClient
         private static void DiscoverDevices()
         {
             List<SensorInterface> devices = new List<SensorInterface>();
-            Type[] types = Assembly.GetAssembly(typeof(SensorInterface)).GetTypes();
-            for (int i = 0; i < types.Length; i++)
+            foreach(Type t in Assembly.GetAssembly(typeof(SensorInterface)).GetTypes())
             {
-                Type t = types[i];
                 if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(SensorInterface)))
                 {
                     SensorInterface HI = (SensorInterface)Activator.CreateInstance(t);
@@ -48,8 +47,7 @@ namespace AnubisClient
         }
 
         /// <summary>
-        /// thread_doWork - called by the system in a new thread.  Do not call directly.
-        /// Polls hardware inputs, sends resulting skeleton to Comm engine.
+        /// Request a new skeleton from the Sensors
         /// </summary>
         public static SkeletonRep GetNewSkeleton()
         {

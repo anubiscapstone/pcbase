@@ -7,7 +7,11 @@ using System.IO;
 
 namespace AnubisClient
 {
-    public class KinectInterface:SensorInterface
+    /// <summary>
+    /// Encapsulates an adapter to the Microsoft Kinect
+    /// Will take a single skeleton tracked by a Kinect, translate it for our own internal use in ANUBIS, and modify a skeleton with that information when requested
+    /// </summary>
+    public class KinectInterface : SensorInterface
     {
         private KinectSensor Sensor;
         private SkeletonRep Skeleton;
@@ -29,6 +33,7 @@ namespace AnubisClient
 
         public override void StartDeviceServer()
         {
+            //Sets up the Kinect to start tracking, hooks the new frame event, and starts the tracking
             if (Sensor != null)
             {
                 Sensor.SkeletonStream.Enable();
@@ -43,7 +48,7 @@ namespace AnubisClient
         }
 
         /// <summary>
-        /// Disccovers the connected Kinects and adds them to a list of available kinects
+        /// Event Handler for new frame events for the Kinect
         /// </summary>
         void Sensor_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {

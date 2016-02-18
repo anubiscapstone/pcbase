@@ -4,27 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 
-namespace AnubisClient {
+namespace AnubisClient
+{
+    /// <summary>
+    /// Encapsulates an adapter to the Johnny5 robot
+    /// Will translate the tracked skeleton data into servo positions to send to the actual robot to use
+    /// </summary>
     public class Johnny5 : ControlInterface
     {
-        private int[] servoPositions;
+        //There are 17 servos (motors included) that can be controlled.
+        //Each has a range [600,2400] with 1500 being the mid-point
+        private int[] servoPositions = new int[17];
 
         public Johnny5(CommunicationsInterface commSock)
             : base(commSock)
         {
-            servoPositions = new int[17];
+            //set all servos to the mid-point
             for (int i = 0; i < servoPositions.Length; i++)
-            {
                 servoPositions[i] = 1500;
-            }
         }
 
+        /// <summary>
+        /// Translate angle (in degrees) to a servo value in the range [600,2400]
+        /// </summary>
         private int angleDecode(double angle)
         {
+            //clamp angle between 0 and 180 degrees
             angle = Math.Max(0, Math.Min(180, angle));
+            //interpolate the angles into the servo values' space with the linear function servo = 10(angle) + 600
             return (int)(angle * 10) + 600;
         }
 
+        /// <summary>
+        /// Build the string that will be sent to the Johnny5 robot.
+        /// This will be a space delimited list of servo values of the form "#{index}P{value}" or "#{index}L" if there is no value
+        /// </summary>
         private string createVector()
         {
             string vec = "";
@@ -71,14 +85,20 @@ namespace AnubisClient {
                 headAngleY = mod.Joints[SkeletonRep.JointType.Head].Pitch;
             }
 
+            //Calculate the orientation (without roll) of the arms
             if (mod.Joints[SkeletonRep.JointType.ShoulderLeft].Tracked && mod.Joints[SkeletonRep.JointType.ElbowLeft].Tracked)
             {
+                //Calculate the difference vector between the Elbow and the Shoulder
                 double DX = -(mod.Joints[SkeletonRep.JointType.ElbowLeft].X - mod.Joints[SkeletonRep.JointType.ShoulderLeft].X);
                 double DY = -(mod.Joints[SkeletonRep.JointType.ElbowLeft].Y - mod.Joints[SkeletonRep.JointType.ShoulderLeft].Y);
                 double DZ = -(mod.Joints[SkeletonRep.JointType.ElbowLeft].Z - mod.Joints[SkeletonRep.JointType.ShoulderLeft].Z);
+                //Figure out how much of our relative yaw is in the neutral yaw vs the neutral roll (depends on relative pitch)
                 double lenAngleY = Math.Sqrt(Math.Pow(DY, 2) + Math.Pow(DZ, 2));
+                //Calculate the relative yaw
                 arm1AngleX = Math.Atan2(Math.Max(0, lenAngleY), DX) * (180 / Math.PI);
+                //Figure out how much of our relative pitch is in the neutral pitch vs the neutral roll (depends on relative yaw)
                 double lenAngleX = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DZ, 2));
+                //Calculate the relative pitch
                 arm1AngleY = Math.Atan2(Math.Max(0, lenAngleX), DY) * (180 / Math.PI);
             }
 

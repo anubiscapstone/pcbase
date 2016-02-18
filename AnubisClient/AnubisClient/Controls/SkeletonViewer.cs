@@ -6,6 +6,10 @@ using System.Text;
 
 namespace AnubisClient
 {
+    /// <summary>
+    /// Encapsulates an adapter to the SkeletonViewer application
+    /// Will blindly send every joint's X and Y to the application in the order that they are defined in the JointType enum
+    /// </summary>
     class SkeletonViewer : ControlInterface
     {
         public SkeletonViewer(CommunicationsInterface commSock) : base(commSock) {}

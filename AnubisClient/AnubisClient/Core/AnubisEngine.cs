@@ -9,8 +9,9 @@ using System.Windows.Forms;
 namespace AnubisClient
 {
     /// <summary>
-    /// Encapsulates all robot interaction functionality.  The only things outside of this class are the 
-    /// standard Windows user interface.
+    /// Module that represents the entire system.
+    /// This is the "entry point" for all of the other modules.
+    /// Initializing this module will start the system up.
     /// </summary>
     static class ANUBISEngine
     {
@@ -26,8 +27,9 @@ namespace AnubisClient
         private static NamedPipeEngine pipeServer = new NamedPipeEngine("anubis-pipe");
 
         /// <summary>
-        /// Initialize starts the ANUBISENGINE.  Nothing happens before this is called. 
-        /// Starts the Communications Engine and Kinematics Engine.
+        /// Called by Program.cs
+        /// Starts the ANUBISENGINE.  Nothing happens before this is called. 
+        /// Sets up the main form and starts up all of the other modules.
         /// </summary>
         public static void Run()
         {
