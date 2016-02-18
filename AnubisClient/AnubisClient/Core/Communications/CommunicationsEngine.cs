@@ -12,12 +12,7 @@ namespace AnubisClient
     public abstract class CommunicationsEngine
     {
         private CancellationTokenSource cancel = null;
-        private List<CommunicationsInterface> comms = null;
-
-        public CommunicationsEngine()
-        {
-            comms = new List<CommunicationsInterface>();
-        }
+        private List<CommunicationsInterface> comms = new List<CommunicationsInterface>();
 
         public async void StartServer()
         {
@@ -31,7 +26,7 @@ namespace AnubisClient
                     {
                         CommunicationsInterface comm = await Connect(cancel.Token).ConfigureAwait(false);
                         if (comm == null)
-                            StopServer();
+                            break;
                         else
                             AcceptConnection(comm, cancel.Token);
                     }
@@ -54,12 +49,32 @@ namespace AnubisClient
             }
         }
 
+        /// <summary>
+        /// Sets up implementation specific stuff for the server.
+        /// </summary>
         protected abstract void SetupServer();
+
+        /// <summary>
+        /// Cleans up implementation specific stuff for the server.
+        /// </summary>
         protected abstract void CleanupServer();
+
+        /// <summary>
+        /// Waits for a new connection on this particular communication method.
+        /// If a connection is made, a CommunicationsInterface representing that connection is returned.
+        /// If the process is canceled or there is an error, null is returned.
+        /// This method is run asnynchronously and supports the await keyword and a CancellationToken.
+        /// </summary>
         protected abstract Task<CommunicationsInterface> Connect(CancellationToken cancelToken);
+
+        /// <summary>
+        /// Verifies the new connection is from a valid Control and calls the NewControlEvent
+        /// </summary>
         private async void AcceptConnection(CommunicationsInterface comm, CancellationToken cancelToken)
         {
-            ControlInterface control = await ControlInterface.getNewROIFromHeloString(comm, cancelToken).ConfigureAwait(false);
+            //getNewROIFromHeloString will let the Control modules figure out if this connection is a valid Control.
+            //null is returned if it is not.
+            ControlInterface control = await ControlInterface.ValidateControl(comm, cancelToken).ConfigureAwait(false);
             if (control != null)
             {
                 comms.Add(comm);

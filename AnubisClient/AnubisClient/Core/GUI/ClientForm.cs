@@ -20,12 +20,10 @@ namespace AnubisClient
         /// <summary>
         /// Initializes the active forms and sets the MDI Parent form
         /// </summary>
-        private List<Form> ActiveForms;
         private StreamViewer SV;
         public ClientForm()
         {
             this.IsMdiContainer = true;
-            ActiveForms = ANUBISEngine.GetActiveForms();
             SV = new StreamViewer();
             SV.MdiParent = this;
 
@@ -37,14 +35,6 @@ namespace AnubisClient
         private void ClientForm_Load(object sender, EventArgs e)
         {
             tscb_HardwareList.Items.Add("");
-            List<string> Dev = ANUBISEngine.GetHardwareNames();
-            foreach (string s in Dev)
-            {
-                tscb_HardwareList.Items.Add(s);
-            }
-
-            
-
         }
 
         /// <summary>
@@ -55,14 +45,6 @@ namespace AnubisClient
         private void tscb_HardwareList_SelectedIndexChanged(object sender, EventArgs e)
         {
             string IDENT = sender.ToString().Split(',').First().ToLower();
-            foreach (Form f in ActiveForms)
-            {
-                if (f.Name.ToLower() == IDENT)
-                {
-                    f.Show();
-                    
-                }
-            }
             ts_ViewWindow.HideDropDown();
 
         }

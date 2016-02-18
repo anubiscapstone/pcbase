@@ -13,17 +13,24 @@ namespace AnubisClient
     /// </summary>
     public static class SensorEngine
     {
-        //Interval used to fine tune network flooding issues.
-        public const int INTERVAL = 100;
-
-        //processing thread for SensorEngine
-        private static BackgroundWorker thread;
-        //List of hardware input devices to be polled.
+        //List of sensor devices to be polled.
         private static List<SensorInterface> readyDevices;
 
-        private static GestureEngine Gesture;
+        /// <summary>
+        /// Finds all of the Sensors that can be started and starts them.
+        /// This should be called to have the system start "sensing"
+        /// </summary>
+        public static void StartDevices()
+        {
+            DiscoverDevices();
+            foreach (SensorInterface hi in readyDevices)
+                hi.StartDeviceServer();
+        }
 
-        private static List<SensorInterface> DiscoverDevices()
+        /// <summary>
+        /// Finds all of the devices that can be started
+        /// </summary>
+        private static void DiscoverDevices()
         {
             List<SensorInterface> devices = new List<SensorInterface>();
             Type[] types = Assembly.GetAssembly(typeof(SensorInterface)).GetTypes();
@@ -33,74 +40,25 @@ namespace AnubisClient
                 if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(SensorInterface)))
                 {
                     SensorInterface HI = (SensorInterface)Activator.CreateInstance(t);
-                    if (HI.detectDevice())
-                    {
+                    if (HI.DetectDevice())
                         devices.Add(HI);
-
-                    }
                 }
             }
-
-            if (devices.Count == 0)
-            return null;
-
-            return devices;
-        }
-
-        private static void StartDevices()
-        {
-            foreach (SensorInterface hi in readyDevices)
-            {
-                hi.startDeviceServer();
-            }
-        }
-
-        public static List<SensorInterface> GetActiveDevices()
-        {
-            return readyDevices;
-        }
-        /// <summary>
-        /// initialize - starts Kinematics Engine.
-        /// </summary>
-        public static void initialize()
-        {
-            Gesture = new GestureEngine();
-
-            thread = new BackgroundWorker();
-            thread.WorkerSupportsCancellation = true;
-            thread.DoWork += new DoWorkEventHandler(thread_doWork);
-            readyDevices = new List<SensorInterface>();
-            readyDevices = DiscoverDevices();
-            StartDevices();
-            thread.RunWorkerAsync();
+            readyDevices = devices;
         }
 
         /// <summary>
         /// thread_doWork - called by the system in a new thread.  Do not call directly.
         /// Polls hardware inputs, sends resulting skeleton to Comm engine.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private static void thread_doWork(object sender, DoWorkEventArgs e)
+        public static SkeletonRep GetNewSkeleton()
         {
-            while (!thread.CancellationPending)
-            {
-                Thread.Sleep(INTERVAL);
-
-                // generate new skel
-                SkeletonRep mod = new SkeletonRep();
-                for (int i = 0; i < readyDevices.Count; i++)
-                {
-                    readyDevices[i].modifyModel(mod);
-                }
-
-                //run the gesture engine after the Kinematics run, to allow it to override kinematic movements
-                //with gestured commands.
-                Gesture.newFrame(mod);
-
-                ControlEngine.publishNewSkeleton(mod);
-
-            }
+            //generate new skeleton
+            SkeletonRep mod = new SkeletonRep();
+            //ask each sensor the modify the skeleton as it sees fit
+            foreach(SensorInterface s in readyDevices)
+                s.ModifyModel(mod);
+            return mod;
         }
     }
 }

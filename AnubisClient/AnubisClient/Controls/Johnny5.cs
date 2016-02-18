@@ -40,18 +40,22 @@ namespace AnubisClient {
             return vec;
         }
 
+        /// <summary>
+        /// Send the values off to the Johnny5 robot.
+        /// </summary>
         private void storeVector()
         {
             commSock.SendLine("sv " + createVector());
         }
 
-        public override string getHeloString()
+        public override string GetHeloString()
         {
             return "Johnny5";
         }
 
-        public override void updateSkeleton(SkeletonRep mod)
+        public override void UpdateSkeleton(SkeletonRep mod)
         {
+            //default values if any of the joints we care about aren't tracked
             double headAngleX = 90.0;
             double headAngleY = 90.0;
             double arm1AngleX = 90.0;

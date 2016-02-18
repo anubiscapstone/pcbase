@@ -28,9 +28,7 @@ namespace AnubisClient
         /// Clever function that, when called, will get the concrete class for the connecting robot.
         /// This ensures easy installation of new robot drivers.
         /// </summary>
-        /// <param name="sock">Connecting robot socket</param>
-        /// <returns>Concrete robot interface</returns>
-        public static async Task<ControlInterface> getNewROIFromHeloString(CommunicationsInterface commSock, CancellationToken cancelToken)
+        public static async Task<ControlInterface> ValidateControl(CommunicationsInterface commSock, CancellationToken cancelToken)
         {
             String helo = await commSock.ReadLine();
             if (helo.IndexOf("\n") >= 0)
@@ -40,7 +38,7 @@ namespace AnubisClient
 				Type t = types[i];
 				if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(ControlInterface))) {
                     ControlInterface roi = (ControlInterface)Activator.CreateInstance(t, commSock);
-					if (roi.getHeloString() == helo) return roi;
+					if (roi.GetHeloString() == helo) return roi;
 				}
 			}
 
@@ -49,7 +47,16 @@ namespace AnubisClient
 			return null;
 		}
 
-		public abstract string getHeloString();
-		public abstract void updateSkeleton(SkeletonRep mod);
+        /// <summary>
+        /// Returns the helo string expected to be sent when this type of Control connects
+        /// Implementations simply need to return a unique identifying string for their type of Control
+        /// </summary>
+        public abstract string GetHeloString();
+
+        /// <summary>
+        /// Informs the Control that there is a new frame and new Skeleton.
+        /// Implementations can use whichever joints they want, translate this data to fit their purposes, and send it to the actual Control via commSock
+        /// </summary>
+        public abstract void UpdateSkeleton(SkeletonRep mod);
 	}
 }

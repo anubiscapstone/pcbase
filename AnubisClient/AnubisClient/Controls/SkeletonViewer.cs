@@ -10,12 +10,12 @@ namespace AnubisClient
     {
         public SkeletonViewer(CommunicationsInterface commSock) : base(commSock) {}
 
-        public override string getHeloString()
+        public override string GetHeloString()
         {
             return "SkeletonViewer";
         }
 
-        public override void updateSkeleton(SkeletonRep mod)
+        public override void UpdateSkeleton(SkeletonRep mod)
         {
             String toSend = "";
             foreach(Joint3d j in mod.Joints)

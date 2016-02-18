@@ -12,14 +12,22 @@ namespace AnubisClient
         private KinectSensor Sensor;
         private SkeletonRep Skeleton;
         private Boolean useNeutralSkeleton = true;
-        public KinectInterface(){}
 
-        public override string getIdentString()
+        public override bool DetectDevice()
         {
-            return "KinectSensor";
+            //Looks for a connected Kinect and returns true if one is found.
+            foreach (var potential in KinectSensor.KinectSensors)
+            {
+                if (potential.Status == KinectStatus.Connected)
+                {
+                    Sensor = potential;
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public override void startDeviceServer()
+        public override void StartDeviceServer()
         {
             if (Sensor != null)
             {
@@ -30,33 +38,16 @@ namespace AnubisClient
                 {
                     Sensor.Start();
                 }
-                catch (IOException)
-                {
-
-                }
+                catch (IOException){}
             }
         }
 
         /// <summary>
         /// Disccovers the connected Kinects and adds them to a list of available kinects
         /// </summary>
-        /// <returns></returns>
-        public override bool detectDevice()
-        {
-            foreach (var potential in KinectSensor.KinectSensors)
-            {
-                if (potential.Status == KinectStatus.Connected)
-                {
-                    Sensor = potential;
-                    return true;
-                }
-            }
-            return false;
-
-        }
         void Sensor_SkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
-            Skeleton = new SkeletonRep();
+            SkeletonRep Skeleton = new SkeletonRep();
 
             Skeleton[] skeletons = new Skeleton[0];
 
@@ -162,15 +153,12 @@ namespace AnubisClient
                     }
                 }
             }
+            this.Skeleton = Skeleton;
         }
 
-
-        /// <summary>
-        /// Updates the skeleton model with the skeleton data from the kinect
-        /// </summary>
-        /// <param name="mod"></param>
-        public override void modifyModel(SkeletonRep mod)
+        public override void ModifyModel(SkeletonRep mod)
         {
+            SkeletonRep Skeleton = this.Skeleton;
             if(!useNeutralSkeleton)
             {
                 mod.Joints[SkeletonRep.JointType.ShoulderCenter] = Skeleton.Joints[SkeletonRep.JointType.ShoulderCenter];

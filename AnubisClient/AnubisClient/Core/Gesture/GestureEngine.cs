@@ -5,20 +5,23 @@ using System.Text;
 
 namespace AnubisClient
 {
-    public class GestureEngine
+    /// <summary>
+    /// Provides the ability to recognize gestures and update the current frame's Skeleton with new information accordingly
+    /// </summary>
+    public static class GestureEngine
     {
+        //information about leg movement
+        private static Queue<double> old_velocities = new Queue<double>();
+        private static double foot_right_old_position = 0;
+        private static double foot_left_old_position = 0;
+        //setting this true tells Johnny5 to go forward
+        //allows us to have different "turn on" and "turn off" conditions (we're using it to reduce sensetivity to idle noise)
+        private static bool forward_noise_gate = false;
 
-        private Queue<double> old_velocities;
-        private double foot_right_old_position = 0;
-        private double foot_left_old_position = 0;
-        private bool forward_noise_gate = false;
-
-        public GestureEngine()
-        {
-            old_velocities = new Queue<double>();
-        }
-
-        public void newFrame(SkeletonRep mod)
+        /// <summary>
+        /// Try to recognize gestures in the new frame and modify the Skeleton accordingly
+        /// </summary>
+        public static void NewFrame(SkeletonRep mod)
         {
             if (!mod.Joints[SkeletonRep.JointType.AnkleLeft].Tracked || !mod.Joints[SkeletonRep.JointType.FootLeft].Tracked || !mod.Joints[SkeletonRep.JointType.AnkleRight].Tracked || !mod.Joints[SkeletonRep.JointType.FootRight].Tracked)
             {

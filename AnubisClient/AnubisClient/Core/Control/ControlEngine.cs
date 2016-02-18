@@ -10,30 +10,24 @@ namespace AnubisClient {
     /// <summary>
     /// ControlEngine - Loads robot drivers, sends skeleton represntations to all connected robots.
     /// </summary>
-	public static class ControlEngine{
-
-        //list of connected robots.
-		private static List<ControlInterface> activeControls;
+	public static class ControlEngine
+    {
+        private static List<ControlInterface> activeControls = new List<ControlInterface>();
 
         /// <summary>
         /// Must be called to start Robo Engine.
         /// </summary>
-		public static void initialize() {
-			activeControls = new List<ControlInterface>();
-		}
-
-        public static void addNewRobot(object sender, ControlInterface e){
-            activeControls.Add(e);
+        public static void AddNewRobot(object sender, ControlInterface newControl){
+            activeControls.Add(newControl);
         }
 
         /// <summary>
         /// Called by Kinematics Engine to update Robo Engine.
         /// Sends a skeletal representation of the user.
         /// </summary>
-        /// <param name="mod">Skeleton representation of user.</param>
-		public static void publishNewSkeleton(SkeletonRep mod) {
+		public static void PublishNewSkeleton(SkeletonRep mod) {
             foreach(var c in activeControls)
-                c.updateSkeleton(mod);
+                c.UpdateSkeleton(mod);
 		}
 
 	}
