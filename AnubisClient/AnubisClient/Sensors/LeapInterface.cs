@@ -48,13 +48,7 @@ namespace AnubisClient.Sensors
 
         }
 
-
-        public override string getIdentString()
-        {
-            return "LeapMotion";
-        }
-
-        public override void modifyModel(SkeletonRep mod)
+        public override void ModifyModel(SkeletonRep mod)
         {
             Hand tempLeft = listener.trackedLeft;
             Hand tempRight = listener.trackedRight;
@@ -153,7 +147,7 @@ namespace AnubisClient.Sensors
           
         }
 
-        public override bool detectDevice()
+        public override bool DetectDevice()
         {
 
             foreach (var d in controller.Devices)
@@ -166,7 +160,7 @@ namespace AnubisClient.Sensors
             return false;
         }
 
-        public override void startDeviceServer()
+        public override void StartDeviceServer()
         {
             controller.AddListener(listener);
         }
