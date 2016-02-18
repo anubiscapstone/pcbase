@@ -26,7 +26,6 @@ namespace AnubisClient.Sensors
             int i;
             public override void OnFrame(Controller controller)
             {
-                System.Diagnostics.Debug.WriteLine(i++.ToString());
                 Hand tempLeft = null;
                 Hand tempRight = null;
 
@@ -52,7 +51,7 @@ namespace AnubisClient.Sensors
 
         public override string getIdentString()
         {
-            return "Leap Motion";
+            return "LeapMotion";
         }
 
         public override void modifyModel(SkeletonRep mod)
@@ -62,8 +61,10 @@ namespace AnubisClient.Sensors
 
             if (tempLeft != null)
             {
+                mod.Joints[SkeletonRep.JointType.HandLeft].Tracked = true;
                 foreach (Finger f in tempLeft.Fingers)
                 {
+                    
                     switch (f.Type)
                     {
                         case Finger.FingerType.TYPE_THUMB:
@@ -99,11 +100,17 @@ namespace AnubisClient.Sensors
                     }
                 }
             }
+            else
+            {
+                mod.Joints[SkeletonRep.JointType.HandLeft].Tracked = false;
+            }
 
             if (tempRight != null)
             {
+                mod.Joints[SkeletonRep.JointType.HandRight].Tracked = true;
                 foreach (Finger f in tempRight.Fingers)
                 {
+                    
                     switch(f.Type)
                     {
                         case Finger.FingerType.TYPE_THUMB:
@@ -138,6 +145,10 @@ namespace AnubisClient.Sensors
                             break;
                     }
                 }
+            }
+            else
+            {
+                mod.Joints[SkeletonRep.JointType.HandRight].Tracked = false;
             }
           
         }

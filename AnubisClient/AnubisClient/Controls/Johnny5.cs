@@ -60,6 +60,10 @@ namespace AnubisClient {
             double arm2AngleY = 90.0;
             double foot1Angle = 90.0;
             double foot2Angle = 90.0;
+            
+            // Hand 1 = Left, Hand 2 = Right
+            double hand1Dist = 0;
+            double hand2Dist = 0;
 
             if(mod.Joints[SkeletonRep.JointType.Head].Tracked)
             {
@@ -97,6 +101,26 @@ namespace AnubisClient {
                     foot2Angle = mod.Joints[SkeletonRep.JointType.FootRight].Pitch;
             }
 
+            if (mod.Joints[SkeletonRep.JointType.HandLeft].Tracked)
+            {
+                double DX = -(mod.Joints[SkeletonRep.JointType.MiddleLeft].X - mod.Joints[SkeletonRep.JointType.ThumbLeft].X);
+                double DY = mod.Joints[SkeletonRep.JointType.MiddleLeft].Y - mod.Joints[SkeletonRep.JointType.ThumbLeft].Y;
+                double DZ = -(mod.Joints[SkeletonRep.JointType.MiddleLeft].Z - mod.Joints[SkeletonRep.JointType.ThumbLeft].Z);
+
+                hand1Dist = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DY, 2) + Math.Pow(DZ, 2));
+                System.Diagnostics.Debug.WriteLine("Hand 1: " + hand1Dist);
+            }
+
+            if (mod.Joints[SkeletonRep.JointType.HandRight].Tracked)
+            {
+                double DX = -(mod.Joints[SkeletonRep.JointType.MiddleRight].X - mod.Joints[SkeletonRep.JointType.ThumbRight].X);
+                double DY = mod.Joints[SkeletonRep.JointType.MiddleRight].Y - mod.Joints[SkeletonRep.JointType.ThumbRight].Y;
+                double DZ = -(mod.Joints[SkeletonRep.JointType.MiddleRight].Z - mod.Joints[SkeletonRep.JointType.ThumbRight].Z);
+
+                hand2Dist = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DY, 2) + Math.Pow(DZ, 2));
+                System.Diagnostics.Debug.WriteLine("Hand 2: " + hand2Dist);
+            }
+
             servoPositions[13] = angleDecode(headAngleX);
             servoPositions[16] = angleDecode(headAngleY);
 
@@ -108,6 +132,10 @@ namespace AnubisClient {
             
             servoPositions[14] = angleDecode(foot2Angle);
             servoPositions[15] = angleDecode(foot1Angle);
+
+            // Hand Servos min 1025, max 1975
+            servoPositions[7] = (int)(1975 - (hand2Dist - 12)*(950/163));
+            servoPositions[12] = (int)((hand1Dist - 12)*(950/163) + 1025);
 
             storeVector();
         }
