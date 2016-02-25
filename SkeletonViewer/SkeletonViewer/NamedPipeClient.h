@@ -9,7 +9,7 @@ namespace SkeletonViewer
 	using namespace System::IO;
 	using namespace System::IO::Pipes;
 
-	ref class NamedPipeClient
+	public ref class NamedPipeClient
 	{
 	private:
 		System::String^ _message = "";

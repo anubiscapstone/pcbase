@@ -10,33 +10,33 @@ namespace SkeletonViewer
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	ref class SkeletonDrawer
+	public ref class SkeletonDrawer
 	{
 	private:
-		double const SCALE = 0.9;
-		double const OFFSET_X = 0.0;
-		double const OFFSET_Y = -0.2;
+		float const SCALE = 0.9f;
+		float const OFFSET_X = 0.0f;
+		float const OFFSET_Y = -0.2f;
 
-		array<double>^ Head				= nullptr;
-		array<double>^ ShoulderCenter	= nullptr;
-		array<double>^ ShoulderLeft		= nullptr;
-		array<double>^ ShoulderRight	= nullptr;
-		array<double>^ ElbowLeft		= nullptr;
-		array<double>^ ElbowRight		= nullptr;
-		array<double>^ WristLeft		= nullptr;
-		array<double>^ WristRight		= nullptr;
-		array<double>^ HandLeft			= nullptr;
-		array<double>^ HandRight		= nullptr;
-		array<double>^ Spine			= nullptr;
-		array<double>^ HipCenter		= nullptr;
-		array<double>^ HipLeft			= nullptr;
-		array<double>^ HipRight			= nullptr;
-		array<double>^ KneeLeft			= nullptr;
-		array<double>^ KneeRight		= nullptr;
-		array<double>^ AnkleLeft		= nullptr;
-		array<double>^ AnkleRight		= nullptr;
-		array<double>^ FootLeft			= nullptr;
-		array<double>^ FootRight		= nullptr;
+		array<float>^ Head				= nullptr;
+		array<float>^ ShoulderCenter	= nullptr;
+		array<float>^ ShoulderLeft		= nullptr;
+		array<float>^ ShoulderRight		= nullptr;
+		array<float>^ ElbowLeft			= nullptr;
+		array<float>^ ElbowRight		= nullptr;
+		array<float>^ WristLeft			= nullptr;
+		array<float>^ WristRight		= nullptr;
+		array<float>^ HandLeft			= nullptr;
+		array<float>^ HandRight			= nullptr;
+		array<float>^ Spine				= nullptr;
+		array<float>^ HipCenter			= nullptr;
+		array<float>^ HipLeft			= nullptr;
+		array<float>^ HipRight			= nullptr;
+		array<float>^ KneeLeft			= nullptr;
+		array<float>^ KneeRight			= nullptr;
+		array<float>^ AnkleLeft			= nullptr;
+		array<float>^ AnkleRight		= nullptr;
+		array<float>^ FootLeft			= nullptr;
+		array<float>^ FootRight			= nullptr;
 
 		void zeroSkeleton()
 		{
@@ -88,26 +88,26 @@ namespace SkeletonViewer
 	public:
 		SkeletonDrawer()
 		{
-			Head				= gcnew array<double>(2);
-			ShoulderCenter		= gcnew array<double>(2);
-			ShoulderLeft		= gcnew array<double>(2);
-			ShoulderRight		= gcnew array<double>(2);
-			ElbowLeft			= gcnew array<double>(2);
-			ElbowRight			= gcnew array<double>(2);
-			WristLeft			= gcnew array<double>(2);
-			WristRight			= gcnew array<double>(2);
-			HandLeft			= gcnew array<double>(2);
-			HandRight			= gcnew array<double>(2);
-			Spine				= gcnew array<double>(2);
-			HipCenter			= gcnew array<double>(2);
-			HipLeft				= gcnew array<double>(2);
-			HipRight			= gcnew array<double>(2);
-			KneeLeft			= gcnew array<double>(2);
-			KneeRight			= gcnew array<double>(2);
-			AnkleLeft			= gcnew array<double>(2);
-			AnkleRight			= gcnew array<double>(2);
-			FootLeft			= gcnew array<double>(2);
-			FootRight			= gcnew array<double>(2);
+			Head				= gcnew array<float>(2);
+			ShoulderCenter		= gcnew array<float>(2);
+			ShoulderLeft		= gcnew array<float>(2);
+			ShoulderRight		= gcnew array<float>(2);
+			ElbowLeft			= gcnew array<float>(2);
+			ElbowRight			= gcnew array<float>(2);
+			WristLeft			= gcnew array<float>(2);
+			WristRight			= gcnew array<float>(2);
+			HandLeft			= gcnew array<float>(2);
+			HandRight			= gcnew array<float>(2);
+			Spine				= gcnew array<float>(2);
+			HipCenter			= gcnew array<float>(2);
+			HipLeft				= gcnew array<float>(2);
+			HipRight			= gcnew array<float>(2);
+			KneeLeft			= gcnew array<float>(2);
+			KneeRight			= gcnew array<float>(2);
+			AnkleLeft			= gcnew array<float>(2);
+			AnkleRight			= gcnew array<float>(2);
+			FootLeft			= gcnew array<float>(2);
+			FootRight			= gcnew array<float>(2);
 
 			zeroSkeleton();
 		}
