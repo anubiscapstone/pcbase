@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Includes.h"
-#include "Canvas.h"
 #include "NamedPipeClient.h"
 #include "SkeletonDrawer.h"
 
@@ -101,7 +100,7 @@ namespace SkeletonViewer {
 			this->SuspendLayout();
 
 			// 
-			// label1
+			// canvas
 			//
 			this->canvas = (gcnew SkeletonViewer::Canvas());
 			this->canvas->Name = L"Canvas";
