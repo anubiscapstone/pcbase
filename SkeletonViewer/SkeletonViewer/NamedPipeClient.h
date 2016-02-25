@@ -12,6 +12,7 @@ namespace SkeletonViewer
 	public ref class NamedPipeClient
 	{
 	private:
+		System::String^ _connectionMessage = "";
 		System::String^ _message = "";
 
 		System::String^ serverName = "anubis-pipe";
@@ -48,6 +49,23 @@ namespace SkeletonViewer
 			{
 				msclr::lock l(_message);
 				_message = s;
+				l.release();
+				newMessage();
+			}
+		};
+
+		property System::String^ ConnectionMessage
+		{
+			System::String^ get()
+			{
+				msclr::lock l(_connectionMessage);
+				System::String^ temp = _connectionMessage;
+				return temp;
+			}
+			void set(System::String^ s)
+			{
+				msclr::lock l(_connectionMessage);
+				_connectionMessage = s;
 				l.release();
 				newMessage();
 			}

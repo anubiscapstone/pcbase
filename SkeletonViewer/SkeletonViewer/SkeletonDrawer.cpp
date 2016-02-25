@@ -7,7 +7,7 @@ bool SkeletonDrawer::parseMessage(String^ msg, RECT bounds)
 	try
 	{
 		array<String^>^ jointParts = msg->Split(String(" ").ToCharArray(), StringSplitOptions::RemoveEmptyEntries);
-		if (jointParts->Length != 40)
+		if (jointParts->Length < 40)
 			return false;
 		
 		float scalex = ((bounds.right - bounds.left) / 2.0f);
@@ -96,4 +96,50 @@ void SkeletonDrawer::drawSkeleton(ID2D1HwndRenderTarget* d2dRenderTarget, ID2D1S
 
 	d2dRenderTarget->DrawLine(D2D1::Point2F(AnkleLeft[0], AnkleLeft[1]), D2D1::Point2F(FootLeft[0], FootLeft[1]), d2dBrush, 3.0);
 	d2dRenderTarget->DrawLine(D2D1::Point2F(AnkleRight[0], AnkleRight[1]), D2D1::Point2F(FootRight[0], FootRight[1]), d2dBrush, 3.0);
+}
+
+void SkeletonDrawer::printSkeleton(array<TextBox^>^ txtBoxes)
+{
+	if (txtBoxes->Length < 40)
+		return;
+	txtBoxes[0]->Text = Head[0].ToString();
+	txtBoxes[1]->Text = Head[1].ToString();
+	txtBoxes[2]->Text = ShoulderCenter[0].ToString();
+	txtBoxes[3]->Text = ShoulderCenter[1].ToString();
+	txtBoxes[4]->Text = ShoulderLeft[0].ToString();
+	txtBoxes[5]->Text = ShoulderLeft[1].ToString();
+	txtBoxes[6]->Text = ShoulderRight[0].ToString();
+	txtBoxes[7]->Text = ShoulderRight[1].ToString();
+	txtBoxes[8]->Text = ElbowLeft[0].ToString();
+	txtBoxes[9]->Text = ElbowLeft[1].ToString();
+	txtBoxes[10]->Text = ElbowRight[0].ToString();
+	txtBoxes[11]->Text = ElbowRight[1].ToString();
+	txtBoxes[12]->Text = WristLeft[0].ToString();
+	txtBoxes[13]->Text = WristLeft[1].ToString();
+	txtBoxes[14]->Text = WristRight[0].ToString();
+	txtBoxes[15]->Text = WristRight[1].ToString();
+	txtBoxes[16]->Text = HandLeft[0].ToString();
+	txtBoxes[17]->Text = HandLeft[1].ToString();
+	txtBoxes[18]->Text = HandRight[0].ToString();
+	txtBoxes[19]->Text = HandRight[1].ToString();
+	txtBoxes[20]->Text = Spine[0].ToString();
+	txtBoxes[21]->Text = Spine[1].ToString();
+	txtBoxes[22]->Text = HipCenter[0].ToString();
+	txtBoxes[23]->Text = HipCenter[1].ToString();
+	txtBoxes[24]->Text = HipLeft[0].ToString();
+	txtBoxes[25]->Text = HipLeft[1].ToString();
+	txtBoxes[26]->Text = HipRight[0].ToString();
+	txtBoxes[27]->Text = HipRight[1].ToString();
+	txtBoxes[28]->Text = KneeLeft[0].ToString();
+	txtBoxes[29]->Text = KneeLeft[1].ToString();
+	txtBoxes[30]->Text = KneeRight[0].ToString();
+	txtBoxes[31]->Text = KneeRight[1].ToString();
+	txtBoxes[32]->Text = AnkleLeft[0].ToString();
+	txtBoxes[33]->Text = AnkleLeft[1].ToString();
+	txtBoxes[34]->Text = AnkleRight[0].ToString();
+	txtBoxes[35]->Text = AnkleRight[1].ToString();
+	txtBoxes[36]->Text = FootLeft[0].ToString();
+	txtBoxes[37]->Text = FootLeft[1].ToString();
+	txtBoxes[38]->Text = FootRight[0].ToString();
+	txtBoxes[39]->Text = FootRight[1].ToString();
 }

@@ -30,7 +30,7 @@ Void NamedPipeClient::pipeConnectDone(Object^ sender, RunWorkerCompletedEventArg
 
 		this->pipeWriter = gcnew StreamWriter(this->pipe);
 		this->pipeReader = gcnew StreamReader(this->pipe);
-		this->Message = "Connected to " + this->serverName;
+		this->ConnectionMessage = "Connected to " + this->serverName;
 		this->pipeWriteWorker->RunWorkerAsync();
 		this->pipeReadWorker->RunWorkerAsync();
 	}
@@ -88,7 +88,7 @@ Void NamedPipeClient::Start()
 {
 	try
 	{
-		this->Message = "Waiting for Connection";
+		this->ConnectionMessage = "Waiting for Connection";
 		this->pipeConnectWorker->RunWorkerAsync();
 	}
 	catch (Exception^)
@@ -99,5 +99,5 @@ Void NamedPipeClient::Start()
 
 Void NamedPipeClient::PipeBroke()
 {
-	this->Message = "Named Pipe Error";
+	this->ConnectionMessage = "Named Pipe Error";
 }

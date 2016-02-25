@@ -84,6 +84,7 @@ namespace SkeletonViewer
 
 		bool parseMessage(String^ msg, RECT bounds);
 		void drawSkeleton(ID2D1HwndRenderTarget* d2dRenderTarget, ID2D1SolidColorBrush* d2dBrush);
+		void printSkeleton(array<TextBox^>^ txtBoxes);
 
 	public:
 		SkeletonDrawer()
@@ -112,11 +113,12 @@ namespace SkeletonViewer
 			zeroSkeleton();
 		}
 
-		void parseAndDraw(String^ msg, ID2D1HwndRenderTarget* d2dRenderTarget, ID2D1SolidColorBrush* d2dBrush, RECT bounds)
+		void parseAndDraw(String^ msg, array<TextBox^>^ txtBoxes, ID2D1HwndRenderTarget* d2dRenderTarget, ID2D1SolidColorBrush* d2dBrush, RECT bounds)
 		{
 			if (!parseMessage(msg, bounds))
 				zeroSkeleton();
 			drawSkeleton(d2dRenderTarget, d2dBrush);
+			printSkeleton(txtBoxes);
 		}
 	};
 }
