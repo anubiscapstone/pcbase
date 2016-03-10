@@ -38,25 +38,24 @@
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(659, 502);
+            this.webBrowser1.Size = new System.Drawing.Size(879, 618);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.Url = new System.Uri("http://192.168.0.105:1235/javascript_simple.html", System.UriKind.Absolute);
             this.webBrowser1.WebBrowserShortcutsEnabled = false;
             // 
             // StreamViewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 502);
             this.Controls.Add(this.webBrowser1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "StreamViewer";
-            this.Text = "StreamViewer";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StreamViewer_FormClosing);
-            this.SizeChanged += new System.EventHandler(this.StreamViewer_SizeChanged);
+            this.Size = new System.Drawing.Size(879, 618);
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ResumeLayout(false);
 
         }
@@ -64,6 +63,5 @@
         #endregion
 
         private System.Windows.Forms.WebBrowser webBrowser1;
-
     }
 }

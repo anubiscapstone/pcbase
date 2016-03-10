@@ -15,23 +15,21 @@ namespace AnubisClient
     public static class SensorEngine
     {
         //List of sensor devices to be polled.
-        private static List<SensorInterface> readyDevices;
+        private static List<SensorInterface> readyDevices = new List<SensorInterface>();
 
         /// <summary>
-        /// Finds all of the Sensors that can be started and starts them.
-        /// This should be called to have the system start "sensing"
+        /// Finds all of the devices that can be started
         /// </summary>
-        public static void StartDevices()
+        public static void StartDevice(SensorInterface sensor)
         {
-            DiscoverDevices();
-            foreach (SensorInterface hi in readyDevices)
-                hi.StartDeviceServer();
+            sensor.StartDeviceServer();
+            readyDevices.Add(sensor);
         }
 
         /// <summary>
         /// Finds all of the devices that can be started
         /// </summary>
-        private static void DiscoverDevices()
+        public static List<SensorInterface> DiscoverDevices()
         {
             List<SensorInterface> devices = new List<SensorInterface>();
             foreach(Type t in Assembly.GetAssembly(typeof(SensorInterface)).GetTypes())
@@ -43,7 +41,7 @@ namespace AnubisClient
                         devices.Add(HI);
                 }
             }
-            readyDevices = devices;
+            return devices;
         }
 
         /// <summary>

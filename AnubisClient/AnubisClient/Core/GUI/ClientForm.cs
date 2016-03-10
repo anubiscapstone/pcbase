@@ -17,47 +17,9 @@ namespace AnubisClient
     /// </summary>
     public partial class ClientForm : Form
     {
-        /// <summary>
-        /// Initializes the active forms and sets the MDI Parent form
-        /// </summary>
-        private StreamViewer SV;
         public ClientForm()
         {
-            this.IsMdiContainer = true;
-            SV = new StreamViewer();
-            SV.MdiParent = this;
-
             InitializeComponent();
-            
-        }
-
-        //On Load, adds the active hardware to the toolstrip menu to allow a user to select that hardware menu
-        private void ClientForm_Load(object sender, EventArgs e)
-        {
-            tscb_HardwareList.Items.Add("");
-        }
-
-        /// <summary>
-        /// Detects a change in the hardware toolstrip selection. Opens the appropriate form for the selected hardware
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tscb_HardwareList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string IDENT = sender.ToString().Split(',').First().ToLower();
-            ts_ViewWindow.HideDropDown();
-
-        }
-
-        /// <summary>
-        /// Resets certain properties of the toolstrip menu when closed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ts_ViewWindow_DropDownClosed(object sender, EventArgs e)
-        {
-            tscb_HardwareList.SelectedIndex = 0;
-
         }
 
         /// <summary>
@@ -70,15 +32,51 @@ namespace AnubisClient
             Application.Exit();
         }
 
-        /// <summary>
-        /// Opens the stream viewing form when selected
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void streamViewerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            SV.Show();
+            int i = (sender as TabControl).SelectedIndex;
+            switch (i)
+            {
+                case 1:
+                    refreshSensors();
+                    break;
+                default:
+                    break;
+            }
         }
 
+        private void refreshSensors()
+        {
+            sensorListBox.Items.Clear();
+            sensorList = SensorEngine.DiscoverDevices();
+            foreach (SensorInterface s in sensorList)
+            {
+                sensorListBox.Items.Add(s.Name());
+            }
+        }
+
+        private void refreshSensorsBtn_Click(object sender, EventArgs e)
+        {
+            refreshSensors();
+        }
+
+        private List<SensorInterface> sensorList;
+        private SensorInterface selectSensor;
+
+        private void sensorListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(sensorList != null)
+            {
+                selectSensor = sensorList[(sender as ListBox).SelectedIndex];
+            }
+        }
+
+        private void startSensorBtn_Click(object sender, EventArgs e)
+        {
+            if(selectSensor != null)
+            {
+                SensorEngine.StartDevice(selectSensor);
+            }
+        }
     }
 }

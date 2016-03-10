@@ -72,5 +72,10 @@ namespace AnubisClient
             }
             mod.Joints[SkeletonRep.JointType.Head].Tracked = true;
         }
+
+        public override string Name()
+        {
+            return "Oculus Rift";
+        }
     }
 }

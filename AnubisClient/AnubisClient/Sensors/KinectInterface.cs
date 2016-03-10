@@ -187,5 +187,10 @@ namespace AnubisClient
                 mod.Joints[SkeletonRep.JointType.FootRight] = Skeleton.Joints[SkeletonRep.JointType.FootRight];
             }
         }
+
+        public override string Name()
+        {
+            return "Microsoft Kinect";
+        }
     }
 }

@@ -48,9 +48,6 @@ namespace AnubisClient
             pipeServer.NewControlEvent += ControlEngine.AddNewRobot;
             pipeServer.StartServer();
 
-            //Start up all of the Sensors
-            SensorEngine.StartDevices();
-
             //When we're done, wait a moment and then show the main form
             Thread.Sleep(1000);
             Splash.Close();

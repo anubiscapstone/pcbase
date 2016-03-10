@@ -22,8 +22,13 @@ namespace AnubisClient
         public abstract void StartDeviceServer();
 
         /// <summary>
-        /// 
+        /// Adds whatever information this Sensor tracks to the Skeleton
         /// </summary>
         public abstract void ModifyModel(SkeletonRep mod);
+
+        /// <summary>
+        /// Return friendly name for GUI purposes
+        /// </summary>
+        public abstract string Name();
     }
 }

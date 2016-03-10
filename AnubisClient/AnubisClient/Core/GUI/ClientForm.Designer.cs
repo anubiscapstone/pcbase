@@ -28,148 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NetCommWorker = new System.ComponentModel.BackgroundWorker();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ts_ViewWindow = new System.Windows.Forms.ToolStripMenuItem();
-            this.ts_NetworkMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.activeRobotsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tscb_RobotMenu = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ts_HardwareMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.kinect1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tscb_HardwareList = new System.Windows.Forms.ToolStripComboBox();
-            this.kinect3ToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.streamViewerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ts_OptionsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.sensorListBox = new System.Windows.Forms.ListBox();
+            this.refreshSensorsBtn = new System.Windows.Forms.Button();
+            this.streamViewer1 = new AnubisClient.StreamViewer();
+            this.startSensorBtn = new System.Windows.Forms.Button();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // tabControl1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ts_ViewWindow});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(13, 13);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(936, 695);
+            this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
-            // ts_ViewWindow
+            // tabPage1
             // 
-            this.ts_ViewWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ts_NetworkMenu,
-            this.ts_HardwareMenu,
-            this.streamViewerToolStripMenuItem,
-            this.ts_OptionsMenu});
-            this.ts_ViewWindow.Name = "ts_ViewWindow";
-            this.ts_ViewWindow.Size = new System.Drawing.Size(96, 20);
-            this.ts_ViewWindow.Text = "View Windows";
-            this.ts_ViewWindow.DropDownClosed += new System.EventHandler(this.ts_ViewWindow_DropDownClosed);
+            this.tabPage1.Controls.Add(this.streamViewer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(928, 666);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Stream Viewer";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ts_NetworkMenu
+            // tabPage2
             // 
-            this.ts_NetworkMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.activeRobotsToolStripMenuItem,
-            this.tscb_RobotMenu,
-            this.toolStripSeparator1});
-            this.ts_NetworkMenu.Name = "ts_NetworkMenu";
-            this.ts_NetworkMenu.Size = new System.Drawing.Size(149, 22);
-            this.ts_NetworkMenu.Text = "Network";
+            this.tabPage2.Controls.Add(this.startSensorBtn);
+            this.tabPage2.Controls.Add(this.sensorListBox);
+            this.tabPage2.Controls.Add(this.refreshSensorsBtn);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(928, 666);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Sensors";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // activeRobotsToolStripMenuItem
+            // sensorListBox
             // 
-            this.activeRobotsToolStripMenuItem.Enabled = false;
-            this.activeRobotsToolStripMenuItem.Name = "activeRobotsToolStripMenuItem";
-            this.activeRobotsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.activeRobotsToolStripMenuItem.Text = "Active Robots";
+            this.sensorListBox.FormattingEnabled = true;
+            this.sensorListBox.ItemHeight = 16;
+            this.sensorListBox.Location = new System.Drawing.Point(21, 60);
+            this.sensorListBox.Name = "sensorListBox";
+            this.sensorListBox.Size = new System.Drawing.Size(170, 100);
+            this.sensorListBox.TabIndex = 1;
+            this.sensorListBox.SelectedIndexChanged += new System.EventHandler(this.sensorListBox_SelectedIndexChanged);
             // 
-            // tscb_RobotMenu
+            // refreshSensorsBtn
             // 
-            this.tscb_RobotMenu.Name = "tscb_RobotMenu";
-            this.tscb_RobotMenu.Size = new System.Drawing.Size(121, 23);
+            this.refreshSensorsBtn.Location = new System.Drawing.Point(21, 17);
+            this.refreshSensorsBtn.Name = "refreshSensorsBtn";
+            this.refreshSensorsBtn.Size = new System.Drawing.Size(170, 29);
+            this.refreshSensorsBtn.TabIndex = 0;
+            this.refreshSensorsBtn.Text = "Refresh Devices";
+            this.refreshSensorsBtn.UseVisualStyleBackColor = true;
+            this.refreshSensorsBtn.Click += new System.EventHandler(this.refreshSensorsBtn_Click);
             // 
-            // toolStripSeparator1
+            // streamViewer1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
+            this.streamViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.streamViewer1.Location = new System.Drawing.Point(23, 24);
+            this.streamViewer1.Margin = new System.Windows.Forms.Padding(4);
+            this.streamViewer1.Name = "streamViewer1";
+            this.streamViewer1.Size = new System.Drawing.Size(879, 618);
+            this.streamViewer1.TabIndex = 0;
             // 
-            // ts_HardwareMenu
+            // startSensorBtn
             // 
-            this.ts_HardwareMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kinect1ToolStripMenuItem,
-            this.tscb_HardwareList,
-            this.kinect3ToolStripMenuItem});
-            this.ts_HardwareMenu.Name = "ts_HardwareMenu";
-            this.ts_HardwareMenu.Size = new System.Drawing.Size(149, 22);
-            this.ts_HardwareMenu.Text = "Hardware";
-            // 
-            // kinect1ToolStripMenuItem
-            // 
-            this.kinect1ToolStripMenuItem.BackColor = System.Drawing.SystemColors.Window;
-            this.kinect1ToolStripMenuItem.Enabled = false;
-            this.kinect1ToolStripMenuItem.Name = "kinect1ToolStripMenuItem";
-            this.kinect1ToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.kinect1ToolStripMenuItem.Text = "Active Hardware";
-            // 
-            // tscb_HardwareList
-            // 
-            this.tscb_HardwareList.Name = "tscb_HardwareList";
-            this.tscb_HardwareList.Size = new System.Drawing.Size(152, 23);
-            this.tscb_HardwareList.SelectedIndexChanged += new System.EventHandler(this.tscb_HardwareList_SelectedIndexChanged);
-            // 
-            // kinect3ToolStripMenuItem
-            // 
-            this.kinect3ToolStripMenuItem.Name = "kinect3ToolStripMenuItem";
-            this.kinect3ToolStripMenuItem.Size = new System.Drawing.Size(209, 6);
-            // 
-            // streamViewerToolStripMenuItem
-            // 
-            this.streamViewerToolStripMenuItem.Name = "streamViewerToolStripMenuItem";
-            this.streamViewerToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.streamViewerToolStripMenuItem.Text = "Stream Viewer";
-            this.streamViewerToolStripMenuItem.Click += new System.EventHandler(this.streamViewerToolStripMenuItem_Click);
-            // 
-            // ts_OptionsMenu
-            // 
-            this.ts_OptionsMenu.Name = "ts_OptionsMenu";
-            this.ts_OptionsMenu.Size = new System.Drawing.Size(149, 22);
-            this.ts_OptionsMenu.Text = "Options";
+            this.startSensorBtn.Location = new System.Drawing.Point(206, 60);
+            this.startSensorBtn.Name = "startSensorBtn";
+            this.startSensorBtn.Size = new System.Drawing.Size(170, 29);
+            this.startSensorBtn.TabIndex = 2;
+            this.startSensorBtn.Text = "Start Device";
+            this.startSensorBtn.UseVisualStyleBackColor = true;
+            this.startSensorBtn.Click += new System.EventHandler(this.startSensorBtn_Click);
             // 
             // ClientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 682);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(964, 723);
+            this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ClientForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
-            this.Load += new System.EventHandler(this.ClientForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.ComponentModel.BackgroundWorker NetCommWorker;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ts_ViewWindow;
-        private System.Windows.Forms.ToolStripMenuItem ts_NetworkMenu;
-        private System.Windows.Forms.ToolStripMenuItem ts_HardwareMenu;
-        private System.Windows.Forms.ToolStripMenuItem ts_OptionsMenu;
-        private System.Windows.Forms.ToolStripComboBox tscb_HardwareList;
-        private System.Windows.Forms.ToolStripSeparator kinect3ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kinect1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem activeRobotsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox tscb_RobotMenu;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem streamViewerToolStripMenuItem;
-
-
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private StreamViewer streamViewer1;
+        private System.Windows.Forms.ListBox sensorListBox;
+        private System.Windows.Forms.Button refreshSensorsBtn;
+        private System.Windows.Forms.Button startSensorBtn;
     }
 }
