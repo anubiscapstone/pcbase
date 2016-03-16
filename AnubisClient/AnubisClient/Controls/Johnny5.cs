@@ -155,7 +155,6 @@ namespace AnubisClient
                 double DZ = -(mod.Joints[SkeletonRep.JointType.MiddleLeft].Z - mod.Joints[SkeletonRep.JointType.ThumbLeft].Z);
 
                 hand1Dist = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DY, 2) + Math.Pow(DZ, 2));
-                System.Diagnostics.Debug.WriteLine("Hand 1: " + hand1Dist);
             }
 
             if (mod.Joints[SkeletonRep.JointType.MiddleRight].Tracked && mod.Joints[SkeletonRep.JointType.ThumbRight].Tracked)
@@ -165,7 +164,6 @@ namespace AnubisClient
                 double DZ = -(mod.Joints[SkeletonRep.JointType.MiddleRight].Z - mod.Joints[SkeletonRep.JointType.ThumbRight].Z);
 
                 hand2Dist = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DY, 2) + Math.Pow(DZ, 2));
-                System.Diagnostics.Debug.WriteLine("Hand 2: " + hand2Dist);
             }
 
             servoPositions[13] = angleDecode(headAngleX);
