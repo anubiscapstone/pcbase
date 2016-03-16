@@ -15,6 +15,7 @@ namespace AnubisClient.Sensors
         public LeapInterface()
         {
             controller = new Controller();
+            // POLICY_BACKGROUND_FRAMES allows for the application to continuously track even when the application is in the background
             controller.SetPolicy(Controller.PolicyFlag.POLICY_BACKGROUND_FRAMES);
             listener = new LeapEventListener();
         }
@@ -24,11 +25,15 @@ namespace AnubisClient.Sensors
             public Hand trackedLeft = null;
             public Hand trackedRight = null;
             int i;
+
+            // This method is called each time the Event Listener is notified of a new Frame Object
             public override void OnFrame(Controller controller)
             {
                 Hand tempLeft = null;
                 Hand tempRight = null;
 
+                // This loop begins when a hand object enters the scope of the device, it then determines if its a Left or Right hand 
+                // and sets the value of that hand to its corresponding hand variable
                 foreach (Hand h in controller.Frame().Hands)
                 {
                     if ((tempLeft == null) && (h.IsLeft))
@@ -55,7 +60,7 @@ namespace AnubisClient.Sensors
 
             if (tempLeft != null)
             {
-                mod.Joints[SkeletonRep.JointType.HandLeft].Tracked = true;
+                // Sets values for SkeletonRep X, Y, Z, & Tracked
                 foreach (Finger f in tempLeft.Fingers)
                 {
                     
@@ -94,18 +99,14 @@ namespace AnubisClient.Sensors
                     }
                 }
             }
-            else
-            {
-                mod.Joints[SkeletonRep.JointType.HandLeft].Tracked = false;
-            }
 
             if (tempRight != null)
             {
-                mod.Joints[SkeletonRep.JointType.HandRight].Tracked = true;
+                // Sets values for SkeletonRep X, Y, Z, & Tracked
                 foreach (Finger f in tempRight.Fingers)
                 {
-                    
-                    switch(f.Type)
+
+                    switch (f.Type)
                     {
                         case Finger.FingerType.TYPE_THUMB:
                             mod.Joints[SkeletonRep.JointType.ThumbRight].X = f.TipPosition.x;
@@ -116,13 +117,13 @@ namespace AnubisClient.Sensors
                         case Finger.FingerType.TYPE_INDEX:
                             mod.Joints[SkeletonRep.JointType.IndexRight].X = f.TipPosition.x;
                             mod.Joints[SkeletonRep.JointType.IndexRight].Y = f.TipPosition.y;
-                            mod.Joints[SkeletonRep.JointType.IndexRight].Z= f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.IndexRight].Z = f.TipPosition.z;
                             mod.Joints[SkeletonRep.JointType.IndexRight].Tracked = true;
                             break;
                         case Finger.FingerType.TYPE_MIDDLE:
                             mod.Joints[SkeletonRep.JointType.MiddleRight].X = f.TipPosition.x;
                             mod.Joints[SkeletonRep.JointType.MiddleRight].Y = f.TipPosition.y;
-                            mod.Joints[SkeletonRep.JointType.MiddleRight].Z =  f.TipPosition.z;
+                            mod.Joints[SkeletonRep.JointType.MiddleRight].Z = f.TipPosition.z;
                             mod.Joints[SkeletonRep.JointType.MiddleRight].Tracked = true;
                             break;
                         case Finger.FingerType.TYPE_RING:
@@ -140,11 +141,6 @@ namespace AnubisClient.Sensors
                     }
                 }
             }
-            else
-            {
-                mod.Joints[SkeletonRep.JointType.HandRight].Tracked = false;
-            }
-          
         }
 
         public override bool DetectDevice()
