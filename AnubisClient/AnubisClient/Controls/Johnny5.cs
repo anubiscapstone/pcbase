@@ -25,14 +25,37 @@ namespace AnubisClient
         }
 
         /// <summary>
+        /// Ensures val is between min and max
+        /// </summary>
+        private double clamp(double val, double min, double max)
+        {
+            return Math.Max(min, Math.Min(max, val));
+        }
+        
+        /// <summary>
+        /// Linear interpolation of val from [inmin, inmax] to [outmin, outmax]
+        /// </summary>
+        private double interpolate(double val, double inmin, double inmax, double outmin, double outmax)
+        {
+            return outmin + (clamp(val, inmin, inmax) - inmin) * ((outmax - outmin) / (inmax - inmin));
+        }
+
+        /// <summary>
+        /// Translate HandDist [12, 175] into a Servo value [1025, 1975]
+        /// </summary>
+        private int handDistDecode(double handDist, bool reverse)
+        {
+            double temp = interpolate(handDist, 12, 175, 1025, 1975);
+            return (int)(reverse ? (1975 - (temp - 1025)) : temp);
+        }
+
+        /// <summary>
         /// Translate angle (in degrees) to a servo value in the range [600,2400]
         /// </summary>
         private int angleDecode(double angle)
         {
-            //clamp angle between 0 and 180 degrees
-            angle = Math.Max(0, Math.Min(180, angle));
             //interpolate the angles into the servo values' space with the linear function servo = 10(angle) + 600
-            return (int)(angle * 10) + 600;
+            return (int)interpolate(angle, 0, 180, 600, 2400);
         }
 
         /// <summary>
@@ -78,6 +101,10 @@ namespace AnubisClient
             double arm2AngleY = 90.0;
             double foot1Angle = 90.0;
             double foot2Angle = 90.0;
+            
+            // Hand 1 = Left, Hand 2 = Right
+            double hand1Dist = 94.0;
+            double hand2Dist = 94.0;
 
             if(mod.Joints[SkeletonRep.JointType.Head].Tracked)
             {
@@ -121,6 +148,26 @@ namespace AnubisClient
                     foot2Angle = mod.Joints[SkeletonRep.JointType.FootRight].Pitch;
             }
 
+            if (mod.Joints[SkeletonRep.JointType.MiddleLeft].Tracked && mod.Joints[SkeletonRep.JointType.ThumbLeft].Tracked)
+            {
+                double DX = -(mod.Joints[SkeletonRep.JointType.MiddleLeft].X - mod.Joints[SkeletonRep.JointType.ThumbLeft].X);
+                double DY = mod.Joints[SkeletonRep.JointType.MiddleLeft].Y - mod.Joints[SkeletonRep.JointType.ThumbLeft].Y;
+                double DZ = -(mod.Joints[SkeletonRep.JointType.MiddleLeft].Z - mod.Joints[SkeletonRep.JointType.ThumbLeft].Z);
+
+                hand1Dist = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DY, 2) + Math.Pow(DZ, 2));
+                System.Diagnostics.Debug.WriteLine("Hand 1: " + hand1Dist);
+            }
+
+            if (mod.Joints[SkeletonRep.JointType.MiddleRight].Tracked && mod.Joints[SkeletonRep.JointType.ThumbRight].Tracked)
+            {
+                double DX = -(mod.Joints[SkeletonRep.JointType.MiddleRight].X - mod.Joints[SkeletonRep.JointType.ThumbRight].X);
+                double DY = mod.Joints[SkeletonRep.JointType.MiddleRight].Y - mod.Joints[SkeletonRep.JointType.ThumbRight].Y;
+                double DZ = -(mod.Joints[SkeletonRep.JointType.MiddleRight].Z - mod.Joints[SkeletonRep.JointType.ThumbRight].Z);
+
+                hand2Dist = Math.Sqrt(Math.Pow(DX, 2) + Math.Pow(DY, 2) + Math.Pow(DZ, 2));
+                System.Diagnostics.Debug.WriteLine("Hand 2: " + hand2Dist);
+            }
+
             servoPositions[13] = angleDecode(headAngleX);
             servoPositions[16] = angleDecode(headAngleY);
 
@@ -132,6 +179,9 @@ namespace AnubisClient
             
             servoPositions[14] = angleDecode(foot2Angle);
             servoPositions[15] = angleDecode(foot1Angle);
+
+            servoPositions[7] = handDistDecode(hand2Dist, true);
+            servoPositions[12] = handDistDecode(hand1Dist, false);
 
             storeVector();
         }
