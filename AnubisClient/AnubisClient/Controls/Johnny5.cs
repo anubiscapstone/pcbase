@@ -20,7 +20,8 @@ namespace AnubisClient
             : base(commSock)
         {
             //set all servos to the mid-point
-            for (int i = 0; i < servoPositions.Length; i++)
+            servoPositions[0] = 1650; //Hip is slightly offcenter at 1500
+            for (int i = 1; i < servoPositions.Length; i++)
                 servoPositions[i] = 1500;
         }
 
