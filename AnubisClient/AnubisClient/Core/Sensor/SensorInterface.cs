@@ -12,14 +12,24 @@ namespace AnubisClient
     public abstract class SensorInterface
     {
         /// <summary>
-        /// Provides an interface to request skeleton data from Sensors
+        /// Returns true if this Sensor can start tracking information
         /// </summary>
         public abstract bool DetectDevice();
 
         /// <summary>
-        /// Provides an interface to request skeleton data from Sensors
+        /// Returns true if this Sensor has started tracking
         /// </summary>
-        public abstract void StartDeviceServer();
+        public abstract bool IsTracking();
+
+        /// <summary>
+        /// Starts tracking information from this Sensor
+        /// </summary>
+        public abstract void StartDeviceTracking();
+
+        /// <summary>
+        /// Stops tracking information from this Sensor
+        /// </summary>
+        public abstract void StopDeviceTracking();
 
         /// <summary>
         /// Adds whatever information this Sensor tracks to the Skeleton

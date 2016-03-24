@@ -130,5 +130,9 @@ namespace AnubisClient
             if (eventCopy != null) eventCopy(this, control);
         }
 
+        /// <summary>
+        /// String to uniquely identify this particular Communication Engine instance
+        /// </summary>
+        public abstract string Identifier();
     }
 }

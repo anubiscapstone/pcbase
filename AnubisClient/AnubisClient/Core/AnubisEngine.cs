@@ -23,9 +23,6 @@ namespace AnubisClient
         //main worker thread
         private static BackgroundWorker thread = new BackgroundWorker();
 
-        private static NetworkEngine netServer = new NetworkEngine(1337);
-        private static NamedPipeEngine pipeServer = new NamedPipeEngine("anubis-pipe");
-
         /// <summary>
         /// Called by Program.cs
         /// Starts the ANUBISENGINE.  Nothing happens before this is called. 
@@ -40,13 +37,6 @@ namespace AnubisClient
             //Setup main worker thread
             thread.WorkerSupportsCancellation = true;
             thread.DoWork += new DoWorkEventHandler(thread_doWork);
-
-            //Set up two Communication Engines.
-            netServer.NewControlEvent += ControlEngine.AddNewRobot;
-            netServer.StartServer();
-            
-            pipeServer.NewControlEvent += ControlEngine.AddNewRobot;
-            pipeServer.StartServer();
 
             //When we're done, wait a moment and then show the main form
             Thread.Sleep(1000);

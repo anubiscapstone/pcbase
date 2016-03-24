@@ -35,5 +35,10 @@ namespace AnubisClient
             await Task.Factory.FromAsync(pipe.BeginWaitForConnection, pipe.EndWaitForConnection, pipe).ConfigureAwait(false);
             return new NamedPipe(pipe, cancelToken);
         }
+
+        public override string Identifier()
+        {
+            return "Named Pipe Engine (" + name + ")";
+        }
     }
 }

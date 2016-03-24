@@ -50,14 +50,21 @@ namespace AnubisClient
         }
 
         private List<SensorInterface> sensorList = new List<SensorInterface>();
+        private List<SensorInterface> activeSensorList = new List<SensorInterface>();
         private SensorInterface selectSensor;
+        private SensorInterface selectActiveSensor;
 
         private void refreshSensors()
         {
+            activeSensorListBox.Items.Clear();
+            activeSensorList = activeSensorList.Where((a) => { return a.IsTracking(); }).ToList(); //ensure still active
+            foreach (SensorInterface s in activeSensorList)
+                activeSensorListBox.Items.Add(s.Name());
+
             sensorListBox.Items.Clear();
             sensorList = SensorEngine.DiscoverDevices();
             foreach (SensorInterface s in sensorList)
-                sensorListBox.Items.Add(s.Name());
+                if(!activeSensorList.Exists((a) => { return a.GetType() == s.GetType(); })) sensorListBox.Items.Add(s.Name()); //only inactive
         }
 
         private void refreshSensorsBtn_Click(object sender, EventArgs e)
@@ -78,12 +85,33 @@ namespace AnubisClient
             if(selectSensor != null)
             {
                 SensorEngine.StartDevice(selectSensor);
+                activeSensorList.Add(selectSensor);
+                refreshSensors();
+            }
+        }
+
+        private void activeSensorListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (activeSensorList != null && activeSensorList.Count > 0)
+            {
+                selectActiveSensor = activeSensorList[(sender as ListBox).SelectedIndex];
+            }
+        }
+
+        private void stopSensorBtn_Click(object sender, EventArgs e)
+        {
+            if (selectActiveSensor != null)
+            {
+                SensorEngine.StopDevice(selectActiveSensor);
+                activeSensorList.Remove(selectActiveSensor);
+                refreshSensors();
             }
         }
 
         private List<CommunicationsEngine> activeCommsList = new List<CommunicationsEngine>();
-        private List<Type> commsList = new List<Type>();
+        private List<Type> commsTypeList = new List<Type>();
         private Type selectComm;
+        private CommunicationsEngine selectActiveComm;
         private int commArgCount = 0;
         private Type[] commArgTypes = new Type[5];
 
@@ -104,12 +132,16 @@ namespace AnubisClient
 
         private void refreshComms()
         {
-            commsList.Clear();
+            activeCommListBox.Items.Clear();
+            foreach (CommunicationsEngine ce in activeCommsList)
+                activeCommListBox.Items.Add(ce.Identifier());
+
+            commsTypeList.Clear();
             commListBox.Items.Clear();
             foreach (Type t in Assembly.GetAssembly(typeof(CommunicationsEngine)).GetTypes())
                 if (t.IsClass && !t.IsAbstract && t.IsSubclassOf(typeof(CommunicationsEngine)))
                 {
-                    commsList.Add(t);
+                    commsTypeList.Add(t);
                     commListBox.Items.Add(t.Name);
                 }
         }
@@ -127,9 +159,9 @@ namespace AnubisClient
         private void commListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             HideCommArgs();
-            if (commsList != null && commsList.Count > 0)
+            if (commsTypeList != null && commsTypeList.Count > 0)
             {
-                selectComm = commsList[(sender as ListBox).SelectedIndex];
+                selectComm = commsTypeList[(sender as ListBox).SelectedIndex];
                 commArgCount = 0;
                 foreach(ParameterInfo p in selectComm.GetConstructors()[0].GetParameters())
                 {
@@ -175,8 +207,32 @@ namespace AnubisClient
                         parms[i] = p;
                     }
                 }
-                activeCommsList.Add((CommunicationsEngine)Activator.CreateInstance(selectComm, parms));
+                CommunicationsEngine ce = (CommunicationsEngine)Activator.CreateInstance(selectComm, parms);
+                if (ce == null)
+                    return;
+                ce.NewControlEvent += ControlEngine.AddNewRobot;
+                ce.StartServer();
+                activeCommsList.Add(ce);
+                refreshComms();
             }
+        }
+
+        private void activeCommListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (activeCommsList != null && activeCommsList.Count > 0)
+            {
+                selectActiveComm = activeCommsList[(sender as ListBox).SelectedIndex];
+            }
+        }
+
+        private void stopCommBtn_Click(object sender, EventArgs e)
+        {
+            if (selectActiveComm != null)
+            {
+                selectActiveComm.StopServer();
+                activeCommsList.Remove(selectActiveComm);
+            }
+            refreshComms();
         }
     }
 }

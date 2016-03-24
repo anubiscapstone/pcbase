@@ -40,5 +40,10 @@ namespace AnubisClient
         {
             return new Sock(await serversock.AcceptTcpClientAsync().ConfigureAwait(false), cancelToken);
         }
+
+        public override string Identifier()
+        {
+            return "Network Engine (" + port + ")";
+        }
     }
 }

@@ -18,12 +18,25 @@ namespace AnubisClient
         private static List<SensorInterface> readyDevices = new List<SensorInterface>();
 
         /// <summary>
-        /// Finds all of the devices that can be started
+        /// Start a SensorInterface
         /// </summary>
         public static void StartDevice(SensorInterface sensor)
         {
-            sensor.StartDeviceServer();
+            if (sensor.IsTracking())
+                return;
+            sensor.StartDeviceTracking();
             readyDevices.Add(sensor);
+        }
+
+        /// <summary>
+        /// Stop a SensorInterface
+        /// </summary>
+        public static void StopDevice(SensorInterface sensor)
+        {
+            if (!sensor.IsTracking())
+                return;
+            sensor.StopDeviceTracking();
+            readyDevices.Remove(sensor);
         }
 
         /// <summary>

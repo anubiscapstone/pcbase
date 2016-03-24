@@ -19,6 +19,8 @@ namespace AnubisClient
 
         public override bool DetectDevice()
         {
+            if (IsTracking())
+                return true;
             //Looks for a connected Kinect and returns true if one is found.
             foreach (var potential in KinectSensor.KinectSensors)
             {
@@ -31,10 +33,10 @@ namespace AnubisClient
             return false;
         }
 
-        public override void StartDeviceServer()
+        public override void StartDeviceTracking()
         {
             //Sets up the Kinect to start tracking, hooks the new frame event, and starts the tracking
-            if (Sensor != null)
+            if (!IsTracking() && Sensor != null)
             {
                 Sensor.SkeletonStream.Enable();
                 Sensor.SkeletonFrameReady += this.Sensor_SkeletonFrameReady;
@@ -163,6 +165,9 @@ namespace AnubisClient
 
         public override void ModifyModel(SkeletonRep mod)
         {
+            if (!IsTracking())
+                return;
+
             SkeletonRep Skeleton = this.Skeleton;
             if(!useNeutralSkeleton)
             {
@@ -191,6 +196,22 @@ namespace AnubisClient
         public override string Name()
         {
             return "Microsoft Kinect";
+        }
+
+        public override bool IsTracking()
+        {
+            if(Sensor != null)
+                return Sensor.SkeletonStream.IsEnabled;
+            return false;
+        }
+
+        public override void StopDeviceTracking()
+        {
+            if (IsTracking())
+            {
+                Sensor.SkeletonStream.Disable();
+                Sensor.SkeletonFrameReady -= this.Sensor_SkeletonFrameReady;
+            }
         }
     }
 }

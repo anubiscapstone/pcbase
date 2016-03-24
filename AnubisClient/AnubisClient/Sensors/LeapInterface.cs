@@ -54,6 +54,9 @@ namespace AnubisClient.Sensors
 
         public override void ModifyModel(SkeletonRep mod)
         {
+            if (!IsTracking())
+                return;
+
             Hand tempLeft = listener.trackedLeft;
             Hand tempRight = listener.trackedRight;
 
@@ -144,7 +147,6 @@ namespace AnubisClient.Sensors
 
         public override bool DetectDevice()
         {
-
             foreach (var d in controller.Devices)
             {
                 if (d.IsStreaming)
@@ -155,14 +157,32 @@ namespace AnubisClient.Sensors
             return false;
         }
 
-        public override void StartDeviceServer()
+        public override void StartDeviceTracking()
         {
+            if (IsTracking())
+                return;
             controller.AddListener(listener);
+            tracking = true;
         }
 
         public override string Name()
         {
             return "Leap Motion";
+        }
+
+        private bool tracking = false;
+
+        public override bool IsTracking()
+        {
+            return tracking;
+        }
+
+        public override void StopDeviceTracking()
+        {
+            if (!IsTracking())
+                return;
+            controller.RemoveListener(listener);
+            tracking = false;
         }
     }
 }
