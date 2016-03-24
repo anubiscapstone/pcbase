@@ -76,7 +76,11 @@ namespace AnubisClient
         {
             if(sensorList != null && sensorList.Count > 0)
             {
-                selectSensor = sensorList[(sender as ListBox).SelectedIndex];
+                int index = (sender as ListBox).SelectedIndex;
+                if (index >= 0)
+                    selectSensor = sensorList[index];
+                else
+                    selectSensor = null;
             }
         }
 
@@ -94,7 +98,11 @@ namespace AnubisClient
         {
             if (activeSensorList != null && activeSensorList.Count > 0)
             {
-                selectActiveSensor = activeSensorList[(sender as ListBox).SelectedIndex];
+                int index = (sender as ListBox).SelectedIndex;
+                if (index >= 0)
+                    selectActiveSensor = activeSensorList[index];
+                else
+                    selectActiveSensor = null;
             }
         }
 
@@ -161,7 +169,14 @@ namespace AnubisClient
             HideCommArgs();
             if (commsTypeList != null && commsTypeList.Count > 0)
             {
-                selectComm = commsTypeList[(sender as ListBox).SelectedIndex];
+                int index = (sender as ListBox).SelectedIndex;
+                if (index >= 0)
+                    selectComm = commsTypeList[index];
+                else
+                {
+                    selectComm = null;
+                    return;
+                }
                 commArgCount = 0;
                 foreach(ParameterInfo p in selectComm.GetConstructors()[0].GetParameters())
                 {
@@ -221,7 +236,11 @@ namespace AnubisClient
         {
             if (activeCommsList != null && activeCommsList.Count > 0)
             {
-                selectActiveComm = activeCommsList[(sender as ListBox).SelectedIndex];
+                int index = (sender as ListBox).SelectedIndex;
+                if (index >= 0)
+                    selectActiveComm = activeCommsList[index];
+                else
+                    selectActiveComm = null;
             }
         }
 
