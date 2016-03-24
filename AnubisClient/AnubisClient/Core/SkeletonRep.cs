@@ -39,7 +39,18 @@ namespace AnubisClient
             AnkleLeft,
             AnkleRight,
             FootLeft,
-            FootRight
+            FootRight,
+            ThumbRight,
+            ThumbLeft,
+            IndexRight,
+            IndexLeft,
+            MiddleRight,
+            MiddleLeft,
+            RingRight,
+            RingLeft,
+            PinkyRight,
+            PinkyLeft
+
         }
         /// <summary>
         /// Provides an enumerable interface to a collection of Joint3Ds
