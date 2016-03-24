@@ -57,6 +57,7 @@ namespace AnubisClient
                             AcceptConnection(comm, cancel.Token);
                     }
                 }
+                catch (Exception) { }
                 finally
                 {
                     StopServer();
