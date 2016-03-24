@@ -168,9 +168,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\Leap.dll">
+      <Link>Leap.dll</Link>
+      <Visible>False</Visible>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="lib\LeapCSharp.dll">
+      <Link>LeapCSharp.dll</Link>
+      <Visible>False</Visible>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
