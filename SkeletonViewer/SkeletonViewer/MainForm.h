@@ -140,26 +140,9 @@ namespace SkeletonViewer {
 			SafeRelease(dwTextFormat);
 		}
 
-		[SecurityPermission(SecurityAction::Demand, Flags = SecurityPermissionFlag::UnmanagedCode)]
-		virtual void WndProc(Message% m) override
+		virtual void OnPaint(PaintEventArgs^ e) override
 		{
-			// Listen for operating system messages.
-			switch (m.Msg)
-			{
-				case WM_PAINT:
-				{
-					Direct2DPaint();
-					this->Validate();
-					break;
-				}
-			}
-			Form::WndProc(m);
-		}
-
-		virtual void OnInvalidated(InvalidateEventArgs^ e) override
-		{
-			const RECT rc = { this->canvas->DisplayRectangle.Bottom ,this->canvas->DisplayRectangle.Left ,this->canvas->DisplayRectangle.Right ,this->canvas->DisplayRectangle.Top };
-			InvalidateRect(NULL, &rc, false);
+			Direct2DPaint();
 		}
 
 		virtual void newMessage()
@@ -170,6 +153,7 @@ namespace SkeletonViewer {
 		virtual void OnShown(EventArgs^ e) override
 		{
 			this->pipeClient->newMessage += gcnew NamedPipeClient::newMessageDelegate(this, &MainForm::newMessage);
+			this->Invalidate();
 		}
 
 	private:
