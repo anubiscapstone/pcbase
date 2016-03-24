@@ -24,7 +24,6 @@ namespace AnubisClient.Sensors
         {
             public Hand trackedLeft = null;
             public Hand trackedRight = null;
-            int i;
 
             // This method is called each time the Event Listener is notified of a new Frame Object
             public override void OnFrame(Controller controller)
@@ -159,6 +158,11 @@ namespace AnubisClient.Sensors
         public override void StartDeviceServer()
         {
             controller.AddListener(listener);
+        }
+
+        public override string Name()
+        {
+            return "Leap Motion";
         }
     }
 }
