@@ -32,21 +32,11 @@ namespace AnubisClient
             Application.Exit();
         }
 
-        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        private void ClientForm_Load(object sender, EventArgs e)
         {
-            int i = (sender as TabControl).SelectedIndex;
-            switch (i)
-            {
-                case 1:
-                    refreshSensors();
-                    break;
-                case 2:
-                    refreshComms();
-                    HideCommArgs();
-                    break;
-                default:
-                    break;
-            }
+            refreshSensors();
+            refreshComms();
+            HideCommArgs();
         }
 
         private List<SensorInterface> sensorList = new List<SensorInterface>();
@@ -231,7 +221,8 @@ namespace AnubisClient
                 CommunicationsEngine ce = (CommunicationsEngine)Activator.CreateInstance(selectComm, parms);
                 if (ce == null)
                     return;
-                ce.NewControlEvent += ControlEngine.AddNewRobot;
+                ce.NewControlEvent += ControlEngine.AddNewControl;
+                ce.NewControlEvent += this.ListControls;
                 ce.StartServer();
                 activeCommsList.Add(ce);
                 refreshComms();
@@ -258,6 +249,29 @@ namespace AnubisClient
                 activeCommsList.Remove(selectActiveComm);
             }
             refreshComms();
+        }
+
+        private delegate void ListControlsDelegate(object sender, ControlInterface newControl);
+        private void ListControls(object sender, ControlInterface newControl)
+        {
+            //ensure GUI thread safety
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new ListControlsDelegate(ListControls), sender, newControl);
+                return;
+            }
+            List<string> controls = ControlEngine.GetActiveControls();
+            controlListBox.Items.Clear();
+            foreach (string c in controls)
+                controlListBox.Items.Add(c);
+        }
+
+        private void stopControlBtn_Click(object sender, EventArgs e)
+        {
+            if (controlListBox.SelectedIndex < 0)
+                return;
+            ControlEngine.StopControl(controlListBox.SelectedIndex);
+            ListControls(this, null);
         }
     }
 }

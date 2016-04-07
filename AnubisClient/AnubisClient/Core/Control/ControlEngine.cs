@@ -19,8 +19,20 @@ namespace AnubisClient {
         /// Event handler for CommunicationEngine's NewControlEvent
         /// This will be called whenever a new Control is connected to the system and validated
         /// </summary>
-        public static void AddNewRobot(object sender, ControlInterface newControl){
+        public static void AddNewControl(object sender, ControlInterface newControl){
             activeControls.Add(newControl);
+        }
+
+        /// <summary>
+        /// Stops communication to a Control and removes its reference from the list of active Controls
+        /// </summary>
+        public static void StopControl(int controlIndex)
+        {
+            if (controlIndex >= activeControls.Count)
+                return;
+            ControlInterface c = activeControls[controlIndex];
+            activeControls.RemoveAt(controlIndex);
+            c.StopDevice();
         }
 
         /// <summary>
@@ -31,5 +43,13 @@ namespace AnubisClient {
             foreach(var c in activeControls)
                 c.UpdateSkeleton(mod);
 		}
+
+        public static List<string> GetActiveControls()
+        {
+            List<string> retval = new List<string>();
+            foreach (ControlInterface c in activeControls)
+                retval.Add(c.GetHeloString());
+            return retval;
+        }
 	}
 }

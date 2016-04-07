@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.streamViewer1 = new AnubisClient.StreamViewer();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.stopSensorBtn = new System.Windows.Forms.Button();
             this.activeSensorListBox = new System.Windows.Forms.ListBox();
             this.startSensorBtn = new System.Windows.Forms.Button();
             this.sensorListBox = new System.Windows.Forms.ListBox();
             this.refreshSensorsBtn = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.stopCommBtn = new System.Windows.Forms.Button();
             this.activeCommListBox = new System.Windows.Forms.ListBox();
             this.commArg5Txt = new System.Windows.Forms.TextBox();
             this.commArg5Lbl = new System.Windows.Forms.Label();
@@ -51,63 +47,14 @@
             this.commArg1Lbl = new System.Windows.Forms.Label();
             this.startCommBtn = new System.Windows.Forms.Button();
             this.commListBox = new System.Windows.Forms.ListBox();
-            this.stopCommBtn = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.streamViewer1 = new AnubisClient.StreamViewer();
+            this.controlListBox = new System.Windows.Forms.ListBox();
+            this.stopControlBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(13, 13);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(936, 695);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.streamViewer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(928, 666);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Stream Viewer";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // streamViewer1
-            // 
-            this.streamViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.streamViewer1.Location = new System.Drawing.Point(23, 24);
-            this.streamViewer1.Margin = new System.Windows.Forms.Padding(4);
-            this.streamViewer1.Name = "streamViewer1";
-            this.streamViewer1.Size = new System.Drawing.Size(879, 618);
-            this.streamViewer1.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.stopSensorBtn);
-            this.tabPage2.Controls.Add(this.activeSensorListBox);
-            this.tabPage2.Controls.Add(this.startSensorBtn);
-            this.tabPage2.Controls.Add(this.sensorListBox);
-            this.tabPage2.Controls.Add(this.refreshSensorsBtn);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(928, 666);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Sensors";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // stopSensorBtn
             // 
-            this.stopSensorBtn.Location = new System.Drawing.Point(211, 156);
+            this.stopSensorBtn.Location = new System.Drawing.Point(1104, 151);
             this.stopSensorBtn.Name = "stopSensorBtn";
             this.stopSensorBtn.Size = new System.Drawing.Size(170, 29);
             this.stopSensorBtn.TabIndex = 4;
@@ -119,7 +66,7 @@
             // 
             this.activeSensorListBox.FormattingEnabled = true;
             this.activeSensorListBox.ItemHeight = 16;
-            this.activeSensorListBox.Location = new System.Drawing.Point(17, 156);
+            this.activeSensorListBox.Location = new System.Drawing.Point(910, 151);
             this.activeSensorListBox.Name = "activeSensorListBox";
             this.activeSensorListBox.Size = new System.Drawing.Size(170, 100);
             this.activeSensorListBox.TabIndex = 3;
@@ -127,7 +74,7 @@
             // 
             // startSensorBtn
             // 
-            this.startSensorBtn.Location = new System.Drawing.Point(211, 66);
+            this.startSensorBtn.Location = new System.Drawing.Point(1104, 61);
             this.startSensorBtn.Name = "startSensorBtn";
             this.startSensorBtn.Size = new System.Drawing.Size(170, 29);
             this.startSensorBtn.TabIndex = 2;
@@ -139,7 +86,7 @@
             // 
             this.sensorListBox.FormattingEnabled = true;
             this.sensorListBox.ItemHeight = 16;
-            this.sensorListBox.Location = new System.Drawing.Point(17, 18);
+            this.sensorListBox.Location = new System.Drawing.Point(910, 13);
             this.sensorListBox.Name = "sensorListBox";
             this.sensorListBox.Size = new System.Drawing.Size(170, 100);
             this.sensorListBox.TabIndex = 1;
@@ -147,7 +94,7 @@
             // 
             // refreshSensorsBtn
             // 
-            this.refreshSensorsBtn.Location = new System.Drawing.Point(211, 18);
+            this.refreshSensorsBtn.Location = new System.Drawing.Point(1104, 13);
             this.refreshSensorsBtn.Name = "refreshSensorsBtn";
             this.refreshSensorsBtn.Size = new System.Drawing.Size(170, 29);
             this.refreshSensorsBtn.TabIndex = 0;
@@ -155,35 +102,21 @@
             this.refreshSensorsBtn.UseVisualStyleBackColor = true;
             this.refreshSensorsBtn.Click += new System.EventHandler(this.refreshSensorsBtn_Click);
             // 
-            // tabPage3
+            // stopCommBtn
             // 
-            this.tabPage3.Controls.Add(this.stopCommBtn);
-            this.tabPage3.Controls.Add(this.activeCommListBox);
-            this.tabPage3.Controls.Add(this.commArg5Txt);
-            this.tabPage3.Controls.Add(this.commArg5Lbl);
-            this.tabPage3.Controls.Add(this.commArg4Txt);
-            this.tabPage3.Controls.Add(this.commArg4Lbl);
-            this.tabPage3.Controls.Add(this.commArg3Txt);
-            this.tabPage3.Controls.Add(this.commArg3Lbl);
-            this.tabPage3.Controls.Add(this.commArg2Txt);
-            this.tabPage3.Controls.Add(this.commArg2Lbl);
-            this.tabPage3.Controls.Add(this.commArg1Txt);
-            this.tabPage3.Controls.Add(this.commArg1Lbl);
-            this.tabPage3.Controls.Add(this.startCommBtn);
-            this.tabPage3.Controls.Add(this.commListBox);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(928, 666);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Communications";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.stopCommBtn.Location = new System.Drawing.Point(1103, 421);
+            this.stopCommBtn.Name = "stopCommBtn";
+            this.stopCommBtn.Size = new System.Drawing.Size(170, 29);
+            this.stopCommBtn.TabIndex = 16;
+            this.stopCommBtn.Text = "Stop Server";
+            this.stopCommBtn.UseVisualStyleBackColor = true;
+            this.stopCommBtn.Click += new System.EventHandler(this.stopCommBtn_Click);
             // 
             // activeCommListBox
             // 
             this.activeCommListBox.FormattingEnabled = true;
             this.activeCommListBox.ItemHeight = 16;
-            this.activeCommListBox.Location = new System.Drawing.Point(16, 151);
+            this.activeCommListBox.Location = new System.Drawing.Point(910, 421);
             this.activeCommListBox.Name = "activeCommListBox";
             this.activeCommListBox.Size = new System.Drawing.Size(170, 100);
             this.activeCommListBox.TabIndex = 15;
@@ -191,7 +124,7 @@
             // 
             // commArg5Txt
             // 
-            this.commArg5Txt.Location = new System.Drawing.Point(675, 95);
+            this.commArg5Txt.Location = new System.Drawing.Point(1569, 365);
             this.commArg5Txt.Name = "commArg5Txt";
             this.commArg5Txt.Size = new System.Drawing.Size(100, 22);
             this.commArg5Txt.TabIndex = 14;
@@ -199,7 +132,7 @@
             // commArg5Lbl
             // 
             this.commArg5Lbl.AutoSize = true;
-            this.commArg5Lbl.Location = new System.Drawing.Point(672, 61);
+            this.commArg5Lbl.Location = new System.Drawing.Point(1566, 331);
             this.commArg5Lbl.Name = "commArg5Lbl";
             this.commArg5Lbl.Size = new System.Drawing.Size(46, 17);
             this.commArg5Lbl.TabIndex = 13;
@@ -207,7 +140,7 @@
             // 
             // commArg4Txt
             // 
-            this.commArg4Txt.Location = new System.Drawing.Point(558, 95);
+            this.commArg4Txt.Location = new System.Drawing.Point(1452, 365);
             this.commArg4Txt.Name = "commArg4Txt";
             this.commArg4Txt.Size = new System.Drawing.Size(100, 22);
             this.commArg4Txt.TabIndex = 12;
@@ -215,7 +148,7 @@
             // commArg4Lbl
             // 
             this.commArg4Lbl.AutoSize = true;
-            this.commArg4Lbl.Location = new System.Drawing.Point(555, 61);
+            this.commArg4Lbl.Location = new System.Drawing.Point(1449, 331);
             this.commArg4Lbl.Name = "commArg4Lbl";
             this.commArg4Lbl.Size = new System.Drawing.Size(46, 17);
             this.commArg4Lbl.TabIndex = 11;
@@ -223,7 +156,7 @@
             // 
             // commArg3Txt
             // 
-            this.commArg3Txt.Location = new System.Drawing.Point(440, 95);
+            this.commArg3Txt.Location = new System.Drawing.Point(1334, 365);
             this.commArg3Txt.Name = "commArg3Txt";
             this.commArg3Txt.Size = new System.Drawing.Size(100, 22);
             this.commArg3Txt.TabIndex = 10;
@@ -231,7 +164,7 @@
             // commArg3Lbl
             // 
             this.commArg3Lbl.AutoSize = true;
-            this.commArg3Lbl.Location = new System.Drawing.Point(437, 61);
+            this.commArg3Lbl.Location = new System.Drawing.Point(1331, 331);
             this.commArg3Lbl.Name = "commArg3Lbl";
             this.commArg3Lbl.Size = new System.Drawing.Size(46, 17);
             this.commArg3Lbl.TabIndex = 9;
@@ -239,7 +172,7 @@
             // 
             // commArg2Txt
             // 
-            this.commArg2Txt.Location = new System.Drawing.Point(324, 95);
+            this.commArg2Txt.Location = new System.Drawing.Point(1218, 365);
             this.commArg2Txt.Name = "commArg2Txt";
             this.commArg2Txt.Size = new System.Drawing.Size(100, 22);
             this.commArg2Txt.TabIndex = 8;
@@ -247,7 +180,7 @@
             // commArg2Lbl
             // 
             this.commArg2Lbl.AutoSize = true;
-            this.commArg2Lbl.Location = new System.Drawing.Point(321, 61);
+            this.commArg2Lbl.Location = new System.Drawing.Point(1215, 331);
             this.commArg2Lbl.Name = "commArg2Lbl";
             this.commArg2Lbl.Size = new System.Drawing.Size(46, 17);
             this.commArg2Lbl.TabIndex = 7;
@@ -255,7 +188,7 @@
             // 
             // commArg1Txt
             // 
-            this.commArg1Txt.Location = new System.Drawing.Point(209, 95);
+            this.commArg1Txt.Location = new System.Drawing.Point(1103, 365);
             this.commArg1Txt.Name = "commArg1Txt";
             this.commArg1Txt.Size = new System.Drawing.Size(100, 22);
             this.commArg1Txt.TabIndex = 6;
@@ -263,7 +196,7 @@
             // commArg1Lbl
             // 
             this.commArg1Lbl.AutoSize = true;
-            this.commArg1Lbl.Location = new System.Drawing.Point(206, 61);
+            this.commArg1Lbl.Location = new System.Drawing.Point(1100, 331);
             this.commArg1Lbl.Name = "commArg1Lbl";
             this.commArg1Lbl.Size = new System.Drawing.Size(46, 17);
             this.commArg1Lbl.TabIndex = 5;
@@ -271,7 +204,7 @@
             // 
             // startCommBtn
             // 
-            this.startCommBtn.Location = new System.Drawing.Point(209, 17);
+            this.startCommBtn.Location = new System.Drawing.Point(1103, 287);
             this.startCommBtn.Name = "startCommBtn";
             this.startCommBtn.Size = new System.Drawing.Size(170, 29);
             this.startCommBtn.TabIndex = 4;
@@ -283,52 +216,83 @@
             // 
             this.commListBox.FormattingEnabled = true;
             this.commListBox.ItemHeight = 16;
-            this.commListBox.Location = new System.Drawing.Point(16, 17);
+            this.commListBox.Location = new System.Drawing.Point(910, 287);
             this.commListBox.Name = "commListBox";
             this.commListBox.Size = new System.Drawing.Size(170, 100);
             this.commListBox.TabIndex = 3;
             this.commListBox.SelectedIndexChanged += new System.EventHandler(this.commListBox_SelectedIndexChanged);
             // 
-            // stopCommBtn
+            // streamViewer1
             // 
-            this.stopCommBtn.Location = new System.Drawing.Point(209, 151);
-            this.stopCommBtn.Name = "stopCommBtn";
-            this.stopCommBtn.Size = new System.Drawing.Size(170, 29);
-            this.stopCommBtn.TabIndex = 16;
-            this.stopCommBtn.Text = "Stop Server";
-            this.stopCommBtn.UseVisualStyleBackColor = true;
-            this.stopCommBtn.Click += new System.EventHandler(this.stopCommBtn_Click);
+            this.streamViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.streamViewer1.Location = new System.Drawing.Point(13, 13);
+            this.streamViewer1.Margin = new System.Windows.Forms.Padding(4);
+            this.streamViewer1.Name = "streamViewer1";
+            this.streamViewer1.Size = new System.Drawing.Size(879, 618);
+            this.streamViewer1.TabIndex = 0;
+            // 
+            // controlListBox
+            // 
+            this.controlListBox.FormattingEnabled = true;
+            this.controlListBox.ItemHeight = 16;
+            this.controlListBox.Location = new System.Drawing.Point(1303, 13);
+            this.controlListBox.Name = "controlListBox";
+            this.controlListBox.Size = new System.Drawing.Size(170, 100);
+            this.controlListBox.TabIndex = 17;
+            // 
+            // stopControlBtn
+            // 
+            this.stopControlBtn.Location = new System.Drawing.Point(1499, 12);
+            this.stopControlBtn.Name = "stopControlBtn";
+            this.stopControlBtn.Size = new System.Drawing.Size(170, 29);
+            this.stopControlBtn.TabIndex = 18;
+            this.stopControlBtn.Text = "Stop Device";
+            this.stopControlBtn.UseVisualStyleBackColor = true;
+            this.stopControlBtn.Click += new System.EventHandler(this.stopControlBtn_Click);
             // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 723);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(1684, 645);
+            this.Controls.Add(this.stopControlBtn);
+            this.Controls.Add(this.controlListBox);
+            this.Controls.Add(this.streamViewer1);
+            this.Controls.Add(this.stopCommBtn);
+            this.Controls.Add(this.stopSensorBtn);
+            this.Controls.Add(this.activeCommListBox);
+            this.Controls.Add(this.commArg5Txt);
+            this.Controls.Add(this.activeSensorListBox);
+            this.Controls.Add(this.commArg5Lbl);
+            this.Controls.Add(this.sensorListBox);
+            this.Controls.Add(this.commArg4Txt);
+            this.Controls.Add(this.startSensorBtn);
+            this.Controls.Add(this.commArg4Lbl);
+            this.Controls.Add(this.refreshSensorsBtn);
+            this.Controls.Add(this.commArg3Txt);
+            this.Controls.Add(this.commListBox);
+            this.Controls.Add(this.commArg3Lbl);
+            this.Controls.Add(this.startCommBtn);
+            this.Controls.Add(this.commArg2Txt);
+            this.Controls.Add(this.commArg1Lbl);
+            this.Controls.Add(this.commArg2Lbl);
+            this.Controls.Add(this.commArg1Txt);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "ClientForm";
+            this.Text = "Anubis II";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.Load += new System.EventHandler(this.ClientForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private StreamViewer streamViewer1;
         private System.Windows.Forms.ListBox sensorListBox;
         private System.Windows.Forms.Button refreshSensorsBtn;
         private System.Windows.Forms.Button startSensorBtn;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox commArg5Txt;
         private System.Windows.Forms.Label commArg5Lbl;
         private System.Windows.Forms.TextBox commArg4Txt;
@@ -345,5 +309,7 @@
         private System.Windows.Forms.ListBox activeCommListBox;
         private System.Windows.Forms.Button stopSensorBtn;
         private System.Windows.Forms.Button stopCommBtn;
+        private System.Windows.Forms.ListBox controlListBox;
+        private System.Windows.Forms.Button stopControlBtn;
     }
 }

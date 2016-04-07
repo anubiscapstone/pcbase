@@ -28,6 +28,14 @@ namespace AnubisClient
         }
 
         /// <summary>
+        /// Stop communication to this Control
+        /// </summary>
+        public void StopDevice()
+        {
+            commSock.Close();
+        }
+
+        /// <summary>
         /// Verify a connecting control is a valid control, instantiate an interface, and return it
         /// This method can be run asynchronously with the await keyword and it will not block while communicating to the potential Control.
         /// </summary>
