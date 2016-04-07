@@ -161,6 +161,7 @@ namespace AnubisClient
                 Tuple<Label, TextBox> b = getCommArgBoxes(i);
                 b.Item1.Hide();
                 b.Item2.Hide();
+                b.Item2.Text = "";
             }
         }
 
@@ -177,6 +178,9 @@ namespace AnubisClient
                     selectComm = null;
                     return;
                 }
+
+                List<string> param_defaults = DefaultsParser.ParseCommDefaults(selectComm);
+
                 commArgCount = 0;
                 foreach(ParameterInfo p in selectComm.GetConstructors()[0].GetParameters())
                 {
@@ -191,6 +195,8 @@ namespace AnubisClient
                     b.Item1.Text = p.Name;
                     b.Item1.Show();
                     b.Item2.Show();
+                    if (param_defaults != null && param_defaults.Count > commArgCount)
+                        b.Item2.Text = param_defaults[commArgCount];
                     commArgTypes[commArgCount++] = p.ParameterType;
                 }
             }

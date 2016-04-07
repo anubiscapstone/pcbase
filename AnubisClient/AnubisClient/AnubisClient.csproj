@@ -101,6 +101,7 @@
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\Communications\CommunicationsEngine.cs" />
+    <Compile Include="Core\GUI\DefaultsParser.cs" />
     <Compile Include="Core\GUI\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
